@@ -12,25 +12,36 @@ if (extraMilestones.length) {
   label.textContent = moreLabel;
   milestoneToggle.hidden = false;
 
+  const list = document.querySelector('#milestone-list');
+  const animateExpansion = window.matchMedia('(max-width: 760px) and (prefers-reduced-motion: no-preference)');
+  let expansion;
+  animateExpansion.addEventListener('change', () => expansion?.cancel());
+
   milestoneToggle.addEventListener('click', async () => {
     if (milestoneSection.hasAttribute('data-collapsing')) return;
+    expansion?.cancel();
     if (!milestoneSection.hasAttribute('data-collapsed')) {
       milestoneSection.dataset.collapsing = '';
       const exit = firstExtra.getAnimations().find(animation => animation.animationName === 'milestone-exit');
       if (exit) await Promise.allSettled([exit.finished]);
     }
     const buttonTop = milestoneToggle.getBoundingClientRect().top;
+    const initialHeight = list.getBoundingClientRect().height;
     const collapsed = milestoneSection.toggleAttribute('data-collapsed');
     milestoneSection.removeAttribute('data-collapsing');
     milestoneToggle.setAttribute('aria-expanded', String(!collapsed));
     label.textContent = collapsed ? moreLabel : 'Show fewer milestones';
+    if (!collapsed && animateExpansion.matches) {
+      expansion = list.animate(
+        [{ height: initialHeight + 'px' }, { height: list.getBoundingClientRect().height + 'px' }],
+        { duration: 320, easing: 'ease-in-out' }
+      );
+    }
     const target = collapsed ? milestoneToggle : firstExtra;
     if (milestoneToggle.getClientRects().length) {
       target.focus({ preventScroll: true });
       if (collapsed) {
         window.scrollBy({ top: target.getBoundingClientRect().top - buttonTop, behavior: 'instant' });
-      } else {
-        target.scrollIntoView({ block: 'center', behavior: 'instant' });
       }
     }
   });
