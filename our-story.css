@@ -135,10 +135,10 @@
   .story-timeline-toggle:not([hidden]) {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    min-height: 44px;
+    gap: var(--button-icon-gap);
     margin-top: var(--space-actions);
-    justify-self: start;
+    margin-inline: auto;
+    justify-self: center;
   }
 
   .story-timeline-toggle[aria-expanded="true"] img { transform: rotate(180deg); }
