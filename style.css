@@ -165,7 +165,7 @@ footer{padding:0;background:var(--soft)}
 .footer-location p{font-size:11px;line-height:1.6;color:#6a6a6a}
 .footer-main{grid-template-columns:1.45fr 1fr 1fr 1fr;padding:50px 7% 44px;border-top:0}
 /* 84px images render 490.5-unit badge rings in a 520-unit SVG: 3.235px layout gap gives 8px between visible rings. */
-.footer-brand .trust-badges{margin-top:24px;gap:3.235px}
+.footer-brand .trust-badges{margin-top:24px;gap:16px}
 .footer-brand .trust-badge.sourced-badge{width:84px;flex-shrink:0}
 .footer-column>a{font-size:14px;line-height:1.6;padding:3px 0}
 .footer-bottom{margin:0 7%;padding:24px 0 28px}
