@@ -16,4 +16,4 @@ Use local edits or a branch for experiments. Commit and push approved work to `m
 
 Previously, `akornion/yopeso-website` held working source and this repository held a separate review release. Their shared website files matched. Both histories were merged here without changing the approved website design; the local preview server was retained. The former working repository is retained as an archive, not a second publishing destination.
 
-The ChatGPT Sites prototype and earlier local checkout remain historical references. New GitHub design decisions take precedence over those older copies. Onsite/Onlook sessions must use this repository for future work; existing sessions connected to `yopeso-website` need to switch before further edits.
+The ChatGPT Sites prototype and earlier local checkout remain historical references. New GitHub design decisions take precedence over those older copies. Onlook sessions must use this repository for future work; existing sessions connected to `yopeso-website` need to switch before further edits.
