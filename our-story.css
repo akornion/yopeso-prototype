@@ -119,6 +119,14 @@
 .story-main .story-timeline-toggle { display: none; }
 
 @media (max-width: 760px) {
+  .story-timeline-section { row-gap: 0; }
+  .story-timeline-heading { margin-bottom: var(--space-content); }
+
+  #milestones[data-collapsed] li:not([data-extra-milestone]):has(+ [data-extra-milestone]),
+  .story-timeline:last-child > li:last-child {
+    padding-bottom: 0;
+  }
+
   #milestones[data-collapsed] [data-extra-milestone],
   #milestones[data-collapsed] .story-timeline:has(> [data-extra-milestone]:first-child) {
     display: none;
@@ -129,6 +137,7 @@
     align-items: center;
     gap: 8px;
     min-height: 44px;
+    margin-top: var(--space-actions);
     justify-self: start;
   }
 
