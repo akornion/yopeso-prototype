@@ -53,7 +53,7 @@ let navDialogReturn=null;
 dialog.addEventListener('close',()=>{if(navDialogReturn){navDialogReturn.focus();navDialogReturn=null;}});
 nav.addEventListener('click',event=>{
  const preview=event.target.closest('[data-dest]');
- if(preview)navDialogReturn=matchMedia('(max-width:760px)').matches?toggle:(preview.closest('.nav-disclosure')?.querySelector('.nav-disclosure-toggle')||preview);
+ if(preview)navDialogReturn=toggle.getClientRects().length?toggle:(preview.closest('.nav-disclosure')?.querySelector('.nav-disclosure-toggle')||preview);
  if(event.target.closest('a,button')&&!event.target.closest('.nav-disclosure-toggle'))closeNavigation();
 });
 document.addEventListener('click',event=>{
@@ -170,7 +170,7 @@ if (new URLSearchParams(location.search).get('nav') === 'mobile' && !document.qu
   const previewStyle = document.createElement('link');
   previewStyle.rel = 'stylesheet';
   previewStyle.href = 'menu-preview.css';
-  previewStyle.media = '(max-width:599px)';
+  previewStyle.media = '(max-width:1024px)';
   document.head.append(previewStyle);
   const previewScript = document.createElement('script');
   previewScript.src = 'menu-preview.js';

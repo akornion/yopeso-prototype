@@ -1,30 +1,8 @@
-// Use a separate column for direct destinations on tablet; retain site order elsewhere.
-const tabletMenu = matchMedia('(min-width:600px) and (max-width:1024px)');
-const previewNav = document.querySelector('#navigation');
-const directItems = [...previewNav.querySelectorAll(':scope > a, :scope > button:not(.nav-contact)')];
-const contactItem = previewNav.querySelector('.nav-contact');
-const originalItems = [...previewNav.children];
-function arrangeMenu() {
-  previewNav.replaceChildren(...originalItems);
-  if (tabletMenu.matches) {
-    const direct = document.createElement('div');
-    direct.className = 'menu-direct';
-    previewNav.prepend(direct);
-    direct.append(...directItems);
-    const contact = document.createElement('div');
-    contact.className = 'menu-contact-row';
-    previewNav.append(contact);
-    contact.append(contactItem);
-  }
-}
 const previewDestination = !toggle.querySelector('.menu-symbol');
-if (!previewDestination) {
-  arrangeMenu();
-  tabletMenu.addEventListener('change', arrangeMenu);
-}
+const contactItem = nav.querySelector('.nav-contact');
 
 // Preserve the preview through real page navigation, including section anchors.
-const phoneMenu = matchMedia('(max-width:599px)');
+const menuViewport = matchMedia('(max-width:1024px)');
 const backdrop = document.createElement('div');
 backdrop.className = 'menu-backdrop';
 backdrop.setAttribute('aria-hidden', 'true');
@@ -36,12 +14,13 @@ backdrop.addEventListener('click', () => {
 const originalToggle = toggle.innerHTML;
 const previewLinks = new Map();
 function syncMobilePreview() {
+  contactItem.classList.toggle('nav-contact', !menuViewport.matches);
   if (previewDestination) {
-    toggle.innerHTML = phoneMenu.matches
+    toggle.innerHTML = menuViewport.matches
       ? '<span class="menu-open-label">Menu</span><span class="menu-close-label">Close</span><span class="menu-symbol" aria-hidden="true"></span>'
       : originalToggle;
   }
-  if (!phoneMenu.matches) {
+  if (!menuViewport.matches) {
     for (const [link, href] of previewLinks) link.setAttribute('href', href);
     previewLinks.clear();
     return;
@@ -56,8 +35,7 @@ function syncMobilePreview() {
   }
 }
 syncMobilePreview();
-phoneMenu.addEventListener('change', syncMobilePreview);
-const menuViewport = matchMedia('(max-width:1024px)');
+menuViewport.addEventListener('change', syncMobilePreview);
 menuViewport.addEventListener('change', closeNavigation);
 let openingScroll = null;
 toggle.addEventListener('click', () => {
