@@ -530,3 +530,6 @@
 @media(prefers-reduced-motion:reduce){.bos-flow-lane{animation:none}}
 
 #ai-bos>.bos-section-action{justify-content:center;margin-top:var(--space-actions)}
+
+/* Closing route titles share the article-card title role. */
+.bos-refined .bos-next-grid h3{font-family:var(--font-heading);font-size:var(--type-title);font-weight:var(--weight-medium);line-height:var(--leading-title);letter-spacing:-.5px}
