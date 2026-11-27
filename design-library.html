@@ -78,10 +78,10 @@
 <div class="spec"><div class="role">Home</div><h3>Primary button</h3><dl>
 <dt>Corner radius</dt><dd>30px</dd>
 <dt>Padding</dt><dd>13px 24px</dd>
-<dt>Layout gap</dt><dd>28px</dd>
+<dt>Label to icon</dt><dd>16px · centered</dd>
 </dl><details><summary>Full measurements</summary><dl>
 <dt>Margin</dt><dd>0px</dd>
-<dt>Width</dt><dd>275.047px</dd>
+<dt>Width</dt><dd>263.047px</dd>
 <dt>Height</dt><dd>48px</dd>
 <dt>Top border</dt><dd>0px none rgb(253, 253, 253)</dd>
 <dt>Grid columns</dt><dd>none</dd>
@@ -91,10 +91,10 @@
 <div class="spec"><div class="role">Home</div><h3>Secondary button</h3><dl>
 <dt>Corner radius</dt><dd>30px</dd>
 <dt>Padding</dt><dd>13px 24px</dd>
-<dt>Layout gap</dt><dd>28px</dd>
+<dt>Label to icon</dt><dd>16px · centered</dd>
 </dl><details><summary>Full measurements</summary><dl>
 <dt>Margin</dt><dd>0px</dd>
-<dt>Width</dt><dd>208.828px / 275.047px</dd>
+<dt>Width</dt><dd>196.828px / 263.047px</dd>
 <dt>Height</dt><dd>48px</dd>
 <dt>Top border</dt><dd>1px solid rgb(41, 41, 41)</dd>
 <dt>Grid columns</dt><dd>none</dd>
@@ -104,14 +104,21 @@
 <div class="spec"><div class="role">Home</div><h3>Tertiary button</h3><dl>
 <dt>Corner radius</dt><dd>0px</dd>
 <dt>Padding</dt><dd>8px 0px</dd>
-<dt>Layout gap</dt><dd>10px</dd>
+<dt>Label to icon</dt><dd>16px · centered</dd>
 </dl><details><summary>Full measurements</summary><dl>
 <dt>Margin</dt><dd>0px</dd>
-<dt>Width</dt><dd>172.766px</dd>
+<dt>Width</dt><dd>174.766px</dd>
 <dt>Height</dt><dd>36.7969px</dd>
 <dt>Top border</dt><dd>0px none rgb(41, 41, 41)</dd>
 <dt>Grid columns</dt><dd>none</dd>
 </dl><code>#capabilities .text-link</code></details><a href="index.html">View source page ↗</a></div></article>
+<article class="card" id="role-filters">
+  <div class="preview"><a class="zoom" href="library-assets/role-filter.png" aria-label="Open full-size Country filter"><img loading="lazy" src="library-assets/role-filter.png" alt="Country choices grouped above a full-width outlined Done button"></a></div>
+  <div class="spec"><div class="role">Open roles</div><h3>Listing filters</h3>
+    <p>Country and Area of expertise allow multiple selections. Working hours allows one. All resets that filter. The list updates immediately and shows every matching role on one page.</p>
+    <dl><dt>Last option to Done</dt><dd>16px</dd><dt>Done button</dt><dd>Secondary · full width · 48px high</dd><dt>Label to checkmark</dt><dd>16px · centered</dd></dl>
+    <details><summary>Interaction and overflow</summary><p>All sits with the other choices. Hover darkens the row, selection uses the checkbox or radio, and keyboard focus has an outline. The panel shows every choice when space allows. In short viewports only the choices scroll, keeping Done visible. Done closes the panel and returns focus to its trigger without scrolling or reloading the page.</p></details>
+    <a href="open-roles.html">View source page ↗</a></div></article>
 <article class="card" id="responsive-navigation">
   <div class="preview"><a class="zoom" href="library-assets/responsive-menu.png" aria-label="Open full-size menu specimen"><img loading="lazy" src="library-assets/responsive-menu.png" alt="Open phone menu with a gray logo strip, white options panel and Contact last"></a></div>
   <div class="spec">
@@ -454,6 +461,7 @@
 </ul>
 
 <h3 class="family">Release record</h3>
+<p><strong>Role filters and shared action spacing.</strong> Buttons and action links pair their label and icon with a centered 16px gap. The <a href="#role-filters">roles filter reference</a> shows the full-width Done button, grouped choices and scrolling behavior.</p>
 <p id="ai-bos-intro-release"><strong>AI-BOS section introduction.</strong> In <a href="ai-bos.html#connected-processes">Connected business processes</a>, the label sits above the heading. Above 760px, the description starts level with the heading in the right column. The columns use the homepage AI-BOS proportions of 1 to 1.2 with a 7% gap. At 760px and narrower, the description follows the heading in a single column.</p>
 <p><strong>GitHub Pages revision <code>55a2c2b</code>.</strong> Published the <a href="#responsive-navigation">phone and tablet menu</a> across all 15 site pages, including job details. Desktop keeps its outlined Contact button. This release includes the directional timeline animations described above. The standalone menu review page was removed before publication.</p>
 <p><strong>GitHub Pages revision <code>0751f49</code>.</strong> Published the independent timeline columns, mobile disclosure and spacing reference. That version used a 200ms fade and rise on expansion and a 150ms exit on collapse. It included the correction from 52px to 24px between the final visible milestone and the button.</p>
