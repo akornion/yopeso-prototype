@@ -8,6 +8,7 @@
 <a href="#spacing">Spacing</a>
 <a href="#corner-radii">Corner radii</a>
 <a href="#components">Components</a>
+<a href="#change-history">Change history</a>
 </nav>
 <section class="block" id="color"><h2>Color</h2>
 <div class="palette">
@@ -132,6 +133,11 @@
       <dt>Button padding</dt><dd>8px 0</dd>
       <dt>Space above</dt><dd><code>--space-actions</code></dd>
       <dt>Space below</dt><dd><code>--space-section</code></dd>
+      <dt>Stacked row divider</dt><dd>1px · <code>--line</code></dd>
+      <dt>Padding after divider</dt><dd>20px · <code>--space-copy</code></dd>
+      <dt>Heading to list</dt><dd>32px · <code>--space-content</code></dd>
+      <dt>Expand / collapse</dt><dd>320ms · ease-in-out</dd>
+      <dt>Reduced motion</dt><dd>Immediate</dd>
     </dl></details>
     <a href="our-story.html#milestones">View source page ↗</a>
   </div>
@@ -403,4 +409,26 @@
 <dt>Grid columns</dt><dd>none</dd>
 </dl><code>.role-apply-bottom</code></details><a href="role-industrial-cybersecurity-expert.html">View source page ↗</a></div></article>
 </div>
+</section>
+<section class="block" id="change-history">
+<h2>Change history</h2>
+<h3 class="family">Our Story timeline</h3>
+<p><strong>761px and wider.</strong> All 11 milestones appear in two independent columns. The first six run down the left and the remaining five down the right. A taller entry only moves the milestones beneath it in its own column.</p>
+<p><strong>760px and narrower.</strong> The timeline becomes one chronological list. It opens with 2005, 2008 and 2012. “Show 8 more milestones” reveals 2013 through 2026 inline. Every consecutive entry has a divider, including the two 2017 milestones where the desktop columns meet.</p>
+<p><strong>Opening.</strong> The list grows downward over 320ms. The viewport stays where the reader tapped. Keyboard focus moves to the 2013 entry, and the reader controls when to scroll.</p>
+<p><strong>Closing.</strong> “Show fewer milestones” folds the list upward over 320ms. The button stays in place on screen and receives focus when the first three entries are visible again. Both transitions are immediate with reduced motion enabled.</p>
+<p>See both button states, the 44px tap target and the surrounding distances in the <a href="#timeline-disclosure">timeline disclosure reference</a>.</p>
+
+<h3 class="family">Prototype and library revisions</h3>
+<ul>
+<li><strong>Page import.</strong> Added six main pages and seven job details, with separate canvas pages for the website and job postings. Added two homepage capabilities variations: a six-card grid and a split layout with metrics beside the service list.</li>
+<li><strong>Design library.</strong> Added references for colors, typography, spacing, corner radii and components. Replaced the blank tertiary preview with a working link. Corrected the navigation’s initial padding, recaptured obscured specimens, added the page-shell preview and made image specimens available at full size. Tables reflow on narrow screens.</li>
+<li><strong>Body and supporting text.</strong> Trialled 16px body copy across desktop and mobile, then assigned 14px Small to helper text, office details, explanatory notes, role counts and empty-state guidance. Introductions, descriptions, FAQs and job prose use 16px Body.</li>
+<li><strong>Button labels.</strong> Primary, secondary and tertiary labels use a dedicated 14px token. Homepage hero buttons retain their 48px height and 13px × 24px padding. At 360px and narrower the label-to-arrow gap is 16px.</li>
+<li><strong>Publishing.</strong> The private working repository feeds a separate public GitHub Pages repository. Relative page links support navigation under the project URL.</li>
+</ul>
+
+<h3 class="family">Release record</h3>
+<p><strong>GitHub Pages revision <code>0751f49</code>.</strong> Published the independent timeline columns, mobile disclosure and spacing reference. That version used a 200ms fade and rise on expansion and a 150ms exit on collapse. It included the correction from 52px to 24px between the final visible milestone and the button.</p>
+<p><strong>Private revisions through <code>185f092</code>.</strong> Replaced those fades with directional height animations, corrected the viewport jump on expansion, kept the collapse button anchored, and restored the divider and 20px top padding above the second 2017 entry.</p>
 </section></main><footer>Measurements in CSS pixels. Shared token values follow the website’s 760px mobile breakpoint.</footer></body></html>
