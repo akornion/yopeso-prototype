@@ -115,3 +115,22 @@
 .story-hero-facts .story-people-fact{background:#fff;border-radius:20px;align-self:start}
 
 .story-hero.internal-hero{padding-bottom:var(--space-actions)}
+
+.story-main .story-timeline-toggle { display: none; }
+
+@media (max-width: 760px) {
+  #milestones[data-collapsed] [data-extra-milestone],
+  #milestones[data-collapsed] .story-timeline:has(> [data-extra-milestone]:first-child) {
+    display: none;
+  }
+
+  .story-timeline-toggle:not([hidden]) {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    justify-self: start;
+  }
+
+  .story-timeline-toggle[aria-expanded="true"] img { transform: rotate(180deg); }
+}
