@@ -97,7 +97,7 @@
 @media(max-width:760px){.story-certification-pair{gap:var(--space-content)}}
 
 /* Enlarge only the certification group; footer artwork retains its shared size. */
-.story-certification-pair .sourced-badge img{width:100.8px;height:100.8px}
+.story-certification-pair .sourced-badge img{width:100px;height:100px}
 
 @media(min-width:1200px){.story-experience .story-quote{max-width:none}.story-quote-line{display:block;white-space:nowrap}}
 
