@@ -148,12 +148,4 @@
   .story-timeline-columns { overflow: clip; overflow-clip-margin: 4px; }
   /* A node below the growing timeline can otherwise anchor the whole viewport. */
   html:has(.story-timeline-toggle[aria-expanded="true"]) { overflow-anchor: none; }
-
-  #milestones[data-collapsing] [data-extra-milestone] {
-    animation: milestone-exit 150ms ease-in both;
-  }
-}
-
-@keyframes milestone-exit {
-  to { opacity: 0; transform: translateY(-4px); }
 }

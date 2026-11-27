@@ -13,36 +13,53 @@ if (extraMilestones.length) {
   milestoneToggle.hidden = false;
 
   const list = document.querySelector('#milestone-list');
-  const animateExpansion = window.matchMedia('(max-width: 760px) and (prefers-reduced-motion: no-preference)');
-  let expansion;
-  animateExpansion.addEventListener('change', () => expansion?.cancel());
+  const motion = window.matchMedia('(max-width: 760px) and (prefers-reduced-motion: no-preference)');
+  let animation;
+  motion.addEventListener('change', () => animation?.cancel());
 
   milestoneToggle.addEventListener('click', async () => {
     if (milestoneSection.hasAttribute('data-collapsing')) return;
-    expansion?.cancel();
-    if (!milestoneSection.hasAttribute('data-collapsed')) {
-      milestoneSection.dataset.collapsing = '';
-      const exit = firstExtra.getAnimations().find(animation => animation.animationName === 'milestone-exit');
-      if (exit) await Promise.allSettled([exit.finished]);
-    }
     const buttonTop = milestoneToggle.getBoundingClientRect().top;
     const initialHeight = list.getBoundingClientRect().height;
+    animation?.cancel();
     const collapsed = milestoneSection.toggleAttribute('data-collapsed');
-    milestoneSection.removeAttribute('data-collapsing');
+    const finalHeight = list.getBoundingClientRect().height;
+
+    function keepButtonInPlace() {
+      if (milestoneToggle.getClientRects().length) {
+        window.scrollBy({ top: milestoneToggle.getBoundingClientRect().top - buttonTop, behavior: 'instant' });
+      }
+    }
+
+    if (motion.matches) {
+      if (collapsed) {
+        // Keep the rows visible inside the shrinking list until the fold finishes.
+        milestoneSection.removeAttribute('data-collapsed');
+        milestoneSection.dataset.collapsing = '';
+      }
+      animation = list.animate(
+        [{ height: initialHeight + 'px' }, { height: finalHeight + 'px' }],
+        { duration: 320, easing: 'ease-in-out', fill: collapsed ? 'forwards' : 'none' }
+      );
+      if (collapsed) {
+        let frame;
+        function followFold() {
+          keepButtonInPlace();
+          frame = requestAnimationFrame(followFold);
+        }
+        followFold();
+        await Promise.allSettled([animation.finished]);
+        cancelAnimationFrame(frame);
+        milestoneSection.dataset.collapsed = '';
+        milestoneSection.removeAttribute('data-collapsing');
+        animation.cancel();
+      }
+    }
     milestoneToggle.setAttribute('aria-expanded', String(!collapsed));
     label.textContent = collapsed ? moreLabel : 'Show fewer milestones';
-    if (!collapsed && animateExpansion.matches) {
-      expansion = list.animate(
-        [{ height: initialHeight + 'px' }, { height: list.getBoundingClientRect().height + 'px' }],
-        { duration: 320, easing: 'ease-in-out' }
-      );
-    }
-    const target = collapsed ? milestoneToggle : firstExtra;
     if (milestoneToggle.getClientRects().length) {
-      target.focus({ preventScroll: true });
-      if (collapsed) {
-        window.scrollBy({ top: target.getBoundingClientRect().top - buttonTop, behavior: 'instant' });
-      }
+      (collapsed ? milestoneToggle : firstExtra).focus({ preventScroll: true });
+      if (collapsed) keepButtonInPlace();
     }
   });
 }
