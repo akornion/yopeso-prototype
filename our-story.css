@@ -17,7 +17,7 @@
 .story-timeline-heading{align-self:start;max-width:360px}
 .story-timeline{display:block;list-style:none;margin:0;padding:0}
 .story-timeline>li:nth-child(n){display:grid;grid-template-columns:75px minmax(0,1fr);gap:var(--space-copy);margin:0;padding:var(--space-copy) 0;border:0;border-top:1px solid var(--line);background:none}
-.story-timeline>li:first-child{padding-top:0;border-top:0}
+.story-timeline:where(:first-child)>li:first-child{padding-top:0;border-top:0}
 .story-timeline>li::after{display:none}
 .story-timeline time,.story-timeline .story-year{font:var(--weight-medium) var(--type-title)/var(--leading-title) var(--font-heading);letter-spacing:-.5px}
 .story-main .story-milestone h3{font-size:var(--type-title)}
