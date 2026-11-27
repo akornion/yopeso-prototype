@@ -59,7 +59,7 @@
 @media(min-width:761px){
  .story-timeline-section{display:block}
  .story-timeline-heading{max-width:700px;margin-bottom:var(--space-content)}
- .story-timeline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(6,auto);grid-auto-flow:column;column-gap:calc(var(--space-section) + var(--space-content));row-gap:0}
+ .story-timeline-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;column-gap:calc(var(--space-section) + var(--space-content))}
  .story-timeline>li:nth-child(n){grid-template-columns:60px minmax(0,1fr);gap:var(--space-card);padding:var(--space-copy) 0;border-top:1px solid var(--line)}
 }
 .story-difference .story-quote,.story-values .story-quote,.story-experience .story-quote{background:none;border-radius:0;border:0;border-left:2px solid var(--ink);padding:0 0 0 var(--space-copy);text-align:left}
