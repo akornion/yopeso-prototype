@@ -215,7 +215,7 @@
         "fontWeight": "400",
         "maxWidth": "none",
         "width": "374px",
-        "height": "1385.23px",
+        "height": "1535.92px",
         "gridTemplateColumns": "none"
       },
       "1512": {
@@ -232,7 +232,7 @@
         "fontWeight": "400",
         "maxWidth": "none",
         "width": "1512px",
-        "height": "1034.59px",
+        "height": "1092.22px",
         "gridTemplateColumns": "none"
       },
       "name": "Capabilities section",
@@ -255,7 +255,7 @@
         "fontWeight": "400",
         "maxWidth": "none",
         "width": "329.125px",
-        "height": "131.391px",
+        "height": "140.984px",
         "gridTemplateColumns": "297.125px 24px"
       },
       "1512": {
@@ -272,7 +272,7 @@
         "fontWeight": "400",
         "maxWidth": "none",
         "width": "1300.34px",
-        "height": "97.7812px",
+        "height": "104.188px",
         "gridTemplateColumns": "556.969px 668.375px 35px"
       },
       "name": "Service row",
@@ -375,7 +375,7 @@
         "fontWeight": "400",
         "maxWidth": "none",
         "width": "329.125px",
-        "height": "297.531px",
+        "height": "307.141px",
         "gridTemplateColumns": "none"
       },
       "1512": {
@@ -392,7 +392,7 @@
         "fontWeight": "400",
         "maxWidth": "none",
         "width": "412.109px",
-        "height": "275.844px",
+        "height": "285.453px",
         "gridTemplateColumns": "none"
       },
       "name": "Insight card",
@@ -415,7 +415,7 @@
         "fontWeight": "400",
         "maxWidth": "none",
         "width": "155.562px",
-        "height": "202.328px",
+        "height": "221.547px",
         "gridTemplateColumns": "none"
       },
       "1512": {
@@ -432,7 +432,7 @@
         "fontWeight": "400",
         "maxWidth": "none",
         "width": "252.953px",
-        "height": "174.953px",
+        "height": "187.766px",
         "gridTemplateColumns": "none"
       },
       "name": "Office contact",
@@ -455,7 +455,7 @@
         "fontWeight": "400",
         "maxWidth": "1512px",
         "width": "374px",
-        "height": "11095.2px",
+        "height": "11813.9px",
         "gridTemplateColumns": "none"
       },
       "1512": {
@@ -472,7 +472,7 @@
         "fontWeight": "400",
         "maxWidth": "1512px",
         "width": "1512px",
-        "height": "6427.97px",
+        "height": "6629.62px",
         "gridTemplateColumns": "none"
       },
       "name": "Page shell",
@@ -494,7 +494,7 @@
         "fontWeight": "400",
         "maxWidth": "none",
         "width": "329.125px",
-        "height": "246.062px",
+        "height": "258.875px",
         "gridTemplateColumns": "none"
       },
       "1512": {
@@ -511,7 +511,7 @@
         "fontWeight": "400",
         "maxWidth": "none",
         "width": "383.328px",
-        "height": "266.062px",
+        "height": "278.875px",
         "gridTemplateColumns": "none"
       },
       "name": "Workflow stage",
@@ -534,7 +534,7 @@
         "fontWeight": "400",
         "maxWidth": "none",
         "width": "329.125px",
-        "height": "1412.11px",
+        "height": "1604.14px",
         "gridTemplateColumns": "none"
       },
       "1512": {
@@ -551,7 +551,7 @@
         "fontWeight": "400",
         "maxWidth": "none",
         "width": "1300.34px",
-        "height": "550.453px",
+        "height": "620.859px",
         "gridTemplateColumns": "none"
       },
       "name": "Applied case",
@@ -614,7 +614,7 @@
         "fontWeight": "400",
         "maxWidth": "none",
         "width": "329.125px",
-        "height": "216.156px",
+        "height": "222.562px",
         "gridTemplateColumns": "none"
       },
       "1512": {
@@ -631,7 +631,7 @@
         "fontWeight": "400",
         "maxWidth": "none",
         "width": "414.766px",
-        "height": "202.469px",
+        "height": "234.469px",
         "gridTemplateColumns": "none"
       },
       "name": "Activity card",
@@ -694,7 +694,7 @@
         "fontWeight": "400",
         "maxWidth": "none",
         "width": "329.125px",
-        "height": "82.4688px",
+        "height": "88.875px",
         "gridTemplateColumns": "none"
       },
       "1512": {
@@ -711,7 +711,7 @@
         "fontWeight": "400",
         "maxWidth": "none",
         "width": "522.172px",
-        "height": "60.0781px",
+        "height": "63.2812px",
         "gridTemplateColumns": "none"
       },
       "name": "Timeline milestone",
@@ -894,7 +894,7 @@
         "fontWeight": "400",
         "maxWidth": "none",
         "width": "329.125px",
-        "height": "140.391px",
+        "height": "175.578px",
         "gridTemplateColumns": "243.125px 24px"
       },
       "1512": {
@@ -911,7 +911,7 @@
         "fontWeight": "400",
         "maxWidth": "none",
         "width": "425.438px",
-        "height": "143.578px",
+        "height": "149.984px",
         "gridTemplateColumns": "339.438px 24px"
       },
       "name": "Capability card \u00b7 grid variation",
@@ -947,14 +947,14 @@
       "--ink": "#292929",
       "--type-caption": "12px",
       "--muted": "#6a6a6a",
-      "--type-body": "15px",
+      "--type-body": "16px",
       "--space-section": "48px",
       "--tracking-display": "-1.9px",
       "--paper": "#fdfdfd",
       "--space-copy": "20px",
       "--leading-text": "1.6",
       "--type-title": "22px",
-      "--type-lead": "15px",
+      "--type-lead": "16px",
       "--type-contact": "43px",
       "--font-heading": "\"Manrope\",Arial,sans-serif",
       "--leading-heading": "1.13",

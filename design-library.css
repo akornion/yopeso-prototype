@@ -21,3 +21,5 @@
  .measures td:has(.rule){display:flex;gap:8px}
  .measures td:has(.rule)::before{width:76px}
 }
+
+.radius p { font-size: 16px; }

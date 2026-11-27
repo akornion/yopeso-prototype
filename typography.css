@@ -44,7 +44,7 @@ nav button{font-family:var(--font-body);font-weight:var(--weight-medium)}
 .value-rail{font-family:var(--font-body);font-size:var(--type-small);font-weight:var(--weight-medium)}
 @media(max-width:760px){
  :root{--type-display:43px;--type-contact:43px;--type-section:34px;
- --type-body:15px;--tracking-section:-1.4px;--tracking-display:-1.9px}
+ --tracking-section:-1.4px;--tracking-display:-1.9px}
  .hero-invite{font-size:var(--type-caption)}
  .cap-list p,.company-numbers dt{font-size:var(--type-action)}
  .value-rail{font-size:var(--type-action)}
@@ -76,3 +76,8 @@ nav button,.hero-invite,.proof p,.lab-options p,.section-bottom,.contact-context
 
 .hero h1{font-weight:700;max-width:1100px}
 @media(min-width:761px){.hero h1>span{display:block}}
+
+/* Body copy across page templates, including compact card and diagram layouts. */
+p:not(.sr-only, .activity-status), .role-detail article li, .lab-options > div:not(.eyebrow) {
+  font-size: var(--type-body) !important;
+}
