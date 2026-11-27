@@ -8,7 +8,7 @@
   .menu-symbol::before, .menu-symbol::after { content: ""; display: block; height: 1.5px; background: currentColor; }
   [aria-expanded="true"] .menu-symbol::before { transform: translateY(3.25px) rotate(45deg); }
   [aria-expanded="true"] .menu-symbol::after { transform: translateY(-3.25px) rotate(-45deg); }
-  #navigation { display: none; position: absolute; inset: 100% 0 auto; width: 100%; max-height: calc(100dvh - 72px); overflow-y: auto; overscroll-behavior: contain; background: var(--soft); border: 0; padding: 16px 6% 32px; }
+  #navigation { display: none; position: absolute; inset: 100% 0 auto; width: 100%; max-height: calc(100dvh - 72px); overflow-y: auto; overscroll-behavior: contain; background: var(--paper); border: 0; padding: 16px 6% 32px; }
   #navigation.open { display: flex; flex-flow: column; align-items: stretch; gap: 0; }
   #navigation > a, #navigation > button, #navigation .nav-disclosure-toggle {
     display: flex; justify-content: space-between; align-items: center; width: 100%; min-height: 62px; padding: 12px 0;
