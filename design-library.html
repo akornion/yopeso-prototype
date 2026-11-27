@@ -112,6 +112,31 @@
 <dt>Top border</dt><dd>0px none rgb(41, 41, 41)</dd>
 <dt>Grid columns</dt><dd>none</dd>
 </dl><code>#capabilities .text-link</code></details><a href="index.html">View source page ↗</a></div></article>
+<article class="card" id="responsive-navigation">
+  <div class="preview"><a class="zoom" href="library-assets/responsive-menu.png" aria-label="Open full-size menu specimen"><img loading="lazy" src="library-assets/responsive-menu.png" alt="Open phone menu with a gray logo strip, white options panel and Contact last"></a></div>
+  <div class="spec">
+    <div class="role">Site navigation · Phone and tablet</div>
+    <h3>Responsive menu</h3>
+    <dl>
+      <dt>Viewport width</dt><dd>Up to 1024px</dd>
+      <dt>Header</dt><dd>72px · Soft gray</dd>
+      <dt>Options panel</dt><dd>Full width · Paper white</dd>
+      <dt>Backdrop</dt><dd>50% black</dd>
+    </dl>
+    <details><summary>Spacing and behavior</summary>
+      <dl>
+        <dt>MENU / CLOSE</dt><dd>14px · 44px minimum tap height</dd>
+        <dt>Panel padding</dt><dd>16px top · 6% sides · 32px bottom</dd>
+        <dt>Main rows</dt><dd>22px labels · 62px minimum height</dd>
+        <dt>Submenu links</dt><dd>16px labels · 44px minimum height</dd>
+        <dt>Disclosure caret</dt><dd>16px Phosphor Light · 8px after label</dd>
+        <dt>Motion</dt><dd>180ms open · 120ms close · immediate with reduced motion</dd>
+      </dl>
+      <p>The logo stays fixed as MENU changes to CLOSE. AI and Company expand independently. Tap an open row again to collapse it. Contact is the final row and opens the prototype dialog. Tapping the backdrop dismisses the menu.</p>
+    </details>
+    <a href="index.html">View source page ↗</a>
+  </div>
+</article>
 <article class="card" id="timeline-disclosure">
   <div class="preview">
     <img src="library-assets/disclosure-collapsed.png" width="179" height="44" alt="Collapsed timeline: Show 8 more milestones, downward chevron">
@@ -425,10 +450,11 @@
 <li><strong>Design library.</strong> Added references for colors, typography, spacing, corner radii and components. Replaced the blank tertiary preview with a working link. Corrected the navigation’s initial padding, recaptured obscured specimens, added the page-shell preview and made image specimens available at full size. Tables reflow on narrow screens.</li>
 <li><strong>Body and supporting text.</strong> Trialled 16px body copy across desktop and mobile, then assigned 14px Small to helper text, office details, explanatory notes, role counts and empty-state guidance. Introductions, descriptions, FAQs and job prose use 16px Body.</li>
 <li><strong>Button labels.</strong> Primary, secondary and tertiary labels use a dedicated 14px token. Homepage hero buttons retain their 48px height and 13px × 24px padding. At 360px and narrower the label-to-arrow gap is 16px.</li>
-<li><strong>Publishing.</strong> The private working repository feeds a separate public GitHub Pages repository. Relative page links support navigation under the project URL.</li>
+<li><strong>Publishing.</strong> The working repository and the separate prototype repository are both public and have GitHub Pages enabled. Relative page links support navigation under the project URL.</li>
 </ul>
 
 <h3 class="family">Release record</h3>
+<p><strong>GitHub Pages revision <code>55a2c2b</code>.</strong> Published the <a href="#responsive-navigation">phone and tablet menu</a> across all 15 site pages, including job details. Desktop keeps its outlined Contact button. This release includes the directional timeline animations described above. The standalone menu review page was removed before publication.</p>
 <p><strong>GitHub Pages revision <code>0751f49</code>.</strong> Published the independent timeline columns, mobile disclosure and spacing reference. That version used a 200ms fade and rise on expansion and a 150ms exit on collapse. It included the correction from 52px to 24px between the final visible milestone and the button.</p>
-<p><strong>Private revisions through <code>185f092</code>.</strong> Replaced those fades with directional height animations, corrected the viewport jump on expansion, kept the collapse button anchored, and restored the divider and 20px top padding above the second 2017 entry.</p>
+<p><strong>Working revisions through <code>185f092</code>.</strong> Replaced those fades with directional height animations, corrected the viewport jump on expansion, kept the collapse button anchored, and restored the divider and 20px top padding above the second 2017 entry.</p>
 </section></main><footer>Measurements in CSS pixels. Shared token values follow the website’s 760px mobile breakpoint.</footer></body></html>
