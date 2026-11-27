@@ -545,3 +545,6 @@ a.footer-location:hover .office-email,a.footer-location:focus-visible .office-em
 a.footer-location h3,a.footer-location .office-email{transition:color 180ms ease}
 a.footer-location .location-icon img{transition:filter 180ms ease,opacity 180ms ease}
 @media(prefers-reduced-motion:reduce){a.footer-location h3,a.footer-location .office-email,a.footer-location .location-icon img{transition:none}}
+
+/* Card actions align with their copy; center label/icon only within the action. */
+.insights-grid .insight-arrow{align-self:flex-start}
