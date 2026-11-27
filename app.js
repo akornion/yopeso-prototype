@@ -16,7 +16,7 @@ function closeNavigation(){
  nav.classList.remove('open');
 }
 function openDisclosure(group){
- disclosures.filter(other=>other!==group).forEach(closeDisclosure);
+ if(!nav.classList.contains('open'))disclosures.filter(other=>other!==group).forEach(closeDisclosure);
  group.querySelector('.nav-disclosure-toggle').setAttribute('aria-expanded','true');
  group.querySelector('.nav-submenu').hidden=false;
 }
@@ -58,7 +58,7 @@ nav.addEventListener('click',event=>{
 });
 document.addEventListener('click',event=>{
  if(!event.target.closest('header'))closeNavigation();
- else disclosures.filter(group=>!group.contains(event.target)).forEach(closeDisclosure);
+ else if(!nav.classList.contains('open'))disclosures.filter(group=>!group.contains(event.target)).forEach(closeDisclosure);
 });
 document.addEventListener('keydown',event=>{
  if(event.key==='Escape'&&nav.classList.contains('open')){closeNavigation();toggle.focus();}
