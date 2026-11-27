@@ -43,7 +43,11 @@ disclosures.forEach(group=>{
    items[event.key==='Home'?0:event.key==='End'?items.length-1:(i+(event.key==='ArrowDown'?1:-1)+items.length)%items.length].focus();
   }
  });
- group.addEventListener('focusout',event=>{if(!group.contains(event.relatedTarget))closeDisclosure(group);});
+ group.addEventListener('focusout',event=>{
+  // Keep stacked rows in place until the next button receives its click.
+  if(nav.classList.contains('open') && nav.contains(event.relatedTarget))return;
+  if(!group.contains(event.relatedTarget))closeDisclosure(group);
+ });
 });
 let navDialogReturn=null;
 dialog.addEventListener('close',()=>{if(navDialogReturn){navDialogReturn.focus();navDialogReturn=null;}});
