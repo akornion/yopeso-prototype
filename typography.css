@@ -8,7 +8,7 @@
  --type-contact:clamp(42px,4.7vw,64px);
  --type-section:clamp(32px,3.3vw,47px);
  --type-title:22px;--type-diagram:20px;--type-lead:var(--type-body);
- --type-body:16px;--type-small:14px;--type-action:13px;
+ --type-button:14px;--type-body:16px;--type-small:14px;--type-action:13px;
  --type-caption:12px;--type-label:11px;--type-category:var(--type-label);
  --leading-heading:1.13;--leading-title:1.35;--leading-body:1.7;
  --tracking-section:-1.8px;--tracking-display:-3px;
@@ -98,4 +98,14 @@ p:not(.sr-only, .activity-status), .role-detail article li, .lab-options > div:n
 .footer-location .office-email,
 .office-slide address {
   font-size: var(--type-small);
+}
+
+/* Retain the original control heights and padding as labels grow. */
+.button.primary, .button.secondary, .text-link, .insight-arrow {
+  font-size: var(--type-button);
+  line-height: 1.3rem;
+}
+.button.secondary { line-height: 1.25rem; }
+@media (max-width: 360px) {
+  .hero .actions .button { gap: 16px; }
 }
