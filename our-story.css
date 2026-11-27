@@ -139,6 +139,14 @@
   #milestones:not([data-collapsed]) [data-extra-milestone] {
     animation: milestone-reveal 200ms ease-out;
   }
+
+  #milestones[data-collapsing] [data-extra-milestone] {
+    animation: milestone-exit 150ms ease-in both;
+  }
+}
+
+@keyframes milestone-exit {
+  to { opacity: 0; transform: translateY(-4px); }
 }
 
 @keyframes milestone-reveal {

@@ -12,12 +12,26 @@ if (extraMilestones.length) {
   label.textContent = moreLabel;
   milestoneToggle.hidden = false;
 
-  milestoneToggle.addEventListener('click', () => {
+  milestoneToggle.addEventListener('click', async () => {
+    if (milestoneSection.hasAttribute('data-collapsing')) return;
+    if (!milestoneSection.hasAttribute('data-collapsed')) {
+      milestoneSection.dataset.collapsing = '';
+      const exit = firstExtra.getAnimations().find(animation => animation.animationName === 'milestone-exit');
+      if (exit) await Promise.allSettled([exit.finished]);
+    }
+    const buttonTop = milestoneToggle.getBoundingClientRect().top;
     const collapsed = milestoneSection.toggleAttribute('data-collapsed');
+    milestoneSection.removeAttribute('data-collapsing');
     milestoneToggle.setAttribute('aria-expanded', String(!collapsed));
     label.textContent = collapsed ? moreLabel : 'Show fewer milestones';
     const target = collapsed ? milestoneToggle : firstExtra;
-    target.focus({ preventScroll: true });
-    target.scrollIntoView({ block: 'center', behavior: 'instant' });
+    if (milestoneToggle.getClientRects().length) {
+      target.focus({ preventScroll: true });
+      if (collapsed) {
+        window.scrollBy({ top: target.getBoundingClientRect().top - buttonTop, behavior: 'instant' });
+      } else {
+        target.scrollIntoView({ block: 'center', behavior: 'instant' });
+      }
+    }
   });
 }
