@@ -14,9 +14,9 @@
  updateFilterText();
  form.querySelectorAll('.filter-all').forEach(b=>b.setAttribute('aria-pressed',String(!chosen(b.dataset.clear).length)));if(!form.querySelector('.filter-trigger[aria-expanded="true"]'))syncUrl();}
  function syncUrl(){const countries=chosen('country'),areas=chosen('area'),hours=chosen('hours');const p=new URLSearchParams();if(search.value)p.set('q',search.value);countries.forEach(v=>p.append('country',v));areas.forEach(v=>p.append('area',v));hours.forEach(v=>p.append('hours',v));const query=p.size?'?'+p:'';if(location.search!==query)history.replaceState(history.state,'',location.pathname+query+location.hash);}
- function close(){const active=form.querySelector('.filter-trigger[aria-expanded="true"]');if(!active)return;const f=active.closest('.role-filter');f.querySelector('.filter-trigger').setAttribute('aria-expanded','false');f.querySelector('.filter-options').hidden=true;}
+ function close(){const active=form.querySelector('.filter-trigger[aria-expanded="true"]');if(!active)return;const f=active.closest('.role-filter');f.querySelector('.filter-trigger').setAttribute('aria-expanded','false');const panel=f.querySelector('.filter-options');animatePopup(panel,false,panel.classList.contains('opens-above')?-1:1);}
  function fitOpenFilter(){
-  const panel=form.querySelector('.filter-options:not([hidden])');
+  const panel=form.querySelector('.filter-trigger[aria-expanded="true"]')?.closest('.role-filter').querySelector('.filter-options');
   if(!panel)return;
   const trigger=panel.closest('.role-filter').querySelector('.filter-trigger').getBoundingClientRect();
   const headerBottom=document.querySelector('header').getBoundingClientRect().bottom;
@@ -30,7 +30,7 @@
  }
  window.addEventListener('resize',fitOpenFilter);
  window.addEventListener('scroll',fitOpenFilter,{passive:true});
- form.querySelectorAll('.filter-trigger').forEach(b=>b.onclick=()=>{const f=b.closest('.role-filter'),open=b.getAttribute('aria-expanded')==='true';close();b.setAttribute('aria-expanded',String(!open));f.querySelector('.filter-options').hidden=open;if(!open)fitOpenFilter();});
+ form.querySelectorAll('.filter-trigger').forEach(b=>b.onclick=()=>{const f=b.closest('.role-filter'),open=b.getAttribute('aria-expanded')==='true';close();b.setAttribute('aria-expanded',String(!open));if(!open){const panel=f.querySelector('.filter-options');panel.hidden=false;fitOpenFilter();if(!popupMotion.has(panel))panel.hidden=true;animatePopup(panel,true,panel.classList.contains('opens-above')?-1:1);}});
  form.querySelectorAll('.filter-done').forEach(button=>button.addEventListener('click',()=>{
   const trigger=button.closest('.role-filter').querySelector('.filter-trigger');
   close();

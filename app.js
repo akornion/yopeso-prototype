@@ -2,13 +2,39 @@ const dialog=document.querySelector('#destination');
 const descriptions={'Our services':'Explore Yopeso’s capabilities and how they can contribute to your team or project.','AI-BOS':'Learn about the reference architecture and delivery framework for AI implementations.','AI Discovery Lab':'Understand the human-led discovery engagement, its purpose and the proposed process before making an enquiry.','Contact':'Start a conversation about your team, project or AI implementation.','Work':'Explore delivered engagements and Yopeso’s specific contribution.','Careers':'Learn about life at Yopeso and explore career opportunities.','Careers → Open roles':'Find roles that fit your experience and location.','Our services → How we work':'Explore how expertise, collaboration and responsibilities are shaped around an engagement.'};
 document.querySelectorAll('[data-dest]').forEach(b=>b.addEventListener('click',()=>{document.querySelector('#dialog-title').textContent=b.dataset.dest;document.querySelector('#dialog-copy').textContent=b.dataset.context||descriptions[b.dataset.dest]||`Intended destination: the ${b.dataset.dest} page.`;dialog.showModal();}));
 document.querySelector('.close').addEventListener('click',()=>dialog.close());document.querySelector('.return').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
+// Shared popup motion; hidden/inert states keep closing panels out of interaction.
+const popupMotion = new WeakMap();
+const popupReducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+function animatePopup(panel, open, direction = 1) {
+ const previous = popupMotion.get(panel);
+ if(previous?.open === open || (!previous && panel.hidden === !open)) return;
+ const wasHidden = panel.hidden;
+ const current = wasHidden ? null : getComputedStyle(panel);
+ const start = current ? {opacity:current.opacity,transform:current.transform} : null;
+ if(previous){previous.animation.onfinish=null;previous.animation.cancel();}
+ panel.hidden=false;
+ panel.inert=!open;
+ const finish=()=>{panel.hidden=!open;panel.inert=!open;popupMotion.delete(panel);};
+ if(popupReducedMotion.matches || !panel.animate){finish();return;}
+ const tucked={opacity:0,transform:`translateY(${-6*direction}px)`};
+ const shown={opacity:1,transform:'translateY(0px)'};
+ const animation=panel.animate([start || tucked,open?shown:tucked],{duration:open?180:120,easing:open?'ease-out':'ease-in'});
+ popupMotion.set(panel,{open,animation});
+ animation.onfinish=finish;
+}
+popupReducedMotion.addEventListener('change',()=>{
+ document.querySelectorAll('.nav-submenu,.filter-options').forEach(panel=>{
+  const state=popupMotion.get(panel);
+  if(state){state.animation.finish();}
+ });
+});
 // Shared main navigation: click/touch disclosure buttons with ordinary links.
 const toggle=document.querySelector('.menu-toggle');
 const nav=document.querySelector('#navigation');
 const disclosures=[...nav.querySelectorAll('.nav-disclosure')];
 function closeDisclosure(group){
  group.querySelector('.nav-disclosure-toggle').setAttribute('aria-expanded','false');
- group.querySelector('.nav-submenu').hidden=true;
+ animatePopup(group.querySelector('.nav-submenu'),false);
 }
 function closeNavigation(){
  disclosures.forEach(closeDisclosure);
@@ -18,7 +44,7 @@ function closeNavigation(){
 function openDisclosure(group){
  if(!nav.classList.contains('open'))disclosures.filter(other=>other!==group).forEach(closeDisclosure);
  group.querySelector('.nav-disclosure-toggle').setAttribute('aria-expanded','true');
- group.querySelector('.nav-submenu').hidden=false;
+ animatePopup(group.querySelector('.nav-submenu'),true);
 }
 toggle.addEventListener('click',()=>{
  if(toggle.getAttribute('aria-expanded')==='true')closeNavigation();
@@ -28,7 +54,7 @@ disclosures.forEach(group=>{
  const trigger=group.querySelector('.nav-disclosure-toggle');
  const panel=group.querySelector('.nav-submenu');
  const items=[...panel.querySelectorAll('button,a')];
- trigger.addEventListener('click',()=>panel.hidden?openDisclosure(group):closeDisclosure(group));
+ trigger.addEventListener('click',()=>trigger.getAttribute('aria-expanded')==='true'?closeDisclosure(group):openDisclosure(group));
  trigger.addEventListener('keydown',event=>{
   if(['ArrowDown','ArrowUp'].includes(event.key)){
    event.preventDefault();event.stopPropagation();openDisclosure(group);
