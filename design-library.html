@@ -1,0 +1,380 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Design library · Yopeso</title><link rel="stylesheet" href="fonts.css"><link rel="stylesheet" href="design-library.css"><body><header><img src="assets/yopeso.svg" alt="Yopeso"><span>Website design library</span></header><main><div class="intro"><div><h1>Tokens &amp;<br>components</h1><p>Design rules from the Yopeso website, with component specimens and measurements at 1512px and 390px.</p></div><div class="corners" aria-hidden="true">
+<div class="corner"><i style="border-top-right-radius:8px"></i>8px</div>
+<div class="corner"><i style="border-top-right-radius:20px"></i>20px</div>
+<div class="corner"><i style="border-top-right-radius:48px"></i>48px</div>
+</div></div><nav class="tabs" aria-label="Library sections">
+<a href="#color">Color</a>
+<a href="#typography">Typography</a>
+<a href="#spacing">Spacing</a>
+<a href="#corner-radii">Corner radii</a>
+<a href="#components">Components</a>
+</nav>
+<section class="block" id="color"><h2>Color</h2>
+<div class="palette">
+<div><div class="swatch" style="background:#292929"></div><strong>Ink</strong><code>--ink</code><small>#292929</small></div>
+<div><div class="swatch" style="background:#6a6a6a"></div><strong>Muted</strong><code>--muted</code><small>#6A6A6A</small></div>
+<div><div class="swatch" style="background:#dcdcdc"></div><strong>Line</strong><code>--line</code><small>#DCDCDC</small></div>
+<div><div class="swatch" style="background:#dcdcdc"></div><strong>Accent</strong><code>--accent</code><small>#DCDCDC</small></div>
+<div><div class="swatch" style="background:#f5f5f5"></div><strong>Soft</strong><code>--soft</code><small>#F5F5F5</small></div>
+<div><div class="swatch" style="background:#fdfdfd"></div><strong>Paper</strong><code>--paper</code><small>#FDFDFD</small></div>
+</div></section>
+<section class="block" id="typography"><h2>Typography</h2>
+<p class="note">Manrope for headings. Archivo for body text, labels and actions.</p>
+<div class="scroller"><table class="measures"><thead><tr><th>Text style</th><th>Token</th><th>Desktop rule</th><th>Mobile rule</th></tr></thead><tbody>
+<tr><td data-label="Text style"><span style="font:700 72px/1.15 Manrope">Display</span></td><td data-label="Token"><code>--type-display</code></td><td data-label="Desktop rule">clamp(44px,5.1vw,72px)</td><td data-label="Mobile rule">43px</td></tr>
+<tr><td data-label="Text style"><span style="font:500 64px/1.15 Manrope">Contact</span></td><td data-label="Token"><code>--type-contact</code></td><td data-label="Desktop rule">clamp(42px,4.7vw,64px)</td><td data-label="Mobile rule">43px</td></tr>
+<tr><td data-label="Text style"><span style="font:500 47px/1.15 Manrope">Section</span></td><td data-label="Token"><code>--type-section</code></td><td data-label="Desktop rule">clamp(32px,3.3vw,47px)</td><td data-label="Mobile rule">34px</td></tr>
+<tr><td data-label="Text style"><span style="font:500 22px/1.15 Manrope">Title</span></td><td data-label="Token"><code>--type-title</code></td><td data-label="Desktop rule">22px</td><td data-label="Mobile rule">22px</td></tr>
+<tr><td data-label="Text style"><span style="font:500 20px/1.15 Manrope">Diagram</span></td><td data-label="Token"><code>--type-diagram</code></td><td data-label="Desktop rule">20px</td><td data-label="Mobile rule">20px</td></tr>
+<tr><td data-label="Text style"><span style="font:400 22px/1.15 Archivo">Quote</span></td><td data-label="Token"><code>--type-quote</code></td><td data-label="Desktop rule">22px</td><td data-label="Mobile rule">22px</td></tr>
+<tr><td data-label="Text style"><span style="font:400 16px/1.15 Archivo">Lead</span></td><td data-label="Token"><code>--type-lead</code></td><td data-label="Desktop rule">16px</td><td data-label="Mobile rule">15px</td></tr>
+<tr><td data-label="Text style"><span style="font:400 16px/1.15 Archivo">Body</span></td><td data-label="Token"><code>--type-body</code></td><td data-label="Desktop rule">16px</td><td data-label="Mobile rule">15px</td></tr>
+<tr><td data-label="Text style"><span style="font:400 14px/1.15 Archivo">Small</span></td><td data-label="Token"><code>--type-small</code></td><td data-label="Desktop rule">14px</td><td data-label="Mobile rule">14px</td></tr>
+<tr><td data-label="Text style"><span style="font:400 13px/1.15 Archivo">Action</span></td><td data-label="Token"><code>--type-action</code></td><td data-label="Desktop rule">13px</td><td data-label="Mobile rule">13px</td></tr>
+<tr><td data-label="Text style"><span style="font:400 12px/1.15 Archivo">Caption</span></td><td data-label="Token"><code>--type-caption</code></td><td data-label="Desktop rule">12px</td><td data-label="Mobile rule">12px</td></tr>
+<tr><td data-label="Text style"><span style="font:400 11px/1.15 Archivo">Label</span></td><td data-label="Token"><code>--type-label</code></td><td data-label="Desktop rule">11px</td><td data-label="Mobile rule">11px</td></tr>
+<tr><td data-label="Text style"><span style="font:400 11px/1.15 Archivo">Category</span></td><td data-label="Token"><code>--type-category</code></td><td data-label="Desktop rule">11px</td><td data-label="Mobile rule">11px</td></tr>
+</tbody></table></div>
+<details class="source"><summary>Font weights, line heights and tracking</summary>
+<div class="scroller"><table class="measures"><thead><tr><th>Token</th><th>Desktop</th><th>Mobile</th></tr></thead><tbody>
+<tr><td data-label="Token">--leading-body</td><td data-label="Desktop">1.7</td><td data-label="Mobile">1.7</td></tr>
+<tr><td data-label="Token">--leading-heading</td><td data-label="Desktop">1.13</td><td data-label="Mobile">1.13</td></tr>
+<tr><td data-label="Token">--leading-text</td><td data-label="Desktop">1.6</td><td data-label="Mobile">1.6</td></tr>
+<tr><td data-label="Token">--leading-title</td><td data-label="Desktop">1.35</td><td data-label="Mobile">1.35</td></tr>
+<tr><td data-label="Token">--tracking-display</td><td data-label="Desktop">-3px</td><td data-label="Mobile">-1.9px</td></tr>
+<tr><td data-label="Token">--tracking-section</td><td data-label="Desktop">-1.8px</td><td data-label="Mobile">-1.4px</td></tr>
+<tr><td data-label="Token">--weight-medium</td><td data-label="Desktop">500</td><td data-label="Mobile">500</td></tr>
+<tr><td data-label="Token">--weight-regular</td><td data-label="Desktop">400</td><td data-label="Mobile">400</td></tr>
+<tr><td data-label="Token">--weight-semibold</td><td data-label="Desktop">600</td><td data-label="Mobile">600</td></tr>
+</tbody></table></div>
+</details></section>
+<section class="block" id="spacing"><h2>Spacing</h2>
+<div class="scroller"><table class="measures"><thead><tr><th>Distance</th><th>Token</th><th>Desktop</th><th>Mobile</th></tr></thead><tbody>
+<tr><td data-label="Distance">Card label to title</td><td data-label="Token"><code>--space-card</code></td><td data-label="Desktop"><i class="rule" style="width:16px"></i>16px</td><td data-label="Mobile"><i class="rule" style="width:16px"></i>16px</td></tr>
+<tr><td data-label="Distance">Section label to heading</td><td data-label="Token"><code>--space-label</code></td><td data-label="Desktop"><i class="rule" style="width:24px"></i>24px</td><td data-label="Mobile"><i class="rule" style="width:20px"></i>20px</td></tr>
+<tr><td data-label="Distance">Heading to body copy</td><td data-label="Token"><code>--space-copy</code></td><td data-label="Desktop"><i class="rule" style="width:24px"></i>24px</td><td data-label="Mobile"><i class="rule" style="width:20px"></i>20px</td></tr>
+<tr><td data-label="Distance">Copy to actions</td><td data-label="Token"><code>--space-actions</code></td><td data-label="Desktop"><i class="rule" style="width:28px"></i>28px</td><td data-label="Mobile"><i class="rule" style="width:24px"></i>24px</td></tr>
+<tr><td data-label="Distance">Heading group to content</td><td data-label="Token"><code>--space-content</code></td><td data-label="Desktop"><i class="rule" style="width:40px"></i>40px</td><td data-label="Mobile"><i class="rule" style="width:32px"></i>32px</td></tr>
+<tr><td data-label="Distance">Section top and bottom padding</td><td data-label="Token"><code>--space-section</code></td><td data-label="Desktop"><i class="rule" style="width:64px"></i>64px</td><td data-label="Mobile"><i class="rule" style="width:48px"></i>48px</td></tr>
+</tbody></table></div>
+</section>
+<section class="block" id="corner-radii"><h2>Corner radii</h2>
+<div class="radii">
+<div class="radius"><i style="border-radius:0px"></i><strong>0px</strong><p>Service row</p><small>Mobile · 0px</small></div>
+<div class="radius"><i style="border-radius:8px"></i><strong>8px</strong><p>Filter trigger</p><small>Mobile · 8px</small></div>
+<div class="radius"><i style="border-radius:18px"></i><strong>18px</strong><p>Insight card</p><small>Mobile · 18px</small></div>
+<div class="radius"><i style="border-radius:20px"></i><strong>20px</strong><p>Activity card</p><small>Mobile · 20px</small></div>
+<div class="radius"><i style="border-radius:30px"></i><strong>30px</strong><p>Primary button</p><small>Mobile · 30px</small></div>
+<div class="radius"><i style="border-radius:40px"></i><strong>40px</strong><p>Applied case</p><small>Mobile · 30px</small></div>
+<div class="radius"><i style="border-radius:48px"></i><strong>48px</strong><p>Capabilities section</p><small>Mobile · 30px</small></div>
+</div></section>
+<section class="block" id="components"><h2>Components</h2>
+<p class="note">Desktop specimens from the source pages. Measurements show desktop / mobile when values differ.</p>
+<h3 class="family">Actions & navigation</h3><div class="cards">
+<article class="card">
+<div class="preview"><a class="zoom" href="library-assets/index-0.png" aria-label="Open full-size specimen"><img loading="lazy" alt="Primary button specimen" src="library-assets/index-0.png"></a></div>
+<div class="spec"><div class="role">Home</div><h3>Primary button</h3><dl>
+<dt>Corner radius</dt><dd>30px</dd>
+<dt>Padding</dt><dd>13px 24px</dd>
+<dt>Layout gap</dt><dd>28px</dd>
+</dl><details><summary>Full measurements</summary><dl>
+<dt>Margin</dt><dd>0px</dd>
+<dt>Width</dt><dd>262.109px</dd>
+<dt>Height</dt><dd>48px</dd>
+<dt>Top border</dt><dd>0px none rgb(253, 253, 253)</dd>
+<dt>Grid columns</dt><dd>none</dd>
+</dl><code>.hero .primary</code></details><a href="index.html">View source page ↗</a></div></article>
+<article class="card">
+<div class="preview"><a class="zoom" href="library-assets/index-1.png" aria-label="Open full-size specimen"><img loading="lazy" alt="Secondary button specimen" src="library-assets/index-1.png"></a></div>
+<div class="spec"><div class="role">Home</div><h3>Secondary button</h3><dl>
+<dt>Corner radius</dt><dd>30px</dd>
+<dt>Padding</dt><dd>13px 24px</dd>
+<dt>Layout gap</dt><dd>28px</dd>
+</dl><details><summary>Full measurements</summary><dl>
+<dt>Margin</dt><dd>0px</dd>
+<dt>Width</dt><dd>200.781px / 262.109px</dd>
+<dt>Height</dt><dd>48px</dd>
+<dt>Top border</dt><dd>1px solid rgb(41, 41, 41)</dd>
+<dt>Grid columns</dt><dd>none</dd>
+</dl><code>.hero .secondary</code></details><a href="index.html">View source page ↗</a></div></article>
+<article class="card" id="tertiary-button">
+<div class="preview"><a class="tertiary-example" href="index.html#capabilities">Explore all capabilities <svg class="icon icon-arrow-right" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M220.24,132.24l-72,72a6,6,0,0,1-8.48-8.48L201.51,134H40a6,6,0,0,1,0-12H201.51L139.76,60.24a6,6,0,0,1,8.48-8.48l72,72A6,6,0,0,1,220.24,132.24Z"/></svg></a></div>
+<div class="spec"><div class="role">Home</div><h3>Tertiary button</h3><dl>
+<dt>Corner radius</dt><dd>0px</dd>
+<dt>Padding</dt><dd>8px 0px</dd>
+<dt>Layout gap</dt><dd>10px</dd>
+</dl><details><summary>Full measurements</summary><dl>
+<dt>Margin</dt><dd>0px</dd>
+<dt>Width</dt><dd>162.703px</dd>
+<dt>Height</dt><dd>36.7969px</dd>
+<dt>Top border</dt><dd>0px none rgb(41, 41, 41)</dd>
+<dt>Grid columns</dt><dd>none</dd>
+</dl><code>#capabilities .text-link</code></details><a href="index.html">View source page ↗</a></div></article>
+<article class="card">
+<div class="preview"><a class="zoom" href="library-assets/index-3.png" aria-label="Open full-size specimen"><img loading="lazy" alt="Carousel controls specimen" src="library-assets/index-3.png"></a></div>
+<div class="spec"><div class="role">Home</div><h3>Carousel controls</h3><dl>
+<dt>Corner radius</dt><dd>0px</dd>
+<dt>Padding</dt><dd>0px</dd>
+<dt>Layout gap</dt><dd>12px / 4px</dd>
+</dl><details><summary>Full measurements</summary><dl>
+<dt>Margin</dt><dd>24px 0px 0px</dd>
+<dt>Width</dt><dd>1300.34px / 329.125px</dd>
+<dt>Height</dt><dd>44px</dd>
+<dt>Top border</dt><dd>0px none rgb(41, 41, 41)</dd>
+<dt>Grid columns</dt><dd>none</dd>
+</dl><code>.carousel-controls</code></details><a href="index.html">View source page ↗</a></div></article>
+<article class="card">
+<div class="preview"><a class="zoom" href="library-assets/index-4.png" aria-label="Open full-size specimen"><img loading="lazy" alt="Navigation specimen" src="library-assets/index-4.png"></a></div>
+<div class="spec"><div class="role">Home</div><h3>Navigation</h3><dl>
+<dt>Corner radius</dt><dd>0px</dd>
+<dt>Padding</dt><dd>28px 75.5938px / 25px 22.4375px</dd>
+<dt>Layout gap</dt><dd>32px / 20px</dd>
+</dl><details><summary>Full measurements</summary><dl>
+<dt>Margin</dt><dd>0px</dd>
+<dt>Width</dt><dd>1512px / 374px</dd>
+<dt>Height</dt><dd>96.7969px / 94px</dd>
+<dt>Top border</dt><dd>0px none rgb(41, 41, 41)</dd>
+<dt>Grid columns</dt><dd>none</dd>
+</dl><code>header</code></details><a href="index.html">View source page ↗</a></div></article>
+</div>
+<h3 class="family">Layout & content</h3><div class="cards">
+<article class="card">
+<div class="preview"><a class="zoom" href="library-assets/shell.png" aria-label="Open full-size specimen"><img alt="Page shell at the top of the homepage" src="library-assets/shell.png"></a></div>
+<div class="spec"><div class="role">Home</div><h3>Page shell</h3><dl>
+<dt>Corner radius</dt><dd>0px</dd>
+<dt>Padding</dt><dd>0px</dd>
+<dt>Layout gap</dt><dd>No explicit gap</dd>
+</dl><details><summary>Full measurements</summary><dl>
+<dt>Margin</dt><dd>0px / 0px 8px</dd>
+<dt>Width</dt><dd>1512px / 374px</dd>
+<dt>Height</dt><dd>6427.97px / 11095.2px</dd>
+<dt>Top border</dt><dd>0px none rgb(41, 41, 41)</dd>
+<dt>Grid columns</dt><dd>none</dd>
+</dl><code>.site-shell</code></details><a href="index.html">View source page ↗</a></div></article>
+<article class="card">
+<div class="preview"><a class="zoom" href="library-assets/index-5.png" aria-label="Open full-size specimen"><img loading="lazy" alt="Capabilities section specimen" src="library-assets/index-5.png"></a></div>
+<div class="spec"><div class="role">Home</div><h3>Capabilities section</h3><dl>
+<dt>Corner radius</dt><dd>48px / 30px</dd>
+<dt>Padding</dt><dd>64px 105.828px / 48px 22.4375px</dd>
+<dt>Layout gap</dt><dd>No explicit gap</dd>
+</dl><details><summary>Full measurements</summary><dl>
+<dt>Margin</dt><dd>0px</dd>
+<dt>Width</dt><dd>1512px / 374px</dd>
+<dt>Height</dt><dd>1034.59px / 1385.23px</dd>
+<dt>Top border</dt><dd>0px none rgb(41, 41, 41)</dd>
+<dt>Grid columns</dt><dd>none</dd>
+</dl><code>#capabilities</code></details><a href="index.html">View source page ↗</a></div></article>
+<article class="card">
+<div class="preview"><a class="zoom" href="library-assets/index-6.png" aria-label="Open full-size specimen"><img loading="lazy" alt="Service row specimen" src="library-assets/index-6.png"></a></div>
+<div class="spec"><div class="role">Home</div><h3>Service row</h3><dl>
+<dt>Corner radius</dt><dd>0px</dd>
+<dt>Padding</dt><dd>26px 0px / 22px 0px</dd>
+<dt>Layout gap</dt><dd>20px / 8px</dd>
+</dl><details><summary>Full measurements</summary><dl>
+<dt>Margin</dt><dd>0px</dd>
+<dt>Width</dt><dd>1300.34px / 329.125px</dd>
+<dt>Height</dt><dd>97.7812px / 131.391px</dd>
+<dt>Top border</dt><dd>0px none rgb(41, 41, 41)</dd>
+<dt>Grid columns</dt><dd>556.969px 668.375px 35px / 297.125px 24px</dd>
+</dl><code>.cap-list button</code></details><a href="index.html">View source page ↗</a></div></article>
+<article class="card">
+<div class="preview"><a class="zoom" href="library-assets/index-7.png" aria-label="Open full-size specimen"><img loading="lazy" alt="Case visual specimen" src="library-assets/index-7.png"></a></div>
+<div class="spec"><div class="role">Home</div><h3>Case visual</h3><dl>
+<dt>Corner radius</dt><dd>0px</dd>
+<dt>Padding</dt><dd>20px</dd>
+<dt>Layout gap</dt><dd>No explicit gap</dd>
+</dl><details><summary>Full measurements</summary><dl>
+<dt>Margin</dt><dd>0px</dd>
+<dt>Width</dt><dd>406.781px / 329.125px</dd>
+<dt>Height</dt><dd>147px / 132px</dd>
+<dt>Top border</dt><dd>0px none rgb(41, 41, 41)</dd>
+<dt>Grid columns</dt><dd>none</dd>
+</dl><code>.case-visual</code></details><a href="index.html">View source page ↗</a></div></article>
+<article class="card">
+<div class="preview"><a class="zoom" href="library-assets/index-8.png" aria-label="Open full-size specimen"><img loading="lazy" alt="Testimonial specimen" src="library-assets/index-8.png"></a></div>
+<div class="spec"><div class="role">Home</div><h3>Testimonial</h3><dl>
+<dt>Corner radius</dt><dd>0px</dd>
+<dt>Padding</dt><dd>0px</dd>
+<dt>Layout gap</dt><dd>24px / 20px</dd>
+</dl><details><summary>Full measurements</summary><dl>
+<dt>Margin</dt><dd>0px</dd>
+<dt>Width</dt><dd>538.172px / 289.125px</dd>
+<dt>Height</dt><dd>192.984px / 254.984px</dd>
+<dt>Top border</dt><dd>0px none rgb(41, 41, 41)</dd>
+<dt>Grid columns</dt><dd>minmax(0px, 1fr) 190px / 1fr</dd>
+</dl><code>.testimonial-layout</code></details><a href="index.html">View source page ↗</a></div></article>
+<article class="card">
+<div class="preview"><a class="zoom" href="library-assets/index-9.png" aria-label="Open full-size specimen"><img loading="lazy" alt="Insight card specimen" src="library-assets/index-9.png"></a></div>
+<div class="spec"><div class="role">Home</div><h3>Insight card</h3><dl>
+<dt>Corner radius</dt><dd>18px</dd>
+<dt>Padding</dt><dd>28px / 24px</dd>
+<dt>Layout gap</dt><dd>No explicit gap</dd>
+</dl><details><summary>Full measurements</summary><dl>
+<dt>Margin</dt><dd>0px</dd>
+<dt>Width</dt><dd>412.109px / 329.125px</dd>
+<dt>Height</dt><dd>275.844px / 297.531px</dd>
+<dt>Top border</dt><dd>0px none rgb(41, 41, 41)</dd>
+<dt>Grid columns</dt><dd>none</dd>
+</dl><code>.insights-grid article</code></details><a href="index.html">View source page ↗</a></div></article>
+<article class="card">
+<div class="preview"><a class="zoom" href="library-assets/index-10.png" aria-label="Open full-size specimen"><img loading="lazy" alt="Office contact specimen" src="library-assets/index-10.png"></a></div>
+<div class="spec"><div class="role">Home</div><h3>Office contact</h3><dl>
+<dt>Corner radius</dt><dd>0px</dd>
+<dt>Padding</dt><dd>0px</dd>
+<dt>Layout gap</dt><dd>No explicit gap</dd>
+</dl><details><summary>Full measurements</summary><dl>
+<dt>Margin</dt><dd>0px</dd>
+<dt>Width</dt><dd>252.953px / 155.562px</dd>
+<dt>Height</dt><dd>174.953px / 202.328px</dd>
+<dt>Top border</dt><dd>0px none rgb(41, 41, 41)</dd>
+<dt>Grid columns</dt><dd>none</dd>
+</dl><code>.footer-location</code></details><a href="index.html">View source page ↗</a></div></article>
+<article class="card">
+<div class="preview"><a class="zoom" href="library-assets/home-grid-0.png" aria-label="Open full-size specimen"><img loading="lazy" alt="Capability card · grid variation specimen" src="library-assets/home-grid-0.png"></a></div>
+<div class="spec"><div class="role">Home Grid</div><h3>Capability card · grid variation</h3><dl>
+<dt>Corner radius</dt><dd>18px</dd>
+<dt>Padding</dt><dd>24px</dd>
+<dt>Layout gap</dt><dd>12px</dd>
+</dl><details><summary>Full measurements</summary><dl>
+<dt>Margin</dt><dd>0px</dd>
+<dt>Width</dt><dd>425.438px / 329.125px</dd>
+<dt>Height</dt><dd>143.578px / 140.391px</dd>
+<dt>Top border</dt><dd>1px solid rgb(222, 222, 222)</dd>
+<dt>Grid columns</dt><dd>339.438px 24px / 243.125px 24px</dd>
+</dl><code>.cap-list button</code></details><a href="home-grid.html">View source page ↗</a></div></article>
+</div>
+<h3 class="family">Service & company pages</h3><div class="cards">
+<article class="card">
+<div class="preview"><a class="zoom" href="library-assets/ai-bos-0.png" aria-label="Open full-size specimen"><img loading="lazy" alt="Workflow stage specimen" src="library-assets/ai-bos-0.png"></a></div>
+<div class="spec"><div class="role">Ai Bos</div><h3>Workflow stage</h3><dl>
+<dt>Corner radius</dt><dd>20px</dd>
+<dt>Padding</dt><dd>32px / 24px</dd>
+<dt>Layout gap</dt><dd>No explicit gap</dd>
+</dl><details><summary>Full measurements</summary><dl>
+<dt>Margin</dt><dd>0px</dd>
+<dt>Width</dt><dd>383.328px / 329.125px</dd>
+<dt>Height</dt><dd>266.062px / 246.062px</dd>
+<dt>Top border</dt><dd>1px solid rgb(220, 220, 220)</dd>
+<dt>Grid columns</dt><dd>none</dd>
+</dl><code>.bos-stage</code></details><a href="ai-bos.html">View source page ↗</a></div></article>
+<article class="card">
+<div class="preview"><a class="zoom" href="library-assets/ai-bos-1.png" aria-label="Open full-size specimen"><img loading="lazy" alt="Applied case specimen" src="library-assets/ai-bos-1.png"></a></div>
+<div class="spec"><div class="role">Ai Bos</div><h3>Applied case</h3><dl>
+<dt>Corner radius</dt><dd>40px / 30px</dd>
+<dt>Padding</dt><dd>32px / 24px</dd>
+<dt>Layout gap</dt><dd>No explicit gap</dd>
+</dl><details><summary>Full measurements</summary><dl>
+<dt>Margin</dt><dd>40px 0px 0px / 32px 0px 0px</dd>
+<dt>Width</dt><dd>1300.34px / 329.125px</dd>
+<dt>Height</dt><dd>550.453px / 1412.11px</dd>
+<dt>Top border</dt><dd>0px none rgb(41, 41, 41)</dd>
+<dt>Grid columns</dt><dd>none</dd>
+</dl><code>.bos-applied-case</code></details><a href="ai-bos.html">View source page ↗</a></div></article>
+<article class="card">
+<div class="preview"><a class="zoom" href="library-assets/ai-discovery-lab-0.png" aria-label="Open full-size specimen"><img loading="lazy" alt="FAQ disclosure specimen" src="library-assets/ai-discovery-lab-0.png"></a></div>
+<div class="spec"><div class="role">Ai Discovery Lab</div><h3>FAQ disclosure</h3><dl>
+<dt>Corner radius</dt><dd>0px</dd>
+<dt>Padding</dt><dd>0px 0px 24px</dd>
+<dt>Layout gap</dt><dd>No explicit gap</dd>
+</dl><details><summary>Full measurements</summary><dl>
+<dt>Margin</dt><dd>0px</dd>
+<dt>Width</dt><dd>618.172px / 329.125px</dd>
+<dt>Height</dt><dd>52px / 79px</dd>
+<dt>Top border</dt><dd>0px none rgb(41, 41, 41)</dd>
+<dt>Grid columns</dt><dd>none</dd>
+</dl><code>.dl-faq details</code></details><a href="ai-discovery-lab.html">View source page ↗</a></div></article>
+<article class="card">
+<div class="preview"><a class="zoom" href="library-assets/life-at-yopeso-0.png" aria-label="Open full-size specimen"><img loading="lazy" alt="Activity card specimen" src="library-assets/life-at-yopeso-0.png"></a></div>
+<div class="spec"><div class="role">Life At Yopeso</div><h3>Activity card</h3><dl>
+<dt>Corner radius</dt><dd>20px</dd>
+<dt>Padding</dt><dd>32px / 24px</dd>
+<dt>Layout gap</dt><dd>No explicit gap</dd>
+</dl><details><summary>Full measurements</summary><dl>
+<dt>Margin</dt><dd>0px</dd>
+<dt>Width</dt><dd>414.766px / 329.125px</dd>
+<dt>Height</dt><dd>202.469px / 216.156px</dd>
+<dt>Top border</dt><dd>0px none rgb(41, 41, 41)</dd>
+<dt>Grid columns</dt><dd>none</dd>
+</dl><code>.activity-card</code></details><a href="life-at-yopeso.html">View source page ↗</a></div></article>
+<article class="card">
+<div class="preview"><a class="zoom" href="library-assets/life-at-yopeso-1.png" aria-label="Open full-size specimen"><img loading="lazy" alt="Office card specimen" src="library-assets/life-at-yopeso-1.png"></a></div>
+<div class="spec"><div class="role">Life At Yopeso</div><h3>Office card</h3><dl>
+<dt>Corner radius</dt><dd>0px</dd>
+<dt>Padding</dt><dd>8px 0px</dd>
+<dt>Layout gap</dt><dd>16px</dd>
+</dl><details><summary>Full measurements</summary><dl>
+<dt>Margin</dt><dd>0px</dd>
+<dt>Width</dt><dd>360px / 329.125px</dd>
+<dt>Height</dt><dd>97.0781px</dd>
+<dt>Top border</dt><dd>0px none rgb(41, 41, 41)</dd>
+<dt>Grid columns</dt><dd>none</dd>
+</dl><code>.office-slide</code></details><a href="life-at-yopeso.html">View source page ↗</a></div></article>
+<article class="card">
+<div class="preview"><a class="zoom" href="library-assets/our-story-0.png" aria-label="Open full-size specimen"><img loading="lazy" alt="Timeline milestone specimen" src="library-assets/our-story-0.png"></a></div>
+<div class="spec"><div class="role">Our Story</div><h3>Timeline milestone</h3><dl>
+<dt>Corner radius</dt><dd>0px</dd>
+<dt>Padding</dt><dd>0px</dd>
+<dt>Layout gap</dt><dd>No explicit gap</dd>
+</dl><details><summary>Full measurements</summary><dl>
+<dt>Margin</dt><dd>0px</dd>
+<dt>Width</dt><dd>522.172px / 329.125px</dd>
+<dt>Height</dt><dd>60.0781px / 82.4688px</dd>
+<dt>Top border</dt><dd>0px none rgb(41, 41, 41)</dd>
+<dt>Grid columns</dt><dd>none</dd>
+</dl><code>.story-milestone</code></details><a href="our-story.html">View source page ↗</a></div></article>
+</div>
+<h3 class="family">Hiring</h3><div class="cards">
+<article class="card">
+<div class="preview"><a class="zoom" href="library-assets/open-roles-0.png" aria-label="Open full-size specimen"><img loading="lazy" alt="Search field specimen" src="library-assets/open-roles-0.png"></a></div>
+<div class="spec"><div class="role">Open Roles</div><h3>Search field</h3><dl>
+<dt>Corner radius</dt><dd>0px</dd>
+<dt>Padding</dt><dd>0px</dd>
+<dt>Layout gap</dt><dd>0px</dd>
+</dl><details><summary>Full measurements</summary><dl>
+<dt>Margin</dt><dd>0px</dd>
+<dt>Width</dt><dd>1244.34px / 281.125px</dd>
+<dt>Height</dt><dd>52px</dd>
+<dt>Top border</dt><dd>0px none rgb(41, 41, 41)</dd>
+<dt>Grid columns</dt><dd>none</dd>
+</dl><code>.roles-search</code></details><a href="open-roles.html">View source page ↗</a></div></article>
+<article class="card">
+<div class="preview"><a class="zoom" href="library-assets/open-roles-1.png" aria-label="Open full-size specimen"><img loading="lazy" alt="Filter trigger specimen" src="library-assets/open-roles-1.png"></a></div>
+<div class="spec"><div class="role">Open Roles</div><h3>Filter trigger</h3><dl>
+<dt>Corner radius</dt><dd>8px</dd>
+<dt>Padding</dt><dd>14px 20px</dd>
+<dt>Layout gap</dt><dd>16px</dd>
+</dl><details><summary>Full measurements</summary><dl>
+<dt>Margin</dt><dd>0px</dd>
+<dt>Width</dt><dd>398.781px / 281.125px</dd>
+<dt>Height</dt><dd>55.5938px</dd>
+<dt>Top border</dt><dd>1px solid rgb(220, 220, 220)</dd>
+<dt>Grid columns</dt><dd>none</dd>
+</dl><code>.filter-trigger</code></details><a href="open-roles.html">View source page ↗</a></div></article>
+<article class="card">
+<div class="preview"><a class="zoom" href="library-assets/open-roles-2.png" aria-label="Open full-size specimen"><img loading="lazy" alt="Role listing specimen" src="library-assets/open-roles-2.png"></a></div>
+<div class="spec"><div class="role">Open Roles</div><h3>Role listing</h3><dl>
+<dt>Corner radius</dt><dd>20px</dd>
+<dt>Padding</dt><dd>28px / 24px</dd>
+<dt>Layout gap</dt><dd>24px</dd>
+</dl><details><summary>Full measurements</summary><dl>
+<dt>Margin</dt><dd>0px</dd>
+<dt>Width</dt><dd>417.438px / 329.125px</dd>
+<dt>Height</dt><dd>204.984px / 226.672px</dd>
+<dt>Top border</dt><dd>0px none rgb(41, 41, 41)</dd>
+<dt>Grid columns</dt><dd>none</dd>
+</dl><code>.role-row</code></details><a href="open-roles.html">View source page ↗</a></div></article>
+<article class="card">
+<div class="preview"><a class="zoom" href="library-assets/role-industrial-cybersecurity-expert-0.png" aria-label="Open full-size specimen"><img loading="lazy" alt="Application panel specimen" src="library-assets/role-industrial-cybersecurity-expert-0.png"></a></div>
+<div class="spec"><div class="role">Job detail</div><h3>Application panel</h3><dl>
+<dt>Corner radius</dt><dd>0px</dd>
+<dt>Padding</dt><dd>32px 0px 0px</dd>
+<dt>Layout gap</dt><dd>No explicit gap</dd>
+</dl><details><summary>Full measurements</summary><dl>
+<dt>Margin</dt><dd>40px 0px 0px / 32px 0px 0px</dd>
+<dt>Width</dt><dd>788.875px / 329.125px</dd>
+<dt>Height</dt><dd>150.688px</dd>
+<dt>Top border</dt><dd>1px solid rgb(220, 220, 220)</dd>
+<dt>Grid columns</dt><dd>none</dd>
+</dl><code>.role-apply-bottom</code></details><a href="role-industrial-cybersecurity-expert.html">View source page ↗</a></div></article>
+</div>
+</section></main><footer>Measurements in CSS pixels. Shared token values follow the website’s 760px mobile breakpoint.</footer></body></html>

@@ -1,0 +1,38 @@
+<svg width="94" height="93" viewBox="0 0 94 93" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2959_627)">
+<mask id="mask0_2959_627" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="94" height="93">
+<path d="M94 0H0V93H94V0Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2959_627)">
+<path d="M0.0698242 91.2979H93.3075" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+<path d="M5.18945 91.2977V65.6984H11.0393V67.8983H17.9891V77.7681H25.6689V74.4782H31.1488V27.6793H35.1687V18.1696H38.4586V16.3396H39.9286V15.2396C39.9286 11.5997 42.8685 8.6698 46.5084 8.6698V0.26001" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+<path d="M88.1874 91.2977V65.6984H82.3375V67.8983H75.3877V77.7681H67.7079V74.4782H62.228V27.6793H58.2081V18.1696H54.9182V16.3396H53.4483V15.2396C53.4483 11.5997 50.5083 8.6698 46.8784 8.6698V0.26001" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+<path d="M35.9087 79.5981V82.0681H27.1289V90.5679" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+<path d="M57.8384 79.5981V82.0681H66.6082V90.5679" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+<path d="M17.9893 91.6577V81.428" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+<path d="M75.3877 91.6577V81.428" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+<path d="M44 90.6289V87.6289" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+<path d="M50 90.6289V87.6289" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+<path d="M43.209 18.1697H50.5288" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+<path d="M5.18945 72.2881H12.5093" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+<path d="M31.1489 54.3687H54.5483" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+<path d="M47 67.1289C53.6274 67.1289 59 72.5015 59 79.1289H35C35 72.5015 40.3726 67.1289 47 67.1289Z" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+<path d="M47 82.1289C49.7614 82.1289 52 84.3675 52 87.1289H42C42 84.3675 44.2386 82.1289 47 82.1289Z" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+<path d="M31.519 62.7783H40.2888" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+<path d="M35.1689 27.6794H54.5485" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+<path d="M12.5095 81.7881V90.5679H9.57959V81.7881C9.57959 80.9781 10.2296 80.3281 11.0396 80.3281C11.8495 80.3281 12.5095 80.9781 12.5095 81.7881Z" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+<path d="M83.4277 81.7881V90.5679H80.5078V81.7881C80.5078 80.9781 81.1578 80.3281 81.9678 80.3281C82.7778 80.3281 83.4277 80.9781 83.4277 81.7881Z" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+<path d="M37.3589 29.8694V51.8088" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+<path d="M41.0186 35.7192V51.8088" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+<path d="M44.6787 29.5093V51.4387" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+<path d="M48.3286 29.5093V51.4387" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+<path d="M51.9883 34.9893V51.8088" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+<path d="M55.6484 29.8694V51.8088" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_2959_627">
+<rect width="94" height="93" fill="white"/>
+</clipPath>
+</defs>
+</svg>

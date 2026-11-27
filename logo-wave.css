@@ -1,0 +1,21 @@
+/* One stable row; individual slots clip the vertical wave without opacity changes. */
+.intro-area>.company-logos{--logo-slots:6;display:grid;grid-template-columns:repeat(var(--logo-slots),minmax(0,1fr));grid-template-rows:52px;grid-auto-rows:52px;gap:0 17px;align-items:center;justify-items:stretch;padding-top:14px;padding-bottom:14px}
+.company-logos>img:nth-child(n+7){display:none}
+.company-logos .logo-slot{height:80px;min-width:0;position:relative;overflow:hidden}
+.company-logos .logo-track{position:absolute;inset:0;will-change:transform}
+.company-logos .logo-face{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.company-logos .logo-face:nth-child(2){top:100%;bottom:auto;height:100%}
+.company-logos img{width:144px;height:48px;max-width:100%;object-fit:contain;object-position:center;align-self:center}
+.company-logos img[src$="permira.svg"]{width:90px;height:30px}
+.company-logos img[src$="imk.svg"]{width:60.06px;height:20.93px}
+.company-logos img[src$="pvolve.svg"]{width:72px;height:22px}
+@media(max-width:1000px){.intro-area>.company-logos{--logo-slots:4;gap:0 17px}.company-logos>img:nth-child(n+5){display:none}}
+@media(max-width:760px){.intro-area>.company-logos{--logo-slots:3;gap:0 14px}.company-logos>img:nth-child(n+4){display:none}}
+@media(max-width:480px){.intro-area>.company-logos{--logo-slots:2}}
+
+/* Optical alignment follows the wordmark, rather than the asset bounds. */
+.company-logos img[src$="permira.svg"]{transform:translateY(-4px)}
+.company-logos img[src$="imk.svg"]{transform:translateY(2px)}
+
+/* Compact symbol uses the same neutral gray as the SVG client marks. */
+.company-logos img[src$="productivity-mark.png"]{width:32px;height:28.8px;filter:brightness(0) invert(46%)}

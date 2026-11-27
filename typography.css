@@ -1,0 +1,78 @@
+/* Typography foundation: component roles share these tokens.
+   Layout, spacing, backgrounds and interactions remain in style.css. */
+:root{
+ --font-heading:"Manrope",Arial,sans-serif;
+ --font-body:"Archivo",Arial,sans-serif;
+ --weight-regular:400;--weight-medium:500;--weight-semibold:600;
+ --type-display:clamp(44px,5.1vw,72px);
+ --type-contact:clamp(42px,4.7vw,64px);
+ --type-section:clamp(32px,3.3vw,47px);
+ --type-title:22px;--type-diagram:20px;--type-lead:var(--type-body);
+ --type-body:16px;--type-small:14px;--type-action:13px;
+ --type-caption:12px;--type-label:11px;--type-category:var(--type-label);
+ --leading-heading:1.13;--leading-title:1.35;--leading-body:1.7;
+ --tracking-section:-1.8px;--tracking-display:-3px;
+}
+body{font-family:var(--font-body);font-weight:var(--weight-regular)}
+button,input,textarea,select{font-family:var(--font-body)}
+h1,h2,h3,.company-numbers dd{font-family:var(--font-heading);font-weight:var(--weight-medium)}
+.hero h1{font-size:var(--type-display);line-height:1.06;letter-spacing:var(--tracking-display)}
+h2,.company-numbers dd{font-size:var(--type-section);line-height:var(--leading-heading);letter-spacing:var(--tracking-section)}
+.contact h2{font-size:var(--type-contact);line-height:var(--leading-heading)}
+h3,.cap-list h3,.case-content h3,.insights-grid h3{font-size:var(--type-title);line-height:var(--leading-title);letter-spacing:-.5px}
+.value-group h3,.value-core h3,.proof h2{font-size:var(--type-diagram);line-height:1.3;letter-spacing:-.4px}
+p,.careers p{font-size:var(--type-body);line-height:var(--leading-body);font-weight:var(--weight-regular)}
+.hero-copy{font-size:var(--type-lead)}
+.cap-list p,.case-content p,.insights-grid p,.company-numbers dt{font-size:var(--type-small);line-height:var(--leading-body)}
+.value-group p{font-size:var(--type-small);line-height:1.6}
+.testimonial-copy blockquote,.colleague-perspective blockquote{font-family:var(--font-body);font-size:var(--type-title);font-weight:var(--weight-regular);line-height:1.5;letter-spacing:-.35px}
+.eyebrow,.case-status,.insights-grid .eyebrow,.footer-column h2{
+ font-family:var(--font-body);font-size:var(--type-label);font-weight:var(--weight-semibold);
+ line-height:1.5;letter-spacing:1.5px;text-transform:uppercase;
+}
+.case-status,.insights-grid .eyebrow,.proof .eyebrow{font-size:var(--type-category);letter-spacing:1px}
+.button,.text-link,.insight-arrow{font-family:var(--font-body);font-size:var(--type-action);font-weight:var(--weight-medium);line-height:1.5;letter-spacing:normal}
+nav button{font-family:var(--font-body);font-weight:var(--weight-medium)}
+.hero-invite,.proof p,.lab-options p,.section-bottom,.contact-context{font-size:var(--type-action)}
+.testimonial-attribution strong,.colleague-perspective figcaption strong{font-family:var(--font-body);font-size:var(--type-small);font-weight:var(--weight-medium)}
+.testimonial-attribution>span,.colleague-perspective figcaption{font-family:var(--font-body);font-size:var(--type-action);font-weight:var(--weight-regular);line-height:1.6}
+.footer-location h3{font-family:var(--font-body);font-weight:var(--weight-medium)}
+.footer-location .office-email{font-size:var(--type-caption);font-weight:var(--weight-medium)}
+.footer-location p{font-size:var(--type-label);line-height:1.6}
+.footer-brand>p{font-size:var(--type-small);line-height:1.5}
+.footer-bottom{font-size:var(--type-caption)}
+.value-rail{font-family:var(--font-body);font-size:var(--type-small);font-weight:var(--weight-medium)}
+@media(max-width:760px){
+ :root{--type-display:43px;--type-contact:43px;--type-section:34px;
+ --type-body:15px;--tracking-section:-1.4px;--tracking-display:-1.9px}
+ .hero-invite{font-size:var(--type-caption)}
+ .cap-list p,.company-numbers dt{font-size:var(--type-action)}
+ .value-rail{font-size:var(--type-action)}
+}
+
+/* Five Display styles: XL, L, M, S, XS.
+   Six Text styles: XL (quote), L (body), M (small), S (action),
+   XS (caption), Label. Weight is a variant, not another style. */
+:root{--type-quote:22px;--leading-text:1.6}
+.hero-copy{font-size:var(--type-body);line-height:var(--leading-body)}
+.value-group p,.company-numbers dt,.footer-brand>p,
+.testimonial-attribution strong,.colleague-perspective figcaption strong,
+.footer-column>a,.footer-column>button,.footer-location h3,.value-rail{
+ font-size:var(--type-small);line-height:var(--leading-text);letter-spacing:normal;
+}
+.testimonial-copy blockquote,.colleague-perspective blockquote{font-size:var(--type-quote)}
+.cap-list p,.case-content p,.insights-grid p{line-height:var(--leading-text)}
+.eyebrow,.case-status,.insights-grid .eyebrow,.proof .eyebrow,.lab-options .eyebrow,.footer-column h2{
+ font-size:var(--type-label);line-height:1.5;letter-spacing:1.5px;font-weight:600;
+}
+nav button,.hero-invite,.proof p,.lab-options p,.section-bottom,.contact-context,
+.testimonial-attribution>span,.colleague-perspective figcaption,
+.button,.text-link,.insight-arrow{font-size:var(--type-action);line-height:var(--leading-text);letter-spacing:normal}
+.footer-location p,.footer-location .office-email,.footer-bottom{
+ font-size:var(--type-caption);line-height:var(--leading-text);letter-spacing:normal;
+}
+.lab-options>div{font-size:var(--type-body);line-height:var(--leading-body)}
+.number{font-size:var(--type-label);line-height:1.5}
+
+.hero h1{font-weight:700;max-width:1100px}
+@media(min-width:761px){.hero h1>span{display:block}}

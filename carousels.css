@@ -1,0 +1,68 @@
+/* Shared controls: fixed hit areas, expanding indicators centered in place. */
+.carousel-controls{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:24px}
+.carousel-controls .carousel-dots{display:flex;align-items:center;gap:4px}
+.carousel-controls .carousel-dot{width:32px;height:44px;padding:0;display:grid;place-items:center;flex:none}
+.carousel-controls .carousel-dot::after{content:"";width:6px;height:6px;border-radius:6px;background:#aaa;transition:width 240ms ease,background-color 240ms ease}
+.carousel-controls .carousel-dot[aria-current="true"]::after{width:18px;background:var(--ink)}
+.carousel-controls .carousel-arrow{width:44px;height:44px;padding:0;display:grid;place-items:center;flex:none;border-radius:50%;color:var(--ink)}
+.carousel-controls .carousel-arrow:hover{background:transparent}
+.carousel-previous svg{transform:rotate(180deg)}
+.carousel-controls button:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:8px}
+.home-carousel-viewport{overflow:hidden;touch-action:pan-y;min-width:0}
+.home-carousel-track{display:flex;align-items:stretch;transition:transform 320ms ease}
+.home-slide{flex:0 0 100%;min-width:0;box-sizing:border-box}
+.proof .proof-logo{width:112px;height:112px;flex:0 0 112px;padding:20px;background:#f5f5f5;border-radius:20px;overflow:hidden}
+.proof .proof-logo img{width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;transform:none}
+.proof-copy{flex:1;min-width:0}
+.testimonial-attribution .testimonial-logo{width:120px;height:44px;object-fit:contain;object-position:center;margin-bottom:8px}
+@media(max-width:760px){
+ .carousel-controls{gap:4px}
+ .carousel-controls .carousel-dots{gap:0}
+ .carousel-controls .carousel-dot{width:24px}
+ .carousel-controls .carousel-arrow{width:40px}
+ .proof .proof-slide{grid-template-columns:80px minmax(0,1fr)}
+ .proof .proof-logo{width:80px;height:80px;padding:14px;flex-basis:80px}
+ .testimonial-attribution .testimonial-logo{object-position:left center}
+}
+@media(max-width:360px){.carousel-controls{gap:0}.carousel-controls .carousel-dot{width:20px}.carousel-controls .carousel-arrow{width:32px}}
+@media(prefers-reduced-motion:reduce){.home-carousel-track,.carousel-controls .carousel-dot::after{transition:none}}
+
+/* Keep the case copy and its action together as one vertically centered group. */
+@media(min-width:761px){
+ .proof .proof-slide{display:grid;grid-template-columns:112px minmax(0,640px) max-content;column-gap:28px;justify-content:center;align-items:center}
+ .proof .proof-cta{margin-left:0}
+}
+
+/* Shared Phosphor Light controls: identical across every page. */
+.carousel-controls .carousel-arrow svg.icon{width:18px;height:18px;fill:currentColor;stroke:none;stroke-width:0;flex:none}
+
+/* Pair the working approach with a distinct client-perspective panel. */
+.collaboration.section{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-section);align-items:center}
+.collaboration-intro{min-width:0}
+.collaboration-intro .split{display:block}
+.collaboration-intro .split h2{margin-bottom:var(--space-copy)}
+.collaboration-intro .actions{flex-wrap:wrap}
+.collaboration #client-perspectives{min-width:0;background:var(--soft);border-radius:36px;padding:var(--space-content);margin:0}
+#client-perspectives .testimonial-layout{display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;gap:var(--space-copy)}
+#client-perspectives .testimonial-attribution{display:flex;flex-direction:column;align-items:flex-start;align-self:flex-start;width:auto;text-align:left;justify-self:auto}
+#client-perspectives .testimonial-attribution .testimonial-logo{width:96px;height:44px;object-position:left center;margin:0 0 8px}
+@media(max-width:1100px){.collaboration.section{grid-template-columns:1fr;gap:var(--space-content)}}
+@media(max-width:760px){.collaboration #client-perspectives{padding:var(--space-copy);border-radius:26px}}
+
+/* Remove transparent asset margins optically without altering shared artwork. */
+#client-perspectives .testimonial-logo-crop{display:block;position:relative;overflow:hidden;height:22.8px;margin-bottom:4px}
+#client-perspectives .testimonial-logo-crop .testimonial-logo{position:absolute;width:115.2px;height:auto;max-width:none;margin:0;padding:0}
+#client-perspectives .logo-wolt{width:41.2368px}
+#client-perspectives .logo-wolt .testimonial-logo{left:-36.9816px;top:-11.5932px}
+#client-perspectives .logo-shopkick{width:62.8092px}
+#client-perspectives .logo-shopkick .testimonial-logo{left:-26.1948px;top:-12.6204px}
+#client-perspectives .logo-limango{width:63.1032px}
+#client-perspectives .logo-limango .testimonial-logo{left:-26.0484px;top:-7.5576px}
+#client-perspectives .logo-insurely{width:60.462px}
+#client-perspectives .logo-insurely .testimonial-logo{left:-27.3696px;top:-11.9604px}
+#client-perspectives .logo-addevent{width:81.0804px}
+#client-perspectives .logo-addevent .testimonial-logo{left:-18.858px;top:-13.8684px}
+#client-perspectives .logo-sides{width:60.9024px}
+#client-perspectives .logo-sides .testimonial-logo{left:-27.1488px;top:-11.226px}
+#client-perspectives .logo-avise{width:73.3752px}
+#client-perspectives .logo-avise .testimonial-logo{left:-20.9124px;top:-12.474px}

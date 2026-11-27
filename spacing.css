@@ -1,0 +1,21 @@
+/* Shared spacing rhythm; hero and contact retain their distinct composition. */
+:root{--space-label:24px;--space-copy:24px;--space-actions:28px;--space-content:40px;--space-section:64px;--space-card:16px}
+.ai.section,.lab.section,.capabilities.section,.work.section,.collaboration.section,.insights.section,.careers{
+ padding-top:var(--space-section);padding-bottom:var(--space-section);
+}
+.ai .eyebrow,.lab-intro>.eyebrow,.capabilities-intro>.eyebrow,
+.work>.section-heading>.eyebrow,.collaboration .eyebrow,
+.insights-heading .eyebrow,.careers .eyebrow{margin-bottom:var(--space-label)}
+.lab-intro h2{margin-bottom:0}
+.lab-intro h2+p,.capabilities-intro p,.work .section-heading>p,
+.insights-heading p,.careers-intro p{margin-top:var(--space-copy)}
+.lab-intro .button,.split .button,.split p+.text-link,.collaboration .actions,.careers-actions{margin-top:var(--space-actions)}
+.collaboration .actions .button{margin-top:0}
+.section-heading,.insights-heading{margin-bottom:var(--space-content)}
+.value-diagram{margin-top:var(--space-content)}
+.case-content .case-status+h3,.insights-grid h3{margin-top:0;margin-bottom:var(--space-card)}
+.case-status,.insights-grid .eyebrow{margin-bottom:var(--space-card)}
+.case-content p,.insights-grid p{margin-bottom:24px}
+@media(max-width:760px){
+ :root{--space-label:20px;--space-copy:20px;--space-actions:24px;--space-content:32px;--space-section:48px}
+}

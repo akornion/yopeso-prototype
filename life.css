@@ -1,0 +1,115 @@
+.life-main{padding-bottom:64px}.life-hero{padding:100px 7% 96px;background:var(--soft);text-align:center;border-radius:0 0 48px 48px}.life-hero h1{font-size:var(--type-display);line-height:1.13;letter-spacing:var(--tracking-display);max-width:1050px;margin:auto}.life-hero h1 span{color:var(--muted)}.life-hero p{max-width:660px;margin:28px auto}.life-jump{display:inline-flex;align-items:center;gap:20px}.life-section{padding:80px 7%}.life-section h2{max-width:780px}.life-intro{max-width:650px;margin-top:24px}.culture-rhythm{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px;font:500 var(--type-title)/1.35 var(--font-heading);letter-spacing:-.5px}.culture-behaviours{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:16px}.culture-behaviours p{font-size:var(--type-small);margin:0;line-height:1.6}.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:48px;border-top:1px solid var(--line);padding-top:40px}.values-grid article{display:grid;grid-template-columns:44px 1fr;gap:12px 20px;align-items:center}.values-grid img{object-fit:contain;filter:grayscale(1);opacity:.65}.values-grid h3{margin:0}.values-grid p{grid-column:2;margin:0;font-size:var(--type-small);line-height:1.6}.life-working{display:grid;grid-template-columns:1fr 1fr;gap:9%;background:var(--soft);border-radius:40px}.life-working>div>p{margin-top:24px}.life-questions article{padding:24px 0;border-bottom:1px solid var(--line)}.life-questions article:first-child{padding-top:0}.life-questions article:last-child{border-bottom:0;padding-bottom:0}.life-questions h3{margin:0 0 12px}.life-questions p{font-size:var(--type-small);margin:0}.development-grid,.activity-grid,.stories-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:40px}.development-grid article{border-top:1px solid var(--line);padding-top:24px}.development-grid .eyebrow{display:block;margin-bottom:20px}.development-grid h3{margin:0 0 16px}.development-grid p,.activity-card p{font-size:var(--type-small);line-height:1.6;margin:0}.activities-section{background:var(--soft);border-radius:40px}.activity-card{padding:32px;background:var(--paper);border-radius:20px;min-height:270px}.activity-card[hidden]{display:none}.activity-number{color:var(--muted);font-size:var(--type-caption)}.activity-card h3{margin:40px 0 16px}.activity-pagination{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:32px}.activity-pagination button{width:28px;height:28px;padding:0;display:grid;place-items:center}.activity-pagination button::after{content:'';width:6px;height:6px;border-radius:5px;background:var(--muted)}.activity-pagination button[aria-current=true]::after{width:18px;background:var(--ink)}.life-story{padding:28px;border:1px solid var(--line);border-radius:20px;display:flex;flex-direction:column}.life-story blockquote{font-size:var(--type-quote);line-height:1.5;letter-spacing:-.35px;margin:0 0 28px}.story-person{display:flex;flex-direction:column;font-size:var(--type-action);line-height:1.6;color:var(--muted);margin-top:auto}.story-person strong{font-size:var(--type-small);font-weight:500;color:var(--ink)}.life-story .text-link{display:flex;align-items:center;gap:16px;align-self:flex-start;margin-top:24px}.life-closing{margin:0 7%;padding:64px 40px;text-align:center;border-radius:36px;background:var(--soft)}.life-closing h2{max-width:750px;margin:auto}.life-closing p{max-width:580px;margin:24px auto 28px}.life-page .icon{width:20px;height:20px;flex:none}
+@media(max-width:900px){.values-grid{gap:24px}.values-grid article{display:block}.values-grid h3{margin:16px 0 12px}.stories-grid{grid-template-columns:1fr}.life-story blockquote{max-width:760px}.activity-card{padding:24px}.culture-rhythm,.culture-behaviours{gap:16px}}
+@media(max-width:760px){.life-main{padding-bottom:48px}.life-hero{padding:64px 6%;border-radius:0 0 30px 30px}.life-section{padding:48px 6%}.culture-rhythm{grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px}.culture-behaviours{grid-template-columns:1fr;gap:16px;margin-top:24px}.values-grid,.development-grid,.activity-grid{grid-template-columns:1fr;gap:24px}.values-grid{margin-top:32px;padding-top:32px}.values-grid article{display:grid;grid-template-columns:36px 1fr;gap:12px 16px}.values-grid img{width:36px;height:36px}.values-grid h3{margin:0}.values-grid p{grid-column:2}.life-working{grid-template-columns:1fr;gap:32px;border-radius:30px}.activities-section{border-radius:30px}.activity-card{min-height:0}.activity-card h3{margin-top:24px}.life-closing{padding:48px 24px;margin:0 6%}.life-story{padding:24px}.life-hero h1 br{display:none}}
+
+.culture-rhythm p{font:400 var(--type-small)/1.6 var(--font-body);letter-spacing:normal;margin-top:16px}
+@media(max-width:480px){.culture-rhythm{grid-template-columns:1fr 1fr;gap:28px 20px}}
+
+/* Reusable internal-page introduction: equal inset and Display M title. */
+.internal-hero{padding-block:100px;border-radius:0;box-shadow:0 0 0 100vmax var(--soft);clip-path:inset(0 -100vmax)}
+.internal-hero h1{font-size:var(--type-section);line-height:var(--leading-heading);letter-spacing:var(--tracking-section)}
+.internal-hero p{margin:28px auto 0}
+@media(max-width:760px){.internal-hero{padding-block:64px;border-radius:0}}
+
+.internal-hero{padding-bottom:48px}
+.internal-hero h1{font-weight:700}
+
+/* Cultural principles lead; everyday behaviours share one outlined panel. */
+.culture-values-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.8fr);gap:96px;align-items:center}
+.culture-values-intro p{margin:24px 0 0;font-size:var(--type-body);line-height:var(--leading-body)}
+.culture-values-panel .values-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0;padding:0;border:0;align-items:stretch}
+.culture-values-panel .values-grid article{display:flex;flex-direction:column;align-items:stretch;gap:12px;background:var(--soft);border-radius:20px;padding:28px 24px}
+.value-name{display:flex;flex-direction:column;gap:24px;align-items:flex-start}
+.culture-values-panel .values-grid img{width:36px;height:36px;flex:none}
+.value-name h3{font:600 var(--type-title)/1.35 var(--font-heading);letter-spacing:-.5px;margin:0}
+.culture-values-panel .values-grid p{margin:0;font-size:var(--type-small);line-height:1.6}
+.culture-practice{margin-top:48px;padding:40px 48px;border:1px solid var(--line);border-radius:20px;background:var(--paper)}
+.culture-practice>h3.eyebrow{text-align:left;margin:0;font:600 var(--type-label)/1.5 var(--font-body);letter-spacing:1.5px;text-transform:uppercase}
+.culture-rhythm{grid-template-columns:repeat(4,minmax(0,1fr));gap:48px;margin:28px 0 0}
+.culture-rhythm h4{font:600 20px/1.35 var(--font-heading);letter-spacing:-.4px;margin:0}
+.culture-rhythm p{margin:12px 0 0}
+@media(max-width:1100px){.culture-values-panel{grid-template-columns:1fr;gap:32px}.culture-values-intro{max-width:640px}.culture-rhythm{gap:32px}.culture-practice{padding-inline:32px}}
+@media(max-width:760px){.culture-values-panel .values-grid{grid-template-columns:1fr;gap:16px}.culture-values-panel .values-grid article{padding:24px}.value-name{gap:20px}.culture-practice{margin-top:32px;padding:28px 24px}.culture-practice>h3.eyebrow{text-align:left}.culture-rhythm{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 24px;margin-top:28px}}
+
+/* Manual carousel: fixed hit areas keep indicator centres stationary. */
+.office-carousel{margin-top:24px;min-width:0}
+.life-questions{min-width:0}
+.office-viewport{overflow:hidden;touch-action:pan-y}
+.office-track{display:flex;transition:transform 320ms ease}
+.office-slide{flex:0 0 100%;min-width:0;box-sizing:border-box;display:flex;align-items:center;gap:24px;padding:8px 0}
+.office-slide img{width:66px;height:66px;object-fit:contain;flex:none;opacity:.7}
+.office-slide h4{font:500 20px/1.35 var(--font-heading);letter-spacing:-.4px;margin:0 0 12px}
+.office-slide address{font:400 var(--type-small)/1.6 var(--font-body);color:var(--muted)}
+.carousel-controls{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:16px}
+.carousel-dots{display:flex;align-items:center;gap:4px}
+.carousel-dot{width:32px;height:44px;padding:0;display:grid;place-items:center;flex:none}
+.carousel-dot::after{content:"";width:6px;height:6px;border-radius:6px;background:#aaa;transition:width 240ms ease,background-color 240ms ease}
+.carousel-dot[aria-current="true"]::after{width:18px;background:var(--ink)}
+.carousel-arrow{width:44px;height:44px;padding:0;display:grid;place-items:center;flex:none;border-radius:50%}
+.carousel-arrow:hover{background:#e8e8e8}
+.carousel-previous svg{transform:rotate(180deg)}
+.carousel-controls button:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:8px}
+.office-status{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(max-width:760px){.office-slide{gap:16px}.office-slide img{width:52px;height:52px}.carousel-controls{gap:4px}.carousel-dots{gap:0}.carousel-dot{width:28px}.carousel-arrow{width:40px}.office-slide h4{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.office-track,.carousel-dot::after{transition:none}}
+
+.development-grid{gap:84px}
+@media(max-width:1100px){.development-grid{gap:40px}}
+@media(max-width:760px){.development-grid{gap:28px}}
+
+.activities-carousel{margin-top:40px}
+.activities-viewport{overflow:hidden;touch-action:pan-y}
+.activities-carousel .activity-grid{display:flex;gap:28px;margin:0;transition:transform 320ms ease;align-items:stretch}
+.activities-carousel .activity-card{flex:0 0 calc((100% - 56px)/3);min-width:0;box-sizing:border-box;min-height:0;cursor:default}
+.activities-carousel .activity-card h3{margin:0 0 16px}
+.activities-carousel .activity-pagination{margin:0;gap:4px}
+.activities-carousel .activity-pagination button{width:32px;height:44px}
+.activities-carousel .activity-pagination button::after{width:6px;background:#aaa;transition:width 240ms ease,background-color 240ms ease}
+.activities-carousel .activity-pagination button[aria-current=true]::after{width:18px;background:var(--ink)}
+.activities-carousel .carousel-controls{margin-top:24px}
+@media(max-width:760px){.activities-carousel{margin-top:32px}.activities-carousel .activity-card{flex-basis:100%;min-height:0}.activities-carousel .activity-pagination{gap:0}.activities-carousel .activity-pagination button{width:24px}}
+@media(prefers-reduced-motion:reduce){.activities-carousel .activity-grid,.activities-carousel .activity-pagination button::after{transition:none}}
+
+/* Section rhythm follows the shared spacing tokens; heroes remain intentional exceptions. */
+.life-main{padding-bottom:0}
+.life-section{padding-block:var(--space-section)}
+.life-closing{margin:0;padding:var(--space-section) 7%;border-radius:40px}
+.life-intro,.life-working>div>p,.culture-values-intro p{margin-top:var(--space-copy)}
+.development-grid,.stories-grid,.activities-carousel{margin-top:var(--space-content)}
+.life-closing p{margin:var(--space-copy) auto var(--space-actions)}
+@media(max-width:760px){.life-closing{margin:0;padding-inline:6%;border-radius:30px}}
+
+/* How we work: one introduction followed by three peer questions. */
+.life-working{grid-template-columns:minmax(0,1fr);gap:var(--space-content)}
+.life-working>div:first-child>p{max-width:650px}
+.life-working .life-questions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;align-items:start}
+.life-working .life-questions>article{min-width:0;padding:0;border:0}
+.life-working .office-slide{gap:16px;align-items:center;justify-content:center}
+.life-working .office-slide>div{min-width:0}
+.life-working .office-slide img{width:52px;height:52px}
+.life-working .office-slide h4{font-size:18px}
+@media(max-width:1000px){.life-working .life-questions{grid-template-columns:1fr;gap:32px}.life-working .office-carousel{max-width:480px}}
+
+/* Equal question columns with dividers centered in their breathing room. */
+.life-working .life-questions{gap:64px;align-items:stretch}
+.life-working .life-questions>article{position:relative}
+.life-working .life-questions>article+article::before{content:"";position:absolute;top:0;bottom:0;left:-32px;width:1px;background:var(--line)}
+@media(max-width:1000px){.life-working .life-questions{gap:32px}.life-working .life-questions>article+article::before{top:-16px;bottom:auto;left:0;width:100%;height:1px}}
+
+/* Offices support the introduction; the three questions remain equal peers. */
+.life-working-heading{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:64px;align-items:center}
+.life-working-heading>div:first-child>p{max-width:650px;margin-top:var(--space-copy)}
+.life-working-heading .office-carousel{width:100%;max-width:360px;margin:0;justify-self:center}
+@media(max-width:1000px){.life-working-heading{grid-template-columns:1fr;gap:32px}.life-working-heading .office-carousel{justify-self:start}}
+
+.activities-carousel .activity-icon{display:block;width:32px;height:32px;object-fit:contain;filter:brightness(0) invert(38.0392%);opacity:.65;margin-bottom:16px}
+
+/* A gentle, sequential rhythm for the four everyday practices. */
+.culture-practice .culture-rhythm>div>h4{animation:culture-practice-lift 8s ease-in-out infinite}
+.culture-practice .culture-rhythm>div:nth-child(2)>h4{animation-delay:2s}
+.culture-practice .culture-rhythm>div:nth-child(3)>h4{animation-delay:4s}
+.culture-practice .culture-rhythm>div:nth-child(4)>h4{animation-delay:6s}
+@keyframes culture-practice-lift{0%,25%,100%{transform:translateY(0)}10%,15%{transform:translateY(-8px)}}
+@media(prefers-reduced-motion:reduce){.culture-practice .culture-rhythm>div>h4{animation:none;transform:none}}
+
+@media(min-width:761px){.life-closing-phrase{white-space:nowrap}}

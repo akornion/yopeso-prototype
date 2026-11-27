@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="113" height="96" viewBox="0 0 113 96" fill="none">
+<g clip-path="url(#clip0_20265_15453)">
+<mask id="mask0_20265_15453" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="113" height="96">
+<path d="M113 0H0V96H113V0Z" fill="white" />
+</mask>
+<g mask="url(#mask0_20265_15453)">
+<path d="M0.97998 94.3477H112.347" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+<path d="M13.5397 94.0777V62.9584L11.6297 61.0485L26.6393 48.2188H56.3986V44.1189L55.0286 42.759L56.3986 41.399V31.2992L55.0286 29.9293L58.8485 26.1094L63.2184 1" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+<path d="M83.4179 52.318H92.6977V50.1281L91.8777 48.4881L92.6977 47.1282L94.3276 41.1183L95.9676 47.1282L96.5176 48.4881L95.9676 50.1281V52.318L104.707 61.0478L101.977 63.7777V94.077M63.4884 1.2793L68.4083 25.8387L71.4082 28.8386L69.7682 30.4786V41.1183L71.1382 42.4883L69.7682 43.8482V48.4881H77.1381L89.6877 61.0478L86.9578 63.7777V94.077" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+<path d="M28.0093 62.6875L26.6393 64.0475L28.0093 65.4174V92.7067" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+<path d="M43.2889 62.6875L41.929 64.0475L43.2889 65.4174L43.289 92.5" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+<path d="M58.2889 62.6875L56.929 64.0475L58.2889 65.4174L58.289 92.5" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+<path d="M93.7877 62.6875L95.1476 64.0475L93.7877 65.4174V92.7067" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+<path d="M73.0482 62.6875L74.4082 64.0475L73.0482 65.4174V92.5" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+<path d="M8.61978 60.5078H67" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+<path d="M67.0383 60.5078H107.157" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+<path d="M65.2284 35.3889C65.2284 38.0688 61.2085 38.0688 61.2085 35.3889C61.2085 32.7089 65.2284 32.7089 65.2284 35.3889Z" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+</g>
+</g>
+<defs>
+<clipPath id="clip0_20265_15453">
+<rect width="113" height="96" fill="white" />
+</clipPath>
+</defs>
+</svg>
