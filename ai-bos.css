@@ -224,8 +224,14 @@
 @media(max-width:1100px){.bos-process-arrow{left:50%;right:auto;top:auto;bottom:-30px;transform:translateX(-50%) rotate(90deg)}}
 @media(max-width:760px){.bos-applied-case{padding:24px;border-radius:30px}.bos-applied-case+.bos-applied-case{padding-top:24px}.bos-main #examples+section::before{left:6%;right:6%}}
 
-.bos-intro .bos-systems-line{display:block}
-@media(min-width:761px){.bos-intro .bos-systems-line{white-space:nowrap}}
+.bos-process-intro{margin-bottom:var(--space-content)}
+.bos-process-intro p{line-height:var(--leading-body);margin:0}
+@media(min-width:761px){
+  .bos-process-intro{row-gap:0}
+  .bos-process-intro > div{display:contents}
+  .bos-process-intro .eyebrow{grid-column:1 / -1}
+  .bos-process-intro h2,.bos-process-intro p{align-self:start}
+}
 
 /* Animate only the card surface; copy and connectors remain stationary. */
 .bos-applied-case .bos-client-mark{height:auto;min-height:0;align-items:flex-end}
@@ -511,7 +517,7 @@
 }
 
 /* Keep the stacked homepage introduction within its measured height. */
-@media(max-width:760px){#ai-bos.ai.section>.split{row-gap:var(--space-content)}}
+@media(max-width:760px){#ai-bos.ai.section>.split,.bos-process-intro{row-gap:var(--space-content)}}
 
 /* Shared transformation diagram label on Home and AI-BOS. */
 .bos-transformation .bos-controls .capability-label{display:block;margin:0 0 8px}
