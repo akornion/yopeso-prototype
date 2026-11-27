@@ -35,3 +35,6 @@
 #lets-talk .button{user-select:none;-webkit-user-select:none}
 
 .discovery-page .close{user-select:none;-webkit-user-select:none}.discovery-page .close svg{width:24px;height:24px;display:block;pointer-events:none}
+
+/* Rotate back while the answer collapses, before removing the open state. */
+.dl-faq details.is-closing summary .dl-faq-icon{transform:rotate(0deg)}
