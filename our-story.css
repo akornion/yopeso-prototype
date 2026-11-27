@@ -1,0 +1,117 @@
+/* Our Story: editorial composition on the shared monochrome foundations. */
+.story-section{padding:var(--space-section) 7%}
+.story-page h1,.story-page h2{text-wrap:balance}
+.story-page .story-main h3{margin:0;font-size:var(--type-title);line-height:var(--leading-title)}
+.story-section p{max-width:none;margin:0;font-size:var(--type-body);line-height:var(--leading-body)}
+.story-main p+p{margin-top:var(--space-copy)}
+.story-proof>div{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;padding:0 var(--space-copy);min-width:0}
+.story-proof>div+div{border-left:1px solid var(--line)}
+.story-proof dt{order:2;color:var(--muted);font-size:var(--type-small);line-height:var(--leading-text)}
+.story-section-heading{max-width:700px;margin-bottom:var(--space-content)}
+.story-origin-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:var(--space-section);align-items:start}
+.story-prose{max-width:720px}
+.story-quote{margin:0}
+.story-quote figcaption{margin-top:10px;color:var(--muted);font-size:var(--type-action);line-height:var(--leading-text)}
+.story-origins .story-quote{padding:var(--space-content);background:var(--soft);border-radius:20px}
+.story-timeline-section{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.65fr);gap:var(--space-section);border-top:1px solid var(--line)}
+.story-timeline-heading{align-self:start;max-width:360px}
+.story-timeline{display:block;list-style:none;margin:0;padding:0}
+.story-timeline>li:nth-child(n){display:grid;grid-template-columns:75px minmax(0,1fr);gap:var(--space-copy);margin:0;padding:var(--space-copy) 0;border:0;border-top:1px solid var(--line);background:none}
+.story-timeline>li:first-child{padding-top:0;border-top:0}
+.story-timeline>li::after{display:none}
+.story-timeline time,.story-timeline .story-year{font:var(--weight-medium) var(--type-title)/var(--leading-title) var(--font-heading);letter-spacing:-.5px}
+.story-main .story-milestone h3{font-size:var(--type-title)}
+.story-milestone p{margin-top:calc(var(--space-card)/2);font-size:var(--type-small);line-height:var(--leading-text)}
+.story-heading-split{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-section);align-items:end}
+.story-heading-split>p{max-width:600px}
+.story-experience{display:grid;grid-template-columns:1fr 1.25fr;gap:var(--space-section)}
+.story-experience .story-quote{margin-top:var(--space-content);max-width:360px}
+.story-experience .actions{margin-top:var(--space-actions);gap:var(--space-copy)}
+.story-main .text-link{display:inline-flex;align-items:center;gap:var(--space-card)}
+.story-main .icon{width:20px;height:20px;flex:none}
+.story-difference{border-top:1px solid var(--line)}
+.story-difference>h2{max-width:800px}
+.story-difference-copy{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-section);margin-top:var(--space-content)}
+.story-difference-copy>p+p{margin:0}
+.story-difference .story-quote{margin:var(--space-content) 0;padding:var(--space-content);background:var(--soft);border-radius:20px;max-width:950px}
+.story-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:var(--space-section) 0 0}
+.story-proof dd{white-space:nowrap;margin:0;font:var(--weight-medium) var(--type-section)/var(--leading-heading) var(--font-heading);letter-spacing:var(--tracking-section)}
+.story-proof dd span{font-size:var(--type-title);letter-spacing:-.5px}
+.story-proof dt{max-width:230px}
+@media(max-width:1100px){
+ .story-origin-grid,.story-heading-split,.story-experience,.story-difference-copy{gap:var(--space-content)}
+ .story-timeline-section{grid-template-columns:minmax(0,.8fr) minmax(0,1.5fr);gap:var(--space-content)}
+ .story-timeline>li:nth-child(n){grid-template-columns:60px minmax(0,1fr);gap:var(--space-card)}
+}
+@media(max-width:760px){
+ .story-section{padding-inline:6%}
+ .story-origin-grid,.story-heading-split,.story-experience,.story-difference-copy,.story-timeline-section{grid-template-columns:minmax(0,1fr);gap:var(--space-content)}
+ .story-origins .story-quote,.story-difference .story-quote{padding:var(--space-copy)}
+ .story-timeline-heading{max-width:none}
+ .story-timeline>li:nth-child(n){grid-template-columns:56px minmax(0,1fr);gap:var(--space-card)}
+ .story-experience .story-quote{max-width:none}
+ .story-proof{grid-template-columns:minmax(0,1fr);gap:var(--space-copy)}
+ .story-proof>div+div{border-left:0;border-top:1px solid var(--line);padding-top:var(--space-copy)}
+ .story-proof dt{max-width:none}
+}
+
+/* Review refinement: shorten the historical passage without hiding milestones. */
+@media(min-width:761px){
+ .story-timeline-section{display:block}
+ .story-timeline-heading{max-width:700px;margin-bottom:var(--space-content)}
+ .story-timeline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(6,auto);grid-auto-flow:column;column-gap:calc(var(--space-section) + var(--space-content));row-gap:0}
+ .story-timeline>li:nth-child(n){grid-template-columns:60px minmax(0,1fr);gap:var(--space-card);padding:var(--space-copy) 0;border-top:1px solid var(--line)}
+}
+.story-difference .story-quote,.story-values .story-quote,.story-experience .story-quote{background:none;border-radius:0;border:0;border-left:2px solid var(--ink);padding:0 0 0 var(--space-copy);text-align:left}
+
+.story-page .icon-arrow-up{transform:rotate(-90deg)}
+@media(max-width:480px){
+ .story-timeline>li:nth-child(n){grid-template-columns:minmax(0,1fr);gap:calc(var(--space-card)/2)}
+}
+
+/* Shared internal hero, homepage statistics and testimonial type roles. */
+.story-hero-facts{max-width:620px;margin:var(--space-content) auto 0}
+.story-section .eyebrow{margin-bottom:var(--space-label)}
+.story-quote blockquote{margin:0}
+
+/* Single invitation uses the established Life at Yopeso closing component. */
+.story-closing .actions{justify-content:center}
+.story-closing .eyebrow{margin-bottom:var(--space-label)}
+@media(max-width:760px){.story-closing .actions{align-items:stretch;flex-direction:column}}
+
+/* Reuse the culture cards; full-width rows accommodate the supplied longer copy. */
+.story-values{border-top:1px solid var(--line)}
+.story-values-panel{grid-template-columns:minmax(0,1fr);gap:var(--space-content)}
+.story-values-panel .culture-values-intro{max-width:760px}
+.story-values-panel .culture-values-intro p{margin-top:var(--space-copy)}
+.story-values .story-quote{margin:var(--space-section) 0 0;max-width:950px}
+
+/* Match Selected Work spacing while cards sit side by side. */
+@media(min-width:761px){.story-values-panel .values-grid{gap:var(--space-content)}}
+
+/* Certification artwork and image treatment are shared with the footer. */
+.story-certifications{border-top:1px solid var(--line);padding-top:var(--space-content);margin-top:var(--space-content);text-align:center}
+.story-certifications .eyebrow{margin-bottom:var(--space-copy)}
+.story-certification-pair{display:flex;justify-content:center;align-items:flex-start;gap:var(--space-section)}
+.story-certification-pair>a{display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--muted);font-size:var(--type-small);line-height:var(--leading-text)}
+@media(max-width:760px){.story-certification-pair{gap:var(--space-content)}}
+
+/* Enlarge only the certification group; footer artwork retains its shared size. */
+.story-certification-pair .sourced-badge img{width:100.8px;height:100.8px}
+
+@media(min-width:1200px){.story-experience .story-quote{max-width:none}.story-quote-line{display:block;white-space:nowrap}}
+
+.story-proof dt.story-proof-label{max-width:22ch}
+.story-proof-label span{display:inline-block}
+
+/* Use the homepage name and role typography, preserving the quote spacing. */
+.story-quote figcaption.testimonial-attribution{width:100%;justify-self:start;align-items:flex-start;text-align:left;color:var(--ink)}
+
+.story-hero-facts{max-width:800px}
+.story-hero-facts .company-numbers{grid-template-columns:repeat(4,minmax(0,1fr));max-width:none}
+@media(max-width:760px){.story-hero-facts .company-numbers{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:28px}}
+
+.story-hero-facts .company-numbers>div{padding:20px 8px}
+.story-hero-facts .story-people-fact{background:#fff;border-radius:20px;align-self:start}
+
+.story-hero.internal-hero{padding-bottom:var(--space-actions)}

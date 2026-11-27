@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="95" viewBox="0 0 100 95" fill="none">
+<g clip-path="url(#clip0_20265_15267)">
+<mask id="mask0_20265_15267" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="95">
+<path d="M100 0H0V95H100V0Z" fill="white" />
+</mask>
+<g mask="url(#mask0_20265_15267)">
+<path d="M3.88989 54.9395H10.2097V93.3485H3.88989V54.9395Z" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+<path d="M88.9678 54.9395H95.2976V93.3485H88.9678V54.9395Z" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+<path d="M26.7393 24.7988H33.0592V93.3471H26.7393V24.7988Z" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+<path d="M26.7393 18.959H33.0592V24.7988H26.7393V18.959Z" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+<path d="M66.1183 18.959H72.4482V24.7988H66.1183V18.959Z" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+<path d="M66.1183 24.7988H72.4482V93.3471H66.1183V24.7988Z" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+<path d="M26.7393 61.2598V67.5796H10.2097V61.2598H26.7393Z" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+<path d="M66.125 61.252V67.5818H33.0658V61.252H66.125Z" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+<path d="M88.9778 61.248V67.5779H72.4482V61.248H88.9778Z" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+<path d="M0 93.3477H99.1875" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+<path d="M10.2097 61.2579C16.1096 61.2579 21.1595 57.008 22.1694 51.1982L26.7393 24.7988" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+<path d="M88.9678 61.2579C83.0679 61.2579 78.0281 57.008 77.0181 51.1982L72.4382 24.7988" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+<path d="M49.5888 61.2579C43.6889 61.2579 38.649 57.008 37.6391 51.1982L33.0592 24.7988" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+<path d="M49.5887 61.2579C55.4886 61.2579 60.5385 57.008 61.5484 51.1982L66.1183 24.7988" stroke="#616161" stroke-width="1" vector-effect="non-scaling-stroke" />
+</g>
+</g>
+<defs>
+<clipPath id="clip0_20265_15267">
+<rect width="100" height="95" fill="white" />
+</clipPath>
+</defs>
+</svg>

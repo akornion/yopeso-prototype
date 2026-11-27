@@ -1,0 +1,46 @@
+/* Open process rows. Shared typography and spacing remain authoritative. */
+#process .dl-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  column-gap: var(--space-section);
+  max-width: none;
+}
+#process .dl-intro > .eyebrow { grid-column: 1 / -1; }
+#process .dl-intro > p { margin: 0; align-self: end; }
+.dl-assessment { display: block; list-style: none; padding: 0; margin: 0; }
+.dl-assessment > li:nth-child(n) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: var(--space-content);
+  padding: var(--space-copy);
+  margin: 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+  background: transparent;
+}
+.dl-assessment > li::before, .dl-assessment > li::after { display: none; }
+.dl-assessment-heading { display: flex; align-items: flex-start; gap: var(--space-card); }
+.dl-assessment-number {
+  flex: none; color: var(--muted);
+  display: flex; align-items: center;
+  height: calc(var(--type-diagram) * var(--leading-title));
+  width: 2ch;
+  font: var(--weight-medium) var(--type-small)/var(--leading-text) var(--font-body);
+  font-variant-numeric: tabular-nums;
+}
+.dl-assessment h3 { font-size: var(--type-diagram); line-height: var(--leading-title); }
+.dl-assessment p { margin: 0; font-size: var(--type-small); line-height: var(--leading-text); }
+.dl-assessment .dl-output { border-left: 1px solid var(--line); padding-left: var(--space-copy); }
+.dl-assessment .dl-output strong { margin-bottom: calc(var(--space-card) / 2); }
+@media(max-width:1100px) {
+  #process .dl-intro { display: block; max-width: 800px; }
+  #process .dl-intro > p { margin-top: var(--space-copy); }
+  .dl-assessment > li:nth-child(n) { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); row-gap: var(--space-card); }
+  .dl-assessment-heading { grid-column: 1 / -1; }
+}
+@media(max-width:760px) {
+  .dl-assessment > li:nth-child(n) { grid-template-columns: minmax(0, 1fr); gap: var(--space-card); padding-block: var(--space-content); }
+  .dl-assessment-heading { grid-column: auto; }
+  .dl-assessment .dl-output { padding-left: var(--space-card); margin-top: var(--space-card); }
+}
+

@@ -1,0 +1,526 @@
+/* AI-BOS uses the shared typography, spacing, hero and carousel foundations. */
+.bos-main{padding:0}.bos-section{padding:var(--space-section) 7%}.bos-intro{max-width:800px;margin-bottom:var(--space-content)}.bos-intro p{margin-top:var(--space-copy)}.bos-followup{max-width:800px;margin:var(--space-copy) 0 0}
+.bos-transformation{display:grid;grid-template-columns:minmax(0,1fr) 24px minmax(0,1.25fr) 24px minmax(0,1fr);gap:16px;align-items:center}.bos-stage{padding:var(--bos-card-padding);border:1px solid var(--line);border-radius:20px;min-width:0}.bos-stage h3{font-size:var(--type-diagram);line-height:1.35}.bos-stage p{font-size:var(--type-small);margin-top:16px}.bos-stage .eyebrow{margin-bottom:24px}.bos-core{background:var(--soft);border-color:transparent}.bos-mark{display:block;width:180px;max-width:100%;height:44px;object-fit:contain;object-position:left center;margin-bottom:24px}.bos-connector{display:flex;justify-content:center}.bos-connector svg{width:24px;height:24px}
+.bos-controls{margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}.bos-control-slides{display:grid}.bos-control-slide{grid-area:1/1;min-height:138px}.bos-control-slide h4{font-family:var(--font-body);font-size:var(--type-small);font-weight:600;margin:0}.bos-control-slide p{margin-top:8px}.bos-controls .carousel-controls{margin-top:16px}.bos-control-slide:not([hidden]){animation:control-enter 280ms ease both}@keyframes control-enter{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.bos-case{padding:var(--bos-card-padding);box-shadow:none;border:1px solid var(--line);border-radius:20px;margin-top:var(--space-content)}.bos-case-heading{display:flex;align-items:center;justify-content:space-between;gap:40px}.bos-case-heading h3{max-width:660px}.bos-case-heading .eyebrow{margin-bottom:var(--space-card)}.bos-client-logo{width:130px;height:56px;object-fit:contain;filter:brightness(0) invert(41.5686%)}.bos-case-flow{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;padding:0;margin:32px 0}.bos-case .bos-case-flow>li{position:relative;border:0;padding:24px;background:var(--soft);border-radius:16px}.bos-case-flow .eyebrow{margin-bottom:16px}.bos-case-flow p{font-size:var(--type-small)}.bos-case-footer{display:flex;justify-content:flex-end}.bos-case-footer .text-link{display:inline-flex;gap:20px;align-items:center}
+.bos-soft{background:var(--soft);border-radius:40px}.bos-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 64px}.bos-grid article{min-width:0}.bos-grid p,.bos-delivery p{margin-top:16px;font-size:var(--type-small)}.bos-rules article{padding-top:24px;border-top:1px solid var(--line)}.bos-delivery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px}.bos-closing .actions{justify-content:center;margin-top:var(--space-actions)}.bos-closing .actions .button{margin-top:0}.bos-page .internal-hero h1{max-width:850px}
+@media(max-width:1000px){.bos-transformation{grid-template-columns:1fr}.bos-stage{padding:32px}.bos-connector{transform:rotate(90deg)}.bos-control-slide{min-height:95px}.bos-delivery{grid-template-columns:repeat(2,minmax(0,1fr))}.bos-case-flow{gap:24px}.bos-case .bos-case-flow>li{padding:24px}.bos-case-flow li+li:before{left:-18px}}
+@media(max-width:760px){.bos-section{padding-inline:6%}.bos-grid,.bos-delivery,.bos-case-flow{grid-template-columns:1fr;gap:32px}.bos-case{padding:24px}.bos-case-heading{align-items:flex-start;flex-direction:column;gap:24px}.bos-client-logo{width:110px;height:40px;order:-1}.bos-case-flow li+li:before{top:-23px;left:50%;transform:rotate(90deg)}.bos-case-footer{justify-content:flex-start}.bos-stage{padding:24px}.bos-control-slide{min-height:115px}.bos-closing .actions{align-items:stretch;flex-direction:column}.bos-closing .button{width:100%}}
+@media(prefers-reduced-motion:reduce){.bos-control-slide{animation:none!important}}
+
+.bos-case-flow li::before,.bos-case-flow li::after{display:none!important}.bos-flow-arrow{position:absolute;right:-28px;top:50%;transform:translateY(-50%)}.bos-flow-arrow svg{width:24px;height:24px}.bos-case-flow li:last-child .bos-flow-arrow{display:none}@media(max-width:1000px){.bos-flow-arrow{right:-24px}}@media(max-width:760px){.bos-flow-arrow{top:auto;right:calc(50% - 12px);bottom:-30px;transform:rotate(90deg)}}
+/* Diagram components reuse existing 20px cards, 32/24px insets and shared type roles. */
+.bos-business-map,.bos-architecture{margin:0}.bos-business-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}.bos-business-card{position:relative;background:var(--soft);border-radius:20px;padding:var(--bos-card-padding);min-width:0}.bos-business-card h3,.bos-layer h3,.bos-governance h3,.bos-observability h3,.bos-business-core h3{font-size:var(--type-diagram);line-height:1.35}.bos-business-card p{margin-top:var(--space-card);font-size:var(--type-small)}.bos-business-card:after{content:'';position:absolute;bottom:-32px;left:50%;height:32px;border-left:1px solid var(--line)}.bos-business-core+.bos-business-row .bos-business-card:after{top:-32px;bottom:auto}.bos-business-core{position:relative;display:flex;align-items:center;justify-content:center;gap:40px;padding:32px;margin:32px 0;border:1px solid var(--line);border-radius:20px}.bos-business-core .bos-mark{flex-shrink:0;margin:0}.bos-business-core p{margin-top:16px;max-width:600px;font-size:var(--type-small)}.bos-business-map figcaption,.bos-architecture figcaption{margin-top:24px;font-size:var(--type-caption);color:var(--muted);line-height:1.6}
+.bos-architecture-body{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:24px}.bos-layers{display:grid;gap:24px}.bos-layer{position:relative;background:var(--paper);padding:32px;border:1px solid var(--line);border-radius:20px;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:32px}.bos-layer:not(:last-child):after{content:'';height:24px;position:absolute;left:50%;bottom:-25px;border-left:1px solid var(--line)}.bos-layer .eyebrow,.bos-governance .eyebrow,.bos-observability .eyebrow{margin-bottom:16px}.bos-layer p,.bos-governance p,.bos-observability p{font-size:var(--type-small)}.bos-layer-tags{list-style:none!important;display:flex;flex-wrap:wrap;gap:8px;padding:0!important;margin:16px 0 0!important}.bos-layer-tags li{font-size:var(--type-caption);background:var(--soft);padding:6px 12px;border-radius:20px}.bos-layer-tags li:before,.bos-layer-tags li:after,.bos-governance li:before,.bos-governance li:after{display:none!important}.bos-governance{border:1px solid var(--line);border-radius:20px;padding:var(--bos-card-padding);display:flex;flex-direction:column;justify-content:center}.bos-governance p{margin-top:16px}.bos-governance ul{list-style:none;padding:0;margin:24px 0 0}.bos-governance li{padding:12px 0;border-top:1px solid var(--line);font-size:var(--type-small)}.bos-observability{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;border:1px solid var(--line);border-radius:20px;padding:32px;background:var(--paper)}
+@media(max-width:1100px){.bos-business-row{grid-template-columns:repeat(2,minmax(0,1fr))}.bos-business-card:after{display:none}.bos-architecture-body{grid-template-columns:1fr}.bos-governance{display:block}.bos-governance ul{display:grid;grid-template-columns:1fr 1fr;gap:0 32px}}
+@media(max-width:760px){.bos-business-row{grid-template-columns:1fr;gap:16px}.bos-business-card{padding:24px}.bos-business-core{align-items:flex-start;flex-direction:column;padding:24px;gap:24px}.bos-layer,.bos-observability{grid-template-columns:1fr;padding:24px;gap:24px}.bos-governance{padding:24px}.bos-governance ul{grid-template-columns:1fr}.bos-business-map figcaption,.bos-architecture figcaption{margin-top:20px}}
+
+/* AI-BOS uses the same spacing and typography roles as the established pages. */
+.bos-main{--bos-card-padding:32px}
+.bos-section .eyebrow{margin-bottom:var(--space-label)}
+.bos-section article h3{margin:0}
+.bos-section article p{margin-bottom:0;max-width:none;line-height:var(--leading-text)}
+.bos-intro p{line-height:var(--leading-body)}
+.bos-intro p+p{margin-top:var(--space-copy)}
+.bos-stage h3,.bos-business-card h3,.bos-business-core h3,.bos-layer h3,.bos-governance h3,.bos-observability h3{letter-spacing:-.4px}
+.bos-case-heading .eyebrow,.bos-case-flow .eyebrow,.bos-layer .eyebrow,.bos-governance .eyebrow,.bos-observability .eyebrow{margin-bottom:var(--space-card)}
+.bos-case .bos-case-flow>li{padding:24px;border:0;box-shadow:none}
+.bos-case-flow p{margin:0;line-height:var(--leading-text)}
+.bos-case-heading h3{max-width:660px}
+.bos-case-footer .text-link{gap:16px}
+.bos-case-footer .icon{width:20px;height:20px;flex:none}
+.bos-rules p,.bos-delivery p{margin-top:var(--space-card)}
+.bos-business-core p,.bos-layer p,.bos-governance p,.bos-observability p{line-height:var(--leading-text)}
+.bos-layer-tags li,.bos-governance li{letter-spacing:normal;line-height:var(--leading-text)}
+.bos-section :is(.bos-stage,.bos-case,.bos-business-card,.bos-business-core,.bos-layer,.bos-governance,.bos-observability){box-shadow:none}
+@media(max-width:760px){
+ .bos-main{--bos-card-padding:24px}
+ .bos-soft{border-radius:30px}
+ .bos-section .eyebrow{margin-bottom:var(--space-label)}
+ .bos-case-heading .eyebrow,.bos-case-flow .eyebrow,.bos-layer .eyebrow,.bos-governance .eyebrow,.bos-observability .eyebrow{margin-bottom:var(--space-card)}
+ .bos-case .bos-case-flow>li{padding:24px}
+}
+/* Compact cards use the same control sizes as the shared mobile carousel. */
+.bos-controls{container-type:inline-size}
+@container(max-width:300px){
+ .bos-controls .carousel-controls{gap:4px}
+ .bos-controls .carousel-dots{gap:0}
+ .bos-controls .carousel-dot{width:24px}
+ .bos-controls .carousel-arrow{width:40px}
+}
+@container(max-width:220px){
+ .bos-controls .carousel-controls{gap:0}
+ .bos-controls .carousel-dot{width:20px}
+ .bos-controls .carousel-arrow{width:32px}
+}
+
+/* Gray framework card with a compact inverse capability panel. */
+.bos-transformation{grid-template-columns:minmax(0,1fr) 24px minmax(0,1.1fr) 24px minmax(0,1fr)}
+.bos-core{background:var(--soft);color:var(--ink);border:0}
+.bos-core>.bos-mark{width:140px;height:28px;margin-bottom:16px;filter:none}
+.bos-core .bos-controls{margin-top:24px;padding:20px;border:0;border-radius:16px;background:var(--ink);color:var(--paper)}
+.bos-core .bos-control-slide{min-height:90px}
+.bos-core .bos-control-slide p{color:#c5c5c5;margin-top:12px}
+.bos-core .carousel-controls{margin-top:12px}
+.bos-core .carousel-arrow{color:var(--paper)}
+.bos-core .carousel-dot::after{background:#777}
+.bos-core .carousel-dot[aria-current="true"]::after{background:var(--paper)}
+.bos-core .carousel-controls button:focus-visible,.bos-core .bos-controls:focus-visible{outline-color:var(--paper)}
+@media(max-width:1100px){.bos-transformation{grid-template-columns:1fr}.bos-connector{transform:rotate(90deg)}.bos-core .bos-control-slide{min-height:90px}}
+@media(max-width:760px){.bos-core .bos-control-slide{min-height:90px}}
+/* Four branch tips share one trunk; this is a relationship diagram, not a sequence. */
+.bos-defense-tree{margin:0;padding:32px;border:1px solid var(--line);border-radius:20px}
+.bos-defense-crown{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.bos-defense{min-width:0;background:var(--soft);border-radius:20px;padding:24px}
+.bos-defense>img{display:block;margin-bottom:var(--space-card);filter:brightness(0) invert(42%)}
+.bos-defense h3{font-size:var(--type-diagram);letter-spacing:-.4px;line-height:1.35}
+.bos-defense .bos-defense-purpose{margin:12px 0 0;font-size:var(--type-small);color:var(--ink)}
+.bos-defense ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:12px}
+.bos-defense li{position:relative;padding-left:12px;font-size:var(--type-small);line-height:var(--leading-text);color:var(--muted)}
+.bos-defense li:before{content:"";position:absolute;left:0;top:.65em;width:3px;height:3px;border-radius:50%;background:currentColor}
+.bos-tree-branches{display:block;width:100%;height:120px;overflow:visible;color:#999}
+.bos-tree-branches path{stroke:currentColor;stroke-width:2;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.bos-tree-branches .bos-trunk{stroke-width:4}.bos-tree-branches .bos-twig{stroke-width:1}
+.bos-tree-root{width:340px;max-width:100%;margin:auto;padding:24px;border:1px solid var(--line);border-radius:20px;text-align:center}
+.bos-tree-root .bos-mark{width:140px;height:36px;margin:0 auto 12px;object-position:center}
+.bos-tree-root p{font-size:var(--type-small);line-height:var(--leading-text)}
+@media(max-width:1000px){
+ .bos-defense-tree{padding:24px}
+ .bos-defense-crown{position:relative;grid-template-columns:1fr;gap:24px;padding-left:32px}
+ .bos-defense-crown:before{content:"";position:absolute;top:50px;bottom:-24px;left:0;border-left:2px solid #999}
+ .bos-defense{position:relative}
+ .bos-defense:before{content:"";position:absolute;left:-32px;top:50px;width:32px;border-top:1px solid #999}
+ .bos-tree-branches{display:none}
+ .bos-tree-root{position:relative;width:auto;max-width:none;margin:24px 0 0 32px}
+ .bos-tree-root:before{content:"";position:absolute;left:-33px;top:-1px;width:32px;height:50%;border-left:2px solid #999;border-bottom:2px solid #999;border-bottom-left-radius:16px}
+}
+@media(max-width:480px){
+ .bos-defense-tree{padding:24px 16px}
+ .bos-defense-crown{padding-left:20px}
+ .bos-defense{padding:20px}
+ .bos-defense:before{left:-20px;width:20px}
+ .bos-tree-root{margin-left:20px;padding:20px}
+ .bos-tree-root:before{left:-21px;width:20px}
+}
+@media(max-width:760px){.bos-core .bos-control-slide{min-height:112px}}
+@media(max-width:360px){.bos-core .bos-control-slide{min-height:136px}}
+
+/* One concise statement per slide, with a bold opening and stable compact height. */
+.bos-core .bos-control-slide{min-height:0}
+.bos-core .bos-control-slide .bos-capability-statement{margin:0;font-family:var(--font-body);font-size:var(--type-body);line-height:var(--leading-text);min-height:4.8em;color:#ddd}
+.bos-capability-statement strong{font-weight:700;color:var(--paper)}
+
+/* Capability text follows the surrounding body; reserve only the tallest statement. */
+.bos-core .bos-control-slide .bos-capability-statement{font-size:var(--type-small);min-height:0}
+.bos-core .bos-control-slide[hidden]{display:block;visibility:hidden;pointer-events:none}
+.bos-core .bos-controls .carousel-controls{margin-top:8px}
+/* Streams are clipped exactly at card edges, with a seamless one-dot cycle. */
+.bos-flow{width:calc(100% + 32px);margin-inline:-16px;height:26px;display:flex;flex-direction:column;justify-content:center;gap:12px;overflow:hidden;transform:none;color:var(--muted);pointer-events:none}
+.bos-flow-lane{display:block;flex:none;width:100%;height:6px;background-image:radial-gradient(circle at 3px 3px,currentColor 2.5px,transparent 2.75px);background-size:14px 6px;background-repeat:repeat-x;animation:bos-flow-forward 1.8s linear infinite}
+.bos-flow-return{animation-direction:reverse}
+@keyframes bos-flow-forward{to{background-position:14px 0}}
+@media(max-width:1100px){
+ .bos-flow{width:26px;height:56px;justify-self:center;margin-inline:0;margin-block:-16px;flex-direction:row;transform:none}
+ .bos-flow-lane{width:6px;height:100%;background-size:6px 14px;background-repeat:repeat-y;animation-name:bos-flow-down}
+}
+@keyframes bos-flow-down{to{background-position:0 14px}}
+@media(prefers-reduced-motion:reduce){.bos-flow-lane{animation:none}}
+
+/* Equal desktop cards and more distinct two-way system flows. */
+.bos-transformation{align-items:stretch}
+.bos-flow{align-self:center;height:48px;gap:28px;color:#d5d5d5}
+.bos-flow-lane{height:10px;background-image:radial-gradient(circle at 5px 5px,currentColor 4.75px,transparent 5px);background-size:20px 10px;animation-duration:2.6s}
+@keyframes bos-flow-forward{to{background-position:20px 0}}
+@media(max-width:1100px){
+ .bos-flow{width:48px;height:56px}
+ .bos-flow-lane{width:10px;height:100%;background-size:10px 20px}
+}
+@keyframes bos-flow-down{to{background-position:0 20px}}
+
+/* Continuous clockwise feedback loop, masked by the cards themselves. */
+.bos-transformation{position:relative;isolation:isolate}
+.bos-transformation>.bos-stage{position:relative;z-index:1;background:var(--paper)}
+.bos-transformation>.bos-core{background:var(--soft)}
+.bos-loop{position:relative;align-self:stretch;transform:none;pointer-events:none;z-index:0;color:#d5d5d5}
+.bos-loop .bos-loop-ring{position:absolute;left:50%;top:50%;translate:-50% -50%;width:var(--loop-size,200px);height:var(--loop-size,200px);max-width:none;overflow:visible;fill:currentColor;animation:bos-loop-clockwise 80s linear infinite}
+@keyframes bos-loop-clockwise{to{transform:rotate(360deg)}}
+.bos-core .bos-controls{background:#484848}
+.bos-core .bos-controls .carousel-controls{gap:8px}
+.bos-core .bos-controls .carousel-dots{gap:0}
+.bos-core .bos-controls .carousel-dot{width:24px}
+.bos-core .bos-controls .carousel-arrow{width:32px}
+@container(max-width:240px){
+ .bos-core .bos-controls .carousel-controls{gap:4px}
+ .bos-core .bos-controls .carousel-dot{width:18px}
+ .bos-core .bos-controls .carousel-arrow{width:24px}
+}
+@media(max-width:1100px){.bos-loop{height:24px;transform:none}}
+@media(prefers-reduced-motion:reduce){.bos-loop .bos-loop-ring{animation:none}}
+
+/* Rotate dots within the SVG viewport so its bounding box never creates overflow. */
+.bos-loop .bos-loop-ring{animation:none;overflow:hidden}
+.bos-loop-ring g{transform-origin:50% 50%;animation:bos-loop-clockwise var(--loop-duration,80s) linear infinite}
+@media(prefers-reduced-motion:reduce){.bos-loop-ring g{animation:none}}
+
+/* White inset carousel with the shared dark text and navigation palette. */
+.bos-core .bos-controls{background:#fff;color:var(--ink)}
+.bos-core .bos-control-slide .bos-capability-statement{color:var(--muted)}
+.bos-core .bos-capability-statement strong,.bos-core .carousel-arrow{color:var(--ink)}
+.bos-core .carousel-dot::after{background:#bbb}
+.bos-core .carousel-dot[aria-current="true"]::after{background:var(--ink)}
+.bos-core .carousel-controls button:focus-visible,.bos-core .bos-controls:focus-visible{outline-color:var(--ink)}
+
+/* Shared diagram geometry and typography on the homepage and dedicated page. */
+.bos-transformation{--bos-card-padding:32px}
+.bos-transformation .bos-stage h3{margin:0}
+.bos-transformation .bos-stage p{margin-bottom:0;max-width:none;line-height:var(--leading-text)}
+.bos-transformation .bos-stage{box-shadow:none}
+#ai-bos>.bos-transformation{margin-top:var(--space-content)}
+#ai-bos>.bos-scope-cta{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;margin-top:var(--space-content);text-align:center}
+@media(max-width:760px){.bos-transformation{--bos-card-padding:24px}}
+
+/* Separate adjacent white sections without changing the shared spacing rhythm. */
+.bos-main #examples{position:relative}
+.bos-main #examples::before{content:"";position:absolute;top:0;left:7%;right:7%;border-top:1px solid var(--line);pointer-events:none}
+@media(max-width:760px){.bos-main #examples::before{left:6%;right:6%}}
+
+/* Applied examples: one clear sequence, equal emphasis on every step. */
+.bos-applied-case{padding:0;border:0;border-radius:0;box-shadow:none;margin-top:var(--space-content)}
+.bos-applied-case+.bos-applied-case{border-top:1px solid var(--line);padding-top:var(--space-section);margin-top:var(--space-section)}
+.bos-applied-case .bos-case-heading{display:grid;grid-template-columns:160px minmax(0,1fr);gap:40px;align-items:center}
+.bos-client-mark{height:88px;display:flex;align-items:center;justify-content:center}
+.bos-applied-case .bos-client-logo{object-fit:contain;filter:brightness(0) invert(41.5686%);order:initial}
+.bos-applied-case .bos-logo-permira{width:150px;height:72px;transform:translateY(-5px)}
+.bos-applied-case .bos-logo-imk{width:104px;height:56px;transform:translateY(3px)}
+.bos-applied-case .bos-case-heading h3{max-width:760px;font-size:var(--type-title);line-height:1.35}
+.bos-applied-case .bos-case-flow{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin:32px 0 24px}
+.bos-applied-case .bos-case-flow>li{padding:24px;background:var(--soft);border:0;border-radius:20px;min-width:0}
+.bos-applied-case .bos-case-flow h4{font-family:var(--font-heading);font-size:var(--type-diagram);font-weight:500;letter-spacing:-.4px;line-height:1.35;margin:0 0 16px}
+.bos-applied-case .bos-case-flow .eyebrow{margin-bottom:16px}
+.bos-applied-case .bos-case-footer{justify-content:flex-start}
+.bos-confidentiality{margin-top:var(--space-content);font-size:var(--type-small);max-width:840px;line-height:var(--leading-text)}
+@media(max-width:1100px){
+ .bos-applied-case .bos-case-flow{grid-template-columns:1fr;gap:24px}
+}
+@media(max-width:760px){
+ .bos-applied-case .bos-case-heading{grid-template-columns:1fr;gap:20px}
+ .bos-client-mark{width:160px;justify-content:flex-start}
+ .bos-applied-case .bos-case-flow{margin-top:var(--space-content)}
+}
+
+/* Client processes share the established panel, card and navigation styles. */
+.bos-applied-case{background:var(--soft);padding:32px;border-radius:40px}
+.bos-applied-case+.bos-applied-case{border-top:0;padding-top:32px;margin-top:var(--space-content)}
+.bos-applied-case .bos-case-heading{grid-template-columns:1fr;gap:calc(var(--space-copy) / 2);text-align:left}
+.bos-applied-case .bos-client-mark{justify-content:flex-start}
+.bos-applied-case .bos-case-flow{gap:40px}
+.bos-applied-case .bos-case-flow>li{background:#fff}
+.bos-applied-case .bos-case-flow>li::after{display:none!important}
+.bos-process-arrow{position:absolute;width:20px;height:20px;right:-30px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+.bos-applied-case .bos-case-footer{justify-content:center}
+.bos-confidentiality{margin-left:0;margin-right:0;text-align:left;font-size:var(--type-caption);line-height:1.6;color:var(--muted)}
+.bos-main #examples+section{position:relative}
+.bos-main #examples+section::before{content:"";position:absolute;top:0;left:7%;right:7%;border-top:1px solid var(--line);pointer-events:none}
+@media(max-width:1100px){.bos-process-arrow{left:50%;right:auto;top:auto;bottom:-30px;transform:translateX(-50%) rotate(90deg)}}
+@media(max-width:760px){.bos-applied-case{padding:24px;border-radius:30px}.bos-applied-case+.bos-applied-case{padding-top:24px}.bos-main #examples+section::before{left:6%;right:6%}}
+
+.bos-intro .bos-systems-line{display:block}
+@media(min-width:761px){.bos-intro .bos-systems-line{white-space:nowrap}}
+
+/* Animate only the card surface; copy and connectors remain stationary. */
+.bos-applied-case .bos-client-mark{height:auto;min-height:0;align-items:flex-end}
+.bos-applied-case .bos-logo-permira{height:auto;transform:none}
+.bos-applied-case .bos-logo-imk{width:72.8px;height:auto;transform:none}
+.bos-case.bos-applied-case .bos-case-flow>li{background:transparent;isolation:isolate}
+.bos-case.bos-applied-case .bos-case-flow>li::before{display:block!important;content:"";position:absolute;inset:0;border:0;border-radius:20px;background:#fff;z-index:-1;pointer-events:none;transform:scale(1);animation:bos-step-surface 24s ease-in-out infinite}
+.bos-case.bos-applied-case .bos-case-flow>li:nth-child(2)::before{animation-delay:3s}
+.bos-case.bos-applied-case .bos-case-flow>li:nth-child(3)::before{animation-delay:6s}
+.bos-case.bos-applied-case .bos-case-flow>li:nth-child(4)::before{animation-delay:9s}
+@keyframes bos-step-surface{0%,12.5%,100%{transform:scale(1);background:#fff}4%,8.5%{transform:scale(1.035);background:#e8e8e8}}
+@media(prefers-reduced-motion:reduce){.bos-case.bos-applied-case .bos-case-flow>li::before{animation:none}}
+
+.bos-applied-case .bos-case-flow{margin-bottom:var(--space-content)}
+.bos-case-footer .button.secondary{display:inline-flex;align-items:center;justify-content:center;gap:28px;padding:13px 24px;min-height:48px}
+
+/* Continue through the second client before returning to the first. */
+.bos-case.bos-applied-case+.bos-applied-case .bos-case-flow>li:nth-child(1)::before{animation-delay:12s}
+.bos-case.bos-applied-case+.bos-applied-case .bos-case-flow>li:nth-child(2)::before{animation-delay:15s}
+.bos-case.bos-applied-case+.bos-applied-case .bos-case-flow>li:nth-child(3)::before{animation-delay:18s}
+.bos-case.bos-applied-case+.bos-applied-case .bos-case-flow>li:nth-child(4)::before{animation-delay:21s}
+
+/* Supporting notes sit on the right, with shorter reading lines. */
+.bos-confidentiality,.bos-business-map figcaption,.bos-architecture figcaption{width:60%;margin-left:auto;margin-right:auto;text-align:center}
+.bos-confidentiality{max-width:504px}
+@media(max-width:760px){.bos-confidentiality,.bos-business-map figcaption,.bos-architecture figcaption{width:100%;max-width:none}}
+
+/* Compact capability card uses dot navigation only. */
+.bos-controls .carousel-arrow{display:none}
+.bos-controls .carousel-controls{justify-content:center}
+/* Keep pagination close to its statement and shared cards evenly stretched. */
+.bos-core .bos-controls .carousel-controls{margin-top:4px;min-height:32px}
+.bos-core .bos-controls .carousel-dot{height:32px;min-height:32px}
+.bos-transformation{align-items:stretch}
+.bos-transformation>.bos-stage{height:auto;align-self:stretch}
+
+/* Progressive explanation uses the established cards, type and spacing. */
+.bos-application-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.bos-application-grid article{padding:var(--bos-card-padding);background:var(--soft);border-radius:20px}
+.bos-refined :is(.bos-application-grid,.bos-workflow,.bos-evaluation-grid,.bos-next-grid) h3{font-size:var(--type-diagram);letter-spacing:-.4px;line-height:1.35}
+.bos-refined :is(.bos-application-grid,.bos-workflow,.bos-evaluation-grid,.bos-next-grid) p{font-size:var(--type-small);margin:var(--space-card) 0 0;line-height:var(--leading-text)}
+.bos-workflow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:32px;list-style:none;padding:0;margin:0}
+.bos-workflow li{position:relative;background:#fff;border-radius:20px;padding:24px;min-width:0}
+.bos-workflow .eyebrow{margin-bottom:16px}
+.bos-workflow li>.icon{position:absolute;right:-26px;top:50%;width:20px;height:20px;transform:translateY(-50%);color:var(--muted)}
+.bos-exception{margin-top:var(--space-content);padding-top:24px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 2fr;gap:32px;align-items:start}
+.bos-exception h3{font-size:var(--type-diagram);letter-spacing:-.4px}
+.bos-exception p{margin:0;font-size:var(--type-small)}
+.bos-note{font-size:var(--type-caption);line-height:1.6;color:var(--muted);max-width:700px;margin:var(--space-copy) auto 0;text-align:center}
+.bos-evaluation-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:64px}
+.bos-evaluation-grid article{border-top:1px solid var(--line);padding-top:24px}
+.bos-next-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.bos-next-grid article{display:flex;flex-direction:column;align-items:flex-start;padding:var(--bos-card-padding);border-radius:20px;background:#fff;min-width:0}
+.bos-next-grid .button{margin-top:var(--space-actions);gap:20px}
+.bos-next-grid article p{flex:1}
+.bos-next-grid .eyebrow{margin-bottom:16px}
+@media(max-width:1200px){.bos-workflow{grid-template-columns:1fr;gap:32px}.bos-workflow li>.icon{right:auto;left:calc(50% - 10px);top:auto;bottom:-26px;transform:rotate(90deg)}}
+@media(max-width:760px){.bos-application-grid,.bos-evaluation-grid,.bos-next-grid,.bos-exception{grid-template-columns:1fr;gap:24px}.bos-workflow li{padding:24px}.bos-next-grid .button{white-space:normal;text-align:left}.bos-note{max-width:none}}
+/* Isolate process steps from the site's editorial list styling. */
+.bos-refined .bos-workflow>li{padding:24px;margin:0;border:0}
+.bos-refined .bos-workflow>li::before,.bos-refined .bos-workflow>li::after{display:none!important}
+/* Application carousel: stable height, shared controls and compact process flows. */
+.bos-opportunities{padding:32px;background:var(--soft);border-radius:40px}
+.bos-example-picker{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.bos-example-picker button{font-size:var(--type-action);padding:10px 16px;border:1px solid var(--line);border-radius:24px;line-height:1.5}
+.bos-example-picker button[aria-current="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.bos-example-picker button:hover{border-color:var(--ink)}
+.bos-example-picker button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.bos-example-slides{display:grid}
+.bos-example-slide{grid-area:1/1;min-width:0}
+.bos-example-slide[hidden]{display:block;visibility:hidden;pointer-events:none}
+.bos-example-slide:not([hidden]){animation:control-enter 320ms ease both}
+.bos-refined .bos-example-slide h3{font-size:var(--type-title);letter-spacing:-.4px;line-height:var(--leading-title);max-width:760px}
+.bos-refined .bos-example-slide>p{font-size:var(--type-body);max-width:760px;margin:var(--space-card) 0 0}
+.bos-example-slide>.eyebrow{margin-bottom:16px}
+.bos-example-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;list-style:none;padding:0;margin:32px 0 0}
+.bos-example-flow>li{position:relative;padding:24px!important;margin:0;border:0!important;border-radius:20px;background:#fff;display:flex;align-items:center;font-size:var(--type-small);line-height:1.6;min-width:0}
+.bos-example-flow>li::before,.bos-example-flow>li::after{display:none!important}
+.bos-example-flow .icon{position:absolute;right:-30px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--muted)}
+.bos-opportunities .carousel-controls{margin-top:24px}
+@media(max-width:760px){.bos-opportunities{padding:24px;border-radius:30px}.bos-example-picker{gap:8px;margin-bottom:24px}.bos-example-picker button{padding:8px 12px}.bos-example-flow{grid-template-columns:1fr;gap:32px;margin-top:24px}.bos-example-flow>li{padding:20px!important}.bos-example-flow .icon{left:calc(50% - 10px);right:auto;top:auto;bottom:-26px;transform:rotate(90deg)}.bos-opportunities .carousel-controls{gap:0}.bos-opportunities .carousel-dot{width:20px}.bos-opportunities .carousel-arrow{width:32px}}
+@media(prefers-reduced-motion:reduce){.bos-example-slide:not([hidden]){animation:none}}
+/* Editorial application panel: quiet selector, focused copy and a connected process. */
+.bos-opportunities{padding:40px}
+.bos-example-picker{gap:8px;margin:0 0 40px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.bos-example-picker button{border-color:transparent;color:var(--muted);padding:10px 14px;transition:background-color 180ms ease,color 180ms ease}
+.bos-example-picker button:hover{border-color:transparent;background:#e9e9e9;color:var(--ink)}
+.bos-example-picker button[aria-current="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.bos-example-slide,.bos-example-slide[hidden]{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+.bos-example-copy{min-width:0;max-width:440px;padding:8px 0}
+.bos-refined .bos-example-copy h3{font-family:var(--font-heading);font-size:var(--type-diagram);font-weight:500;letter-spacing:-.4px;line-height:1.35;margin:0 0 16px}
+.bos-refined .bos-example-copy p{font-size:var(--type-small);line-height:var(--leading-text);margin:0;max-width:420px}
+.bos-example-flow{grid-template-columns:1fr;gap:28px;margin:0;min-width:0}
+.bos-example-flow>li{padding:20px 24px!important;gap:20px;min-height:80px;align-items:center}
+.bos-step-icon{width:32px;height:32px;flex:none;filter:brightness(0) invert(42%)}
+.bos-example-flow>li>span{font-size:var(--type-body);line-height:1.5;color:var(--ink)}
+.bos-example-flow .icon{left:calc(50% - 9px);right:auto;top:auto;bottom:-23px;width:18px;height:18px;transform:rotate(90deg);color:#999}
+.bos-opportunities .carousel-controls{margin-top:32px}
+@media(max-width:1000px){.bos-example-slide,.bos-example-slide[hidden]{gap:32px}.bos-example-flow>li{padding:20px!important;gap:16px}}
+@media(max-width:760px){.bos-opportunities{padding:24px}.bos-example-picker{padding-bottom:20px;margin-bottom:24px;gap:4px}.bos-example-picker button{padding:8px 10px}.bos-example-slide,.bos-example-slide[hidden]{grid-template-columns:1fr;gap:32px}.bos-example-copy{max-width:none;padding:0}.bos-refined .bos-example-copy p{max-width:none}.bos-example-flow>li{min-height:72px}.bos-opportunities .carousel-controls{margin-top:24px}}
+@media(prefers-reduced-motion:reduce){.bos-example-picker button{transition:none}}
+
+/* Match the applied examples: animate the surface, keeping content still. */
+.bos-example-flow>li{position:relative;isolation:isolate;background:transparent!important}
+.bos-example-flow>li::before{display:block!important;content:"";position:absolute;inset:0;border-radius:20px;background:#fff;z-index:-1;pointer-events:none}
+.diagram-running .bos-example-slide:not([hidden]) .bos-example-flow>li::before{animation:bos-example-surface 12s ease-in-out infinite}
+.diagram-running .bos-example-slide:not([hidden]) .bos-example-flow>li:nth-child(2)::before{animation-delay:4s}
+.diagram-running .bos-example-slide:not([hidden]) .bos-example-flow>li:nth-child(3)::before{animation-delay:8s}
+@keyframes bos-example-surface{0%,33.333%,100%{transform:scale(1);background:#fff}10%,23.333%{transform:scale(1.035);background:#e8e8e8}}
+@media(prefers-reduced-motion:reduce){.diagram-running .bos-example-slide:not([hidden]) .bos-example-flow>li::before{animation:none}}
+
+/* Exception paths are distinct from the illustrative-workflow note. */
+#workflow .bos-exception{display:block;background:#fff;border:0;border-radius:20px;padding:24px;margin-top:var(--space-content)}
+#workflow .bos-exception>h3{font-size:var(--type-diagram);line-height:1.35;font-weight:500;margin:0 0 24px}
+.bos-exception-paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.bos-exception-paths>div+div{border-left:1px solid var(--line);padding-left:32px}
+.bos-exception-paths img{display:block;filter:brightness(0) invert(42%);margin-bottom:16px}
+.bos-exception-paths h4{font-family:var(--font-heading);font-size:var(--type-small);font-weight:600;line-height:1.5;letter-spacing:normal;margin:0 0 8px}
+#workflow .bos-exception p{font-size:var(--type-small);line-height:var(--leading-text);margin:0}
+#workflow>.bos-note{max-width:700px;margin:var(--space-copy) auto 0;padding:0;border:0}
+@media(max-width:760px){#workflow .bos-exception{padding:24px}.bos-exception-paths{grid-template-columns:1fr;gap:24px}.bos-exception-paths>div+div{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:24px}}
+
+/* Compact exception headings keep the icon and title together. */
+.bos-exception-paths>div{display:grid;grid-template-columns:32px minmax(0,1fr);column-gap:12px;row-gap:8px;align-content:start;align-items:center}
+.bos-exception-paths img{margin:0}
+.bos-exception-paths h4{margin:0}
+#workflow .bos-exception-paths p{grid-column:1 / -1}
+
+/* A supporting heading beside three short, evenly spaced exception paths. */
+#workflow .bos-exception{display:grid;grid-template-columns:minmax(180px,.85fr) minmax(0,3fr);gap:48px;align-items:center}
+#workflow .bos-exception>h3{margin:0;max-width:240px}
+.bos-exception-paths{gap:48px;min-width:0}
+.bos-exception-paths>div{position:relative;min-width:0}
+.bos-exception-paths>div+div{border:0;padding:0}
+.bos-exception-paths>div+div::before{content:"";position:absolute;left:-24px;top:0;bottom:0;border-left:1px solid var(--line)}
+@media(max-width:1100px){#workflow .bos-exception{grid-template-columns:1fr;gap:24px}#workflow .bos-exception>h3{max-width:none}}
+@media(max-width:760px){.bos-exception-paths{gap:24px}.bos-exception-paths>div+div{padding-top:24px;border-top:1px solid var(--line)}.bos-exception-paths>div+div::before{display:none}}
+
+/* Four controls work together; a restrained pulse connects the shared foundation. */
+#safeguards .bos-defense-tree{border:0;padding:0}
+#safeguards .bos-defense-crown{gap:32px}
+#safeguards .bos-defense .bos-defense-purpose{margin-top:16px;color:var(--muted);line-height:var(--leading-text)}
+#safeguards .bos-tree-branches{height:104px;color:#c7c7c7}
+#safeguards .bos-tree-branches .bos-trunk{stroke-width:2}
+#safeguards .bos-tree-branches .bos-branch-pulse{stroke:#858585;stroke-width:2;stroke-dasharray:12 100;stroke-dashoffset:12;opacity:0;animation:bos-guard-pulse 8s ease-in-out infinite}
+@keyframes bos-guard-pulse{0%,12%{stroke-dashoffset:12;opacity:0}20%{opacity:.75}60%{stroke-dashoffset:-100;opacity:.75}68%,100%{stroke-dashoffset:-100;opacity:0}}
+@media(max-width:1000px){#safeguards .bos-defense-crown{gap:24px}#safeguards .bos-defense-crown:before,#safeguards .bos-defense:before,#safeguards .bos-tree-root:before{border-color:#c7c7c7}}
+@media(prefers-reduced-motion:reduce){#safeguards .bos-tree-branches .bos-branch-pulse{animation:none;opacity:0}}
+
+/* Quiet continuous strokes, without a static track underneath. */
+#safeguards .bos-tree-branches path:not(.bos-branch-pulse){stroke:none}
+#safeguards .bos-tree-branches .bos-branch-pulse{stroke:#aaa;stroke-width:2;stroke-dasharray:8 5;stroke-dashoffset:0;opacity:.75;animation:bos-guard-flow 6s linear infinite}
+@keyframes bos-guard-flow{to{stroke-dashoffset:26}}
+@media(prefers-reduced-motion:reduce){#safeguards .bos-tree-branches .bos-branch-pulse{animation:none;opacity:.75}}
+
+/* Shared finishing rhythm: notes follow content, then standard section padding. */
+#workflow,#safeguards{padding-bottom:var(--space-section)}
+#workflow>.bos-note,#safeguards>.bos-note{margin-bottom:0;font-size:var(--type-caption);line-height:var(--leading-text)}
+#safeguards .bos-tree-root .bos-mark{margin-bottom:var(--space-card)}
+#safeguards .bos-tree-root p{margin:0}
+@media(max-width:760px){#workflow>.bos-note{max-width:none}}
+@media(max-width:480px){#safeguards .bos-defense,#safeguards .bos-tree-root{padding:24px}}
+
+/* Compact architecture: connected layers with persistent shared controls. */
+.bos-stack{margin:0}
+.bos-stack-body{display:grid;grid-template-columns:minmax(0,1fr) 72px;gap:24px}
+.bos-stack-layers{display:grid;gap:16px}
+.bos-stack-layer{position:relative;display:grid;grid-template-columns:32px minmax(160px,.65fr) minmax(0,1.35fr);align-items:center;gap:24px;padding:24px;background:var(--paper);border-radius:20px;min-width:0}
+.bos-stack-layer:not(:last-child)::after{content:"";position:absolute;left:40px;bottom:-16px;height:16px;border-left:1px solid var(--line)}
+#architecture .bos-stack-layer h3{font-size:var(--type-diagram);font-weight:500;line-height:1.35;letter-spacing:-.02em;margin:0}
+#architecture .bos-stack-layer p{font-size:var(--type-small);line-height:1.6;color:var(--muted);margin:0}
+.bos-stack img{width:32px;height:32px;opacity:.55;flex-shrink:0}
+.bos-stack-governance{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px;border:1px solid var(--line);border-radius:20px;padding:24px 12px}
+.bos-stack-governance span{writing-mode:vertical-rl;font-size:var(--type-small);font-weight:500;line-height:1.5}
+.bos-stack-monitor{display:flex;align-items:center;justify-content:center;gap:16px;padding:16px 24px;border:1px solid var(--line);border-radius:20px;margin-top:16px;font-size:var(--type-small);line-height:1.6}
+#architecture .bos-stack>.bos-note{margin:var(--space-copy) auto 0;font-size:var(--type-caption);line-height:var(--leading-text)}
+@media(max-width:760px){.bos-stack-body{grid-template-columns:minmax(0,1fr) 44px;gap:16px}.bos-stack-layer{grid-template-columns:32px minmax(0,1fr);gap:16px;padding:24px}.bos-stack-layer p{grid-column:1/-1}.bos-stack-governance{padding:16px 6px;border-radius:16px;gap:16px}.bos-stack-governance img{width:24px;height:24px}.bos-stack-monitor{padding:16px;justify-content:flex-start}.bos-stack-monitor span{max-width:250px}}
+
+/* Architecture relationships, with a quiet request-and-response cycle. */
+.bos-system{margin:0}.bos-system img{width:32px;height:32px;opacity:.55;flex-shrink:0}
+.bos-system-guard,.bos-system-monitor{display:flex;align-items:center;gap:16px;padding:20px 24px;border:1px solid var(--line);border-radius:20px;font-size:var(--type-small);line-height:1.6}
+.bos-system-guard{margin-bottom:24px}.bos-system-people{background:var(--paper);border-radius:20px;padding:24px;display:grid;grid-template-columns:1fr 1.5fr;align-items:center;gap:24px}
+.bos-system-heading{display:flex;align-items:center;gap:16px}
+#architecture .bos-system h3{font-size:var(--type-diagram);font-weight:500;line-height:1.35;letter-spacing:-.02em;margin:0}
+#architecture .bos-system p{font-size:var(--type-small);line-height:1.6;color:var(--muted);margin:16px 0 0}
+#architecture .bos-system-people p{margin:0}.bos-system-human-link{height:48px;display:flex;align-items:center;gap:12px;font-size:var(--type-caption);color:var(--muted);padding-left:32px}.bos-system-human-link:before{content:"";height:100%;border-left:1px solid #bbb}
+.bos-system-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:64px;align-items:center}
+.bos-system-hub{align-self:stretch;display:flex;flex-direction:column;justify-content:center;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:32px;position:relative}.bos-system-hub:after{content:"";position:absolute;width:32px;right:-33px;top:50%;border-top:1px solid #ccc}
+.bos-system-services{display:grid;gap:16px;position:relative}.bos-system-services:before{content:"";position:absolute;left:-32px;top:0;bottom:0;border-left:1px solid #ccc;border-radius:12px}
+.bos-system-node{background:var(--paper);border-radius:20px;padding:24px;position:relative}.bos-system-link{position:absolute;left:-32px;top:50%;width:32px;height:1px;background:#ccc}.bos-system-link:after{content:"";position:absolute;left:0;top:-2px;width:8px;height:5px;border-radius:4px;background:#999;opacity:0;animation:bos-system-exchange 18s ease-in-out infinite;animation-delay:calc(var(--branch)*6s)}
+.bos-system-caption{display:block;margin-top:16px;font-size:var(--type-caption);color:var(--muted);line-height:1.6}.bos-system-monitor{margin-top:24px}#architecture .bos-system-monitor p{margin:4px 0 0}.bos-system>.bos-note{margin:var(--space-copy) auto 0}
+@keyframes bos-system-exchange{0%{opacity:0;transform:translateX(0)}3%{opacity:.8}14%{opacity:.8;transform:translateX(24px)}18%{opacity:.8;transform:translateX(24px)}30%{opacity:.8;transform:translateX(0)}33%,100%{opacity:0;transform:translateX(0)}}
+@media(max-width:760px){.bos-system-people,.bos-system-body{grid-template-columns:1fr}.bos-system-people{gap:16px}.bos-system-body{gap:24px}.bos-system-hub{padding:24px}.bos-system-hub:after{right:auto;left:16px;top:100%;width:0;height:24px;border-top:0;border-left:1px solid #ccc}.bos-system-services{margin-left:32px}.bos-system-services:before{left:-16px}.bos-system-link{left:-16px;width:16px;overflow:visible}.bos-system-link:after{width:5px;animation-name:bos-system-exchange-mobile}.bos-system-guard,.bos-system-monitor{align-items:flex-start;padding:20px}.bos-system-human-link{padding-left:16px}.bos-system-caption{margin-top:12px}}
+@keyframes bos-system-exchange-mobile{0%{opacity:0;transform:translateX(0)}3%{opacity:.8}14%,18%{opacity:.8;transform:translateX(11px)}30%{opacity:.8;transform:translateX(0)}33%,100%{opacity:0;transform:translateX(0)}}
+@media(prefers-reduced-motion:reduce){.bos-system-link:after{animation:none;display:none}}
+
+.bos-system-controls{background:#fff;border-radius:16px;padding:20px;margin-top:24px;text-align:center}
+#architecture .bos-system-controls .bos-capability-statement{font-family:var(--font-body);font-size:var(--type-small);line-height:var(--leading-text);color:var(--muted);margin:0;max-width:760px;margin-inline:auto}
+.bos-system-controls strong{color:var(--ink);font-weight:700}.bos-system-controls .carousel-controls{margin-top:4px;min-height:32px}.bos-system-controls .carousel-dot{width:24px;height:32px;min-height:32px}.bos-system-controls .carousel-dots{gap:0}
+.bos-system-controls{border:0}.bos-system-controls .bos-control-slide{min-height:0}.bos-system-controls .bos-control-slide[hidden]{display:block;visibility:hidden;pointer-events:none}
+
+/* Calm two-way communication; only the inset controls carousel rotates. */
+.bos-system-hub{background:var(--soft);border:1px solid var(--line)}
+.bos-system-hub:after,.bos-system-services:before,.bos-system-human-link:before{display:none}
+.bos-system-controls{text-align:left}
+.bos-system-human-link{height:64px;position:relative;padding:0;display:block}
+.bos-system-arrows{display:flex;flex-direction:column;gap:4px;position:absolute;left:-32px;top:50%;translate:-50% -50%;pointer-events:none}
+.bos-system-arrows img{width:24px;height:24px;opacity:.45}.bos-system-arrows img+img{transform:rotate(180deg)}
+.bos-system-human-link .bos-system-arrows{left:calc((100% - 64px)/5);flex-direction:row;gap:8px}
+.bos-system-human-link .bos-system-arrows img{transform:rotate(90deg)}.bos-system-human-link .bos-system-arrows img+img{transform:rotate(-90deg)}
+@media(max-width:760px){.bos-system-human-link .bos-system-arrows{left:50%}.bos-system-body{gap:32px}.bos-system-services{margin-left:44px}.bos-system-node .bos-system-arrows{left:-22px}.bos-system-services:before{display:block;left:-44px;top:-32px;bottom:0;border-left:1px solid var(--line)}.bos-system-controls{padding:20px}.bos-system-hub{padding:24px}}
+
+/* White architectural canvas, shared gray core card, one quiet exchange at a time. */
+#architecture{background:var(--paper);position:relative}
+#architecture:before{content:"";position:absolute;top:0;left:7%;right:7%;border-top:1px solid var(--line)}
+.bos-system{position:relative;isolation:isolate}
+.bos-system-people{width:calc((100% - 64px)/2.5);grid-template-columns:1fr;padding:32px;gap:16px;position:relative}
+.bos-system-hub{border:0;padding:32px;background:var(--soft);justify-content:center}
+.bos-system-services:before{display:none}
+.bos-system-traffic{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;overflow:hidden;fill:#d5d5d5}
+@media(max-width:760px){#architecture:before{left:6%;right:6%}.bos-system-people{width:100%;padding:24px}.bos-system-hub{padding:24px}.bos-system-services{margin-left:32px}}
+
+/* Four independent system parts around a shared orchestration core. */
+.bos-x{margin:0}.bos-x-grid{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr) minmax(0,1fr);grid-template-rows:1fr 1fr;gap:40px 48px;align-items:center;--bos-card-padding:24px}
+.bos-x-grid>.bos-stage{position:relative;z-index:1;background:var(--paper);border:1px solid var(--line);padding:24px;box-shadow:none;min-width:0}
+.bos-x-grid>.bos-x-core{grid-column:2;grid-row:1/3;background:var(--soft);border:0;align-self:center}
+.bos-x-tl{grid-column:1;grid-row:1}.bos-x-bl{grid-column:1;grid-row:2}.bos-x-tr{grid-column:3;grid-row:1}.bos-x-br{grid-column:3;grid-row:2}
+.bos-x-node .bos-system-heading{display:block}.bos-x-node img{width:32px;height:32px;opacity:.55;display:block;margin-bottom:16px}
+#architecture .bos-x h3{font-size:var(--type-diagram);line-height:1.35;letter-spacing:-.02em;font-weight:500;margin:0}
+#architecture .bos-x .bos-stage>p{font-size:var(--type-small);line-height:var(--leading-text);margin:16px 0 0;color:var(--muted)}
+.bos-x>.bos-note{margin:var(--space-copy) auto 0}.bos-x-traffic{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:hidden;z-index:0}.bos-x-traffic path{fill:none;stroke:#d5d5d5;stroke-width:2;stroke-linecap:butt;stroke-dasharray:8 5}
+@media(min-width:761px) and (max-width:1050px){.bos-x-grid{gap:24px;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) minmax(0,1fr)}.bos-x-grid>.bos-stage{padding:20px}}
+@media(max-width:760px){.bos-x-grid{grid-template-columns:32px minmax(0,1fr);grid-template-rows:auto;gap:24px 0}.bos-x-grid>.bos-x-core{grid-column:1/3;grid-row:1}.bos-x-grid>.bos-x-node{grid-column:2;grid-row:auto}.bos-x-grid>.bos-stage{padding:24px}.bos-x-node .bos-system-heading{display:flex;gap:16px}.bos-x-node img{margin:0;flex-shrink:0}}
+
+@media(max-width:760px){.bos-x-grid{grid-template-columns:48px minmax(0,1fr)}}
+
+@media(max-width:760px){.bos-x-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px 16px}.bos-x-grid>.bos-x-core{grid-column:1/3;grid-row:2}.bos-x-grid>.bos-x-tl{grid-column:1;grid-row:1}.bos-x-grid>.bos-x-tr{grid-column:2;grid-row:1}.bos-x-grid>.bos-x-bl{grid-column:1;grid-row:3}.bos-x-grid>.bos-x-br{grid-column:2;grid-row:3}.bos-x-node .bos-system-heading{display:block}.bos-x-node img{margin-bottom:16px}.bos-x-grid>.bos-x-node{padding:20px;height:100%}.bos-x-node .bos-system-caption{overflow-wrap:anywhere}}
+
+/* Match the existing section divider and retain shared vertical spacing. */
+#evaluation{position:relative}
+#evaluation:before{content:"";position:absolute;top:0;left:7%;right:7%;border-top:1px solid var(--line)}
+@media(max-width:760px){#evaluation:before{left:6%;right:6%}}
+
+@media(min-width:1051px){.bos-x-grid>.bos-x-node{width:85%}.bos-x-tl,.bos-x-bl{justify-self:start}.bos-x-tr,.bos-x-br{justify-self:end}}
+
+/* All system components share the same visual treatment. */
+.bos-x-grid>.bos-x-node{background:var(--soft);border-color:transparent}
+
+/* Reuse the architecture diagram layering: opaque cards mask the moving paths. */
+#safeguards .bos-defense-tree{position:relative;isolation:isolate}
+#safeguards .bos-tree-branches{position:relative;z-index:0}
+#safeguards .bos-defense-crown,#safeguards .bos-tree-root{position:relative;z-index:1}
+#safeguards .bos-tree-root{background:var(--paper)}
+
+/* Original line motion with the shared dot gray, without opacity dilution. */
+#safeguards .bos-tree-branches .bos-branch-pulse{stroke:#d5d5d5;opacity:1}
+
+/* Reuse the example cards' surface-only emphasis, one three-second step at a time. */
+.bos-improvement-cycle{gap:64px}
+.bos-improvement-cycle article{position:relative;isolation:isolate;border:0;padding:24px;min-width:0}
+.bos-improvement-cycle article::before{content:"";position:absolute;inset:0;border-radius:20px;background:var(--soft);z-index:-1;pointer-events:none;animation:bos-improve-surface 9s ease-in-out infinite}
+.bos-improvement-cycle article:nth-child(2)::before{animation-delay:3s}
+.bos-improvement-cycle article:nth-child(3)::before{animation-delay:6s}
+@keyframes bos-improve-surface{0%,33.333%,100%{transform:scale(1);background:var(--soft)}10.667%,22.667%{transform:scale(1.035);background:#e8e8e8}}
+.bos-improve-arrow{position:absolute;right:-44px;top:calc(50% - 12px);width:24px;height:24px;color:var(--muted)}
+@media(max-width:760px){.bos-improvement-cycle{gap:48px}.bos-improve-arrow{right:calc(50% - 12px);top:auto;bottom:-36px;transform:rotate(90deg)}}
+@media(prefers-reduced-motion:reduce){.bos-improvement-cycle article::before{animation:none}}
+
+/* Closing invitation follows the shared centered CTA layout. */
+.bos-next .bos-intro{margin-inline:auto;text-align:center}
+.bos-next-grid{gap:64px;max-width:1040px;margin-inline:auto}
+.bos-next-grid article{position:relative;align-items:center;text-align:center;background:transparent;border-radius:0;padding:0 24px}
+.bos-next-grid article+article::before{content:"";position:absolute;left:-32px;top:0;bottom:0;border-left:1px solid var(--line)}
+.bos-next-grid article p{max-width:380px}
+.bos-next-grid .button{text-align:center}
+@media(max-width:960px){.bos-next-grid{grid-template-columns:1fr;gap:48px}.bos-next-grid article{padding:0}.bos-next-grid article+article{padding-top:48px}.bos-next-grid article+article::before{left:0;right:0;top:0;bottom:auto;border-left:0;border-top:1px solid var(--line)}.bos-next-grid .button{white-space:normal;text-align:center}}
+
+@media (min-width: 1101px) {
+  .bos-transformation > .bos-stage:not(.bos-core) {
+    align-self: center;
+    min-height: 60%;
+  }
+}
+
+/* Keep the stacked homepage introduction within its measured height. */
+@media(max-width:760px){#ai-bos.ai.section>.split{row-gap:var(--space-content)}}
+
+/* Shared transformation diagram label on Home and AI-BOS. */
+.bos-transformation .bos-controls .capability-label{display:block;margin:0 0 8px}
+
+/* Connected processes retain their straight flow and clockwise return loop. */
+.bos-flow-lane{height:2px;background-image:linear-gradient(to right,currentColor 0 8px,transparent 8px 13px);background-size:13px 2px;animation-name:bos-dash-forward;animation-duration:1.69s}
+@keyframes bos-dash-forward{to{background-position:13px 0}}
+@media(max-width:1100px){.bos-flow-lane{width:2px;height:100%;background-image:linear-gradient(to bottom,currentColor 0 8px,transparent 8px 13px);background-size:2px 13px;animation-name:bos-dash-down}}
+@keyframes bos-dash-down{to{background-position:0 13px}}
+@media(prefers-reduced-motion:reduce){.bos-flow-lane{animation:none}}
+
+#ai-bos>.bos-section-action{justify-content:center;margin-top:var(--space-actions)}
