@@ -16,7 +16,7 @@ function closeNavigation(){
  nav.classList.remove('open');
 }
 function openDisclosure(group){
- disclosures.filter(other=>other!==group).forEach(closeDisclosure);
+ if(!nav.classList.contains('open'))disclosures.filter(other=>other!==group).forEach(closeDisclosure);
  group.querySelector('.nav-disclosure-toggle').setAttribute('aria-expanded','true');
  group.querySelector('.nav-submenu').hidden=false;
 }
@@ -43,18 +43,22 @@ disclosures.forEach(group=>{
    items[event.key==='Home'?0:event.key==='End'?items.length-1:(i+(event.key==='ArrowDown'?1:-1)+items.length)%items.length].focus();
   }
  });
- group.addEventListener('focusout',event=>{if(!group.contains(event.relatedTarget))closeDisclosure(group);});
+ group.addEventListener('focusout',event=>{
+  // Keep stacked rows in place until the next button receives its click.
+  if(nav.classList.contains('open') && nav.contains(event.relatedTarget))return;
+  if(!group.contains(event.relatedTarget))closeDisclosure(group);
+ });
 });
 let navDialogReturn=null;
 dialog.addEventListener('close',()=>{if(navDialogReturn){navDialogReturn.focus();navDialogReturn=null;}});
 nav.addEventListener('click',event=>{
  const preview=event.target.closest('[data-dest]');
- if(preview)navDialogReturn=matchMedia('(max-width:760px)').matches?toggle:(preview.closest('.nav-disclosure')?.querySelector('.nav-disclosure-toggle')||preview);
+ if(preview)navDialogReturn=toggle.getClientRects().length?toggle:(preview.closest('.nav-disclosure')?.querySelector('.nav-disclosure-toggle')||preview);
  if(event.target.closest('a,button')&&!event.target.closest('.nav-disclosure-toggle'))closeNavigation();
 });
 document.addEventListener('click',event=>{
  if(!event.target.closest('header'))closeNavigation();
- else disclosures.filter(group=>!group.contains(event.target)).forEach(closeDisclosure);
+ else if(!nav.classList.contains('open'))disclosures.filter(group=>!group.contains(event.target)).forEach(closeDisclosure);
 });
 document.addEventListener('keydown',event=>{
  if(event.key==='Escape'&&nav.classList.contains('open')){closeNavigation();toggle.focus();}
@@ -62,7 +66,6 @@ document.addEventListener('keydown',event=>{
 nav.addEventListener('focusout',event=>{
  if(!nav.contains(event.relatedTarget)&&event.relatedTarget!==toggle)closeNavigation();
 });
-matchMedia('(max-width:760px)').addEventListener('change',closeNavigation);
 
 document.querySelectorAll('[data-scroll]').forEach(button=>button.addEventListener('click',()=>document.getElementById(button.dataset.scroll)?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})));
 

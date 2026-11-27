@@ -17,7 +17,7 @@
 .story-timeline-heading{align-self:start;max-width:360px}
 .story-timeline{display:block;list-style:none;margin:0;padding:0}
 .story-timeline>li:nth-child(n){display:grid;grid-template-columns:75px minmax(0,1fr);gap:var(--space-copy);margin:0;padding:var(--space-copy) 0;border:0;border-top:1px solid var(--line);background:none}
-.story-timeline>li:first-child{padding-top:0;border-top:0}
+.story-timeline:where(:first-child)>li:first-child{padding-top:0;border-top:0}
 .story-timeline>li::after{display:none}
 .story-timeline time,.story-timeline .story-year{font:var(--weight-medium) var(--type-title)/var(--leading-title) var(--font-heading);letter-spacing:-.5px}
 .story-main .story-milestone h3{font-size:var(--type-title)}
@@ -145,20 +145,7 @@
 }
 
 @media (max-width: 760px) and (prefers-reduced-motion: no-preference) {
-  #milestones:not([data-collapsed]) [data-extra-milestone] {
-    animation: milestone-reveal 200ms ease-out;
-  }
-
-  #milestones[data-collapsing] [data-extra-milestone] {
-    animation: milestone-exit 150ms ease-in both;
-  }
-}
-
-@keyframes milestone-exit {
-  to { opacity: 0; transform: translateY(-4px); }
-}
-
-@keyframes milestone-reveal {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
+  .story-timeline-columns { overflow: clip; overflow-clip-margin: 4px; }
+  /* A node below the growing timeline can otherwise anchor the whole viewport. */
+  html:has(.story-timeline-toggle[aria-expanded="true"]) { overflow-anchor: none; }
 }

@@ -25,3 +25,8 @@
 .radius p { font-size: 16px; }
 
 .note { font-size: 14px; }
+
+#change-history p, #change-history ul { max-width: 76ch; }
+#change-history p + p, #change-history li + li { margin-top: 12px; }
+#change-history ul { padding-left: 1.25em; }
+#change-history a { text-underline-offset: 3px; }

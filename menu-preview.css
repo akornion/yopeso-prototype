@@ -1,0 +1,74 @@
+.menu-close-label, .menu-group-label { display: none; }
+@media (max-width: 1024px) {
+  html { scrollbar-gutter: stable; }
+  .site-shell > header { padding: 0 6%; height: 72px; overflow: visible; flex-wrap: nowrap; }
+  .menu-toggle { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 4px; font-size: var(--type-button); font-weight: 500; }
+  .menu-toggle[aria-expanded="true"] .menu-open-label { display: none; }
+  .menu-toggle[aria-expanded="true"] .menu-close-label { display: inline; }
+  .menu-symbol { display: grid; align-content: center; gap: 5px; width: 20px; height: 20px; }
+  .menu-symbol::before, .menu-symbol::after { content: ""; display: block; height: 1.5px; background: currentColor; }
+  [aria-expanded="true"] .menu-symbol::before { transform: translateY(3.25px) rotate(45deg); }
+  [aria-expanded="true"] .menu-symbol::after { transform: translateY(-3.25px) rotate(-45deg); }
+  #navigation { display: none; position: absolute; inset: 100% 0 auto; width: 100%; max-height: calc(100dvh - 72px); overflow-y: auto; overscroll-behavior: contain; background: var(--paper); border: 0; padding: 16px 6% 32px; }
+  #navigation.open { display: flex; flex-flow: column; align-items: stretch; gap: 0; }
+  #navigation > a, #navigation > button, #navigation .nav-disclosure-toggle {
+    display: flex; justify-content: space-between; align-items: center; width: 100%; min-height: 62px; padding: 12px 0;
+    text-align: left; font: 500 22px/1.35 var(--font-heading); letter-spacing: -.5px; border: 0;
+  }
+  #navigation .nav-submenu { position: static; margin: 0; padding: 8px 0 12px; background: transparent; border: 0; box-shadow: none; }
+  #navigation .nav-submenu a { display: flex; align-items: center; gap: 10px; padding: 8px 12px; min-height: 44px; font-size: 16px; border: 0; }
+  #navigation [aria-current="page"]::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  html:has(#navigation.open) { overflow: hidden; }
+}
+@media (max-width:1024px) {
+  .site-shell > header {
+    width: 100vw;
+    margin-inline: calc((100% - 100vw) / 2);
+    padding-inline: calc((100vw - 100%) / 2 + 6%);
+  }
+  .menu-toggle {
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    min-width: 56px;
+    justify-content: center;
+  }
+  .menu-symbol { display: none; }
+  #navigation [aria-current="page"]::before { content: none; }
+  #navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    border-top: 0;
+    max-height: calc(100dvh - 72px - 44px);
+    visibility: hidden;
+    pointer-events: none;
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 120ms ease-in, visibility 0s linear 120ms;
+  }
+  #navigation.open {
+    visibility: visible;
+    pointer-events: auto;
+    clip-path: inset(0);
+    transition: clip-path 180ms ease-out;
+  }
+  .menu-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 19;
+    background: rgb(0 0 0 / 50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 120ms ease-in, visibility 0s linear 120ms;
+  }
+  header:has(#navigation.open) + .menu-backdrop {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 180ms ease-out;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #navigation, #navigation.open, .menu-backdrop, header:has(#navigation.open) + .menu-backdrop { transition: none; }
+  }
+  #navigation .nav-disclosure-toggle { justify-content: flex-start; gap: 8px; }
+}
