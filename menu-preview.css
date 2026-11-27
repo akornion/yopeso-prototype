@@ -18,20 +18,28 @@
   #navigation .nav-submenu { position: static; margin: 0; padding: 8px 0 12px; background: transparent; border: 0; box-shadow: none; }
   #navigation .nav-submenu a { display: flex; align-items: center; gap: 10px; padding: 8px 12px; min-height: 44px; font-size: 16px; border: 0; }
   #navigation [aria-current="page"]::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
-  #navigation .nav-contact { display: inline-flex; justify-content: center; align-items: center; align-self: flex-start; gap: 24px; border: 0; border-radius: 30px; color: var(--paper); background: var(--ink); font-size: 14px; min-height: 48px; margin: 24px 0 0; padding: 12px 24px; }
-  #navigation .nav-contact::after { content: "→"; font-size: 18px; }
-  #navigation .nav-contact:hover { background: #525252; }
   html:has(#navigation.open) { overflow: hidden; }
 }
 @media (max-width:599px) {
-  .menu-symbol {
-    width: 24px;
-    height: 24px;
-    background: url("assets/phosphor-list-light.svg") center / contain no-repeat;
+  .site-shell > header {
+    width: 100vw;
+    margin-inline: calc((100% - 100vw) / 2);
+    padding-inline: calc((100vw - 100%) / 2 + 6%);
   }
-  [aria-expanded="true"] .menu-symbol { background-image: url("assets/phosphor-x-light.svg"); }
-  .menu-symbol::before, .menu-symbol::after, #navigation [aria-current="page"]::before { content: none; }
-
+  .menu-toggle {
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    min-width: 56px;
+    justify-content: center;
+  }
+  .menu-symbol { display: none; }
+  #navigation [aria-current="page"]::before { content: none; }
+  #navigation .nav-contact {
+    align-self: flex-start;
+    min-height: 44px;
+    font-size: var(--type-button);
+    margin-top: var(--space-actions);
+  }
   #navigation {
     display: flex;
     flex-direction: column;
@@ -42,13 +50,13 @@
     visibility: hidden;
     pointer-events: none;
     clip-path: inset(0 0 100% 0);
-    transition: clip-path 160ms ease-in, visibility 0s linear 160ms;
+    transition: clip-path 120ms ease-in, visibility 0s linear 120ms;
   }
   #navigation.open {
     visibility: visible;
     pointer-events: auto;
     clip-path: inset(0);
-    transition: clip-path 220ms ease-out;
+    transition: clip-path 180ms ease-out;
   }
   .menu-backdrop {
     display: block;
@@ -58,12 +66,12 @@
     background: rgb(0 0 0 / 50%);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 160ms ease-in, visibility 0s linear 160ms;
+    transition: opacity 120ms ease-in, visibility 0s linear 120ms;
   }
   header:has(#navigation.open) + .menu-backdrop {
     visibility: visible;
     opacity: 1;
-    transition: opacity 220ms ease-out;
+    transition: opacity 180ms ease-out;
   }
   @media (prefers-reduced-motion: reduce) {
     #navigation, #navigation.open, .menu-backdrop, header:has(#navigation.open) + .menu-backdrop { transition: none; }
@@ -73,6 +81,10 @@
   #navigation .nav-disclosure-toggle { border-bottom: 0; }
 }
 @media (min-width:600px) and (max-width:1024px) {
+  #navigation .nav-contact { display: inline-flex; justify-content: center; align-items: center; align-self: flex-start; gap: 24px; border: 0; border-radius: 30px; color: var(--paper); background: var(--ink); font-size: 14px; min-height: 48px; margin: 24px 0 0; padding: 12px 24px; }
+  #navigation .nav-contact::after { content: "→"; font-size: 18px; }
+  #navigation .nav-contact:hover { background: #525252; }
+
   #navigation.open { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; padding-block: 30px 24px; box-shadow: 0 14px 24px -20px #29292960; }
   #navigation .menu-direct { grid-area: 1 / 1 / 3 / 2; }
   #navigation .menu-direct > * { display: flex; align-items: center; width: 100%; min-height: 60px; padding: 12px 0; border-bottom: 1px solid var(--line); font: 500 24px/1.35 var(--font-heading); letter-spacing: -.6px; }
