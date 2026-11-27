@@ -415,7 +415,7 @@
         "fontWeight": "400",
         "maxWidth": "none",
         "width": "155.562px",
-        "height": "221.547px",
+        "height": "218.344px",
         "gridTemplateColumns": "none"
       },
       "1512": {
@@ -432,7 +432,7 @@
         "fontWeight": "400",
         "maxWidth": "none",
         "width": "252.953px",
-        "height": "187.766px",
+        "height": "184.562px",
         "gridTemplateColumns": "none"
       },
       "name": "Office contact",
@@ -455,7 +455,7 @@
         "fontWeight": "400",
         "maxWidth": "1512px",
         "width": "374px",
-        "height": "11813.9px",
+        "height": "11737.1px",
         "gridTemplateColumns": "none"
       },
       "1512": {
@@ -472,7 +472,7 @@
         "fontWeight": "400",
         "maxWidth": "1512px",
         "width": "1512px",
-        "height": "6629.62px",
+        "height": "6597.62px",
         "gridTemplateColumns": "none"
       },
       "name": "Page shell",

@@ -79,5 +79,23 @@ nav button,.hero-invite,.proof p,.lab-options p,.section-bottom,.contact-context
 
 /* Body copy across page templates, including compact card and diagram layouts. */
 p:not(.sr-only, .activity-status), .role-detail article li, .lab-options > div:not(.eyebrow) {
-  font-size: var(--type-body) !important;
+  font-size: var(--paragraph-size, var(--type-body)) !important;
+}
+
+/* Supporting copy qualifies an action, reports a result, or supplies contact details. */
+.hero-invite,
+.footer-location,
+.footer-brand,
+.dialog-note,
+.bos-note,
+.bos-confidentiality,
+.lab-options p,
+#role-count,
+.no-roles p {
+  --paragraph-size: var(--type-small);
+}
+
+.footer-location .office-email,
+.office-slide address {
+  font-size: var(--type-small);
 }
