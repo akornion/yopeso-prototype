@@ -25,6 +25,14 @@ if (!previewDestination) {
 
 // Preserve the preview through real page navigation, including section anchors.
 const phoneMenu = matchMedia('(max-width:599px)');
+const backdrop = document.createElement('div');
+backdrop.className = 'menu-backdrop';
+backdrop.setAttribute('aria-hidden', 'true');
+toggle.closest('header').after(backdrop);
+backdrop.addEventListener('click', () => {
+  closeNavigation();
+  toggle.focus({ preventScroll: true });
+});
 const originalToggle = toggle.innerHTML;
 const previewLinks = new Map();
 function syncMobilePreview() {

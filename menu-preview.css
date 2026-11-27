@@ -24,7 +24,50 @@
   html:has(#navigation.open) { overflow: hidden; }
 }
 @media (max-width:599px) {
-  #navigation.open { height: calc(100dvh - 72px); border-top: 0; }
+  .menu-symbol {
+    width: 24px;
+    height: 24px;
+    background: url("assets/phosphor-list-light.svg") center / contain no-repeat;
+  }
+  [aria-expanded="true"] .menu-symbol { background-image: url("assets/phosphor-x-light.svg"); }
+  .menu-symbol::before, .menu-symbol::after, #navigation [aria-current="page"]::before { content: none; }
+
+  #navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    border-top: 0;
+    max-height: calc(100dvh - 72px - 44px);
+    visibility: hidden;
+    pointer-events: none;
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 160ms ease-in, visibility 0s linear 160ms;
+  }
+  #navigation.open {
+    visibility: visible;
+    pointer-events: auto;
+    clip-path: inset(0);
+    transition: clip-path 220ms ease-out;
+  }
+  .menu-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 19;
+    background: rgb(0 0 0 / 50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 160ms ease-in, visibility 0s linear 160ms;
+  }
+  header:has(#navigation.open) + .menu-backdrop {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 220ms ease-out;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #navigation, #navigation.open, .menu-backdrop, header:has(#navigation.open) + .menu-backdrop { transition: none; }
+  }
   #navigation > a,
   #navigation > button:not(.nav-contact),
   #navigation .nav-disclosure-toggle { border-bottom: 0; }
