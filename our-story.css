@@ -27,7 +27,7 @@
 .story-experience{display:grid;grid-template-columns:1fr 1.25fr;gap:var(--space-section)}
 .story-experience .story-quote{margin-top:var(--space-content);max-width:360px}
 .story-experience .actions{margin-top:var(--space-actions);gap:var(--space-copy)}
-.story-main .text-link{display:inline-flex;align-items:center;gap:var(--space-card)}
+.story-main .text-link{display:inline-flex;align-items:center;gap:var(--button-icon-gap)}
 .story-main .icon{width:20px;height:20px;flex:none}
 .story-difference{border-top:1px solid var(--line)}
 .story-difference>h2{max-width:800px}

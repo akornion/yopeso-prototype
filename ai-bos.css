@@ -246,7 +246,7 @@
 @media(prefers-reduced-motion:reduce){.bos-case.bos-applied-case .bos-case-flow>li::before{animation:none}}
 
 .bos-applied-case .bos-case-flow{margin-bottom:var(--space-content)}
-.bos-case-footer .button.secondary{display:inline-flex;align-items:center;justify-content:center;gap:28px;padding:13px 24px;min-height:48px}
+.bos-case-footer .button.secondary{display:inline-flex;align-items:center;justify-content:center;gap:var(--button-icon-gap);padding:13px 24px;min-height:48px}
 
 /* Continue through the second client before returning to the first. */
 .bos-case.bos-applied-case+.bos-applied-case .bos-case-flow>li:nth-child(1)::before{animation-delay:12s}
@@ -285,7 +285,7 @@
 .bos-evaluation-grid article{border-top:1px solid var(--line);padding-top:24px}
 .bos-next-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
 .bos-next-grid article{display:flex;flex-direction:column;align-items:flex-start;padding:var(--bos-card-padding);border-radius:20px;background:#fff;min-width:0}
-.bos-next-grid .button{margin-top:var(--space-actions);gap:20px}
+.bos-next-grid .button{margin-top:var(--space-actions)}
 .bos-next-grid article p{flex:1}
 .bos-next-grid .eyebrow{margin-bottom:16px}
 @media(max-width:1200px){.bos-workflow{grid-template-columns:1fr;gap:32px}.bos-workflow li>.icon{right:auto;left:calc(50% - 10px);top:auto;bottom:-26px;transform:rotate(90deg)}}

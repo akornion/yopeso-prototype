@@ -12,11 +12,32 @@
  const filtered=Boolean(terms.length||countries.length||areas.length||hours.length);document.querySelector('#role-count').textContent=matched.length+' '+(matched.length===1?'role':'roles')+' '+(filtered?'found':'available');document.querySelector('#no-roles').hidden=matched.length!==0;clear.hidden=!(search.value||countries.length||areas.length||hours.length);
 
  updateFilterText();
- form.querySelectorAll('.filter-all').forEach(b=>b.setAttribute('aria-pressed',String(!chosen(b.dataset.clear).length)));const p=new URLSearchParams();if(search.value)p.set('q',search.value);countries.forEach(v=>p.append('country',v));areas.forEach(v=>p.append('area',v));hours.forEach(v=>p.append('hours',v));history.replaceState(null,'',location.pathname+(p.size?'?'+p:''));}
- function close(except){form.querySelectorAll('.role-filter').forEach(f=>{if(f===except)return;f.querySelector('.filter-trigger').setAttribute('aria-expanded','false');f.querySelector('.filter-options').hidden=true;});}
- form.querySelectorAll('.filter-trigger').forEach(b=>b.onclick=()=>{const f=b.closest('.role-filter'),open=b.getAttribute('aria-expanded')==='true';close();b.setAttribute('aria-expanded',String(!open));f.querySelector('.filter-options').hidden=open;});
- document.addEventListener('click',e=>{if(!e.target.closest('.role-filter'))close();});form.addEventListener('keydown',e=>{if(e.key==='Escape'){const f=e.target.closest('.role-filter');close();f?.querySelector('.filter-trigger').focus();}});
+ form.querySelectorAll('.filter-all').forEach(b=>b.setAttribute('aria-pressed',String(!chosen(b.dataset.clear).length)));if(!form.querySelector('.filter-trigger[aria-expanded="true"]'))syncUrl();}
+ function syncUrl(){const countries=chosen('country'),areas=chosen('area'),hours=chosen('hours');const p=new URLSearchParams();if(search.value)p.set('q',search.value);countries.forEach(v=>p.append('country',v));areas.forEach(v=>p.append('area',v));hours.forEach(v=>p.append('hours',v));const query=p.size?'?'+p:'';if(location.search!==query)history.replaceState(history.state,'',location.pathname+query+location.hash);}
+ function close(){const active=form.querySelector('.filter-trigger[aria-expanded="true"]');if(!active)return;const f=active.closest('.role-filter');f.querySelector('.filter-trigger').setAttribute('aria-expanded','false');f.querySelector('.filter-options').hidden=true;}
+ function fitOpenFilter(){
+  const panel=form.querySelector('.filter-options:not([hidden])');
+  if(!panel)return;
+  const trigger=panel.closest('.role-filter').querySelector('.filter-trigger').getBoundingClientRect();
+  const headerBottom=document.querySelector('header').getBoundingClientRect().bottom;
+  const above=trigger.top-Math.max(0,headerBottom)-16;
+  const below=window.innerHeight-trigger.bottom-16;
+  const choices=panel.querySelector('.filter-choices');
+  const naturalHeight=choices.scrollHeight+panel.querySelector('.filter-footer').offsetHeight+panel.offsetHeight-panel.clientHeight+16;
+  const opensAbove=below<naturalHeight && above>below;
+  panel.classList.toggle('opens-above',opensAbove);
+  panel.style.setProperty('--panel-room',Math.max(0,opensAbove?above:below)+'px');
+ }
+ window.addEventListener('resize',fitOpenFilter);
+ window.addEventListener('scroll',fitOpenFilter,{passive:true});
+ form.querySelectorAll('.filter-trigger').forEach(b=>b.onclick=()=>{const f=b.closest('.role-filter'),open=b.getAttribute('aria-expanded')==='true';close();b.setAttribute('aria-expanded',String(!open));f.querySelector('.filter-options').hidden=open;if(!open)fitOpenFilter();});
+ form.querySelectorAll('.filter-done').forEach(button=>button.addEventListener('click',()=>{
+  const trigger=button.closest('.role-filter').querySelector('.filter-trigger');
+  close();
+  trigger.focus({preventScroll:true});
+ }));
+ document.addEventListener('click',e=>{if(!e.target.closest('.role-filter'))close();});form.addEventListener('keydown',e=>{if(e.key==='Escape'){const f=e.target.closest('.role-filter');close();f?.querySelector('.filter-trigger').focus({preventScroll:true});}});
  form.addEventListener('submit',e=>e.preventDefault());search.addEventListener('input',render);form.addEventListener('change',render);
  function reset(){search.value='';form.querySelectorAll('input[type="checkbox"]').forEach(i=>i.checked=false);hourInputs.forEach(i=>i.checked=i.value==='');render();}
- form.querySelectorAll('.filter-all').forEach(b=>b.onclick=()=>{form.querySelectorAll(`input[name="${b.dataset.clear}"]`).forEach(i=>i.checked=false);render();});clear.onclick=reset;document.querySelector('#reset-empty').onclick=reset;rows.forEach(r=>r.addEventListener('click',()=>{try{sessionStorage.setItem('yopeso-role-search',JSON.stringify({query:location.search}));}catch{}}));render();
+ form.querySelectorAll('.filter-all').forEach(b=>b.onclick=()=>{form.querySelectorAll(`input[name="${b.dataset.clear}"]`).forEach(i=>i.checked=false);render();});clear.onclick=reset;document.querySelector('#reset-empty').onclick=reset;rows.forEach(r=>r.addEventListener('click',()=>{syncUrl();try{sessionStorage.setItem('yopeso-role-search',JSON.stringify({query:location.search}));}catch{}}));render();
 })();
