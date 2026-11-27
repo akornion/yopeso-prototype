@@ -17,8 +17,38 @@ function arrangeMenu() {
     contact.append(contactItem);
   }
 }
-arrangeMenu();
-tabletMenu.addEventListener('change', arrangeMenu);
+const previewDestination = !toggle.querySelector('.menu-symbol');
+if (!previewDestination) {
+  arrangeMenu();
+  tabletMenu.addEventListener('change', arrangeMenu);
+}
+
+// Preserve the preview through real page navigation, including section anchors.
+const phoneMenu = matchMedia('(max-width:599px)');
+const originalToggle = toggle.innerHTML;
+const previewLinks = new Map();
+function syncMobilePreview() {
+  if (previewDestination) {
+    toggle.innerHTML = phoneMenu.matches
+      ? '<span class="menu-open-label">Menu</span><span class="menu-close-label">Close</span><span class="menu-symbol" aria-hidden="true"></span>'
+      : originalToggle;
+  }
+  if (!phoneMenu.matches) {
+    for (const [link, href] of previewLinks) link.setAttribute('href', href);
+    previewLinks.clear();
+    return;
+  }
+  for (const link of document.querySelectorAll('a[href]')) {
+    const href = link.getAttribute('href');
+    const url = new URL(href, location.href);
+    if (href.startsWith('#') || url.origin !== location.origin || !url.pathname.endsWith('.html')) continue;
+    previewLinks.set(link, href);
+    url.searchParams.set('nav', 'mobile');
+    link.href = url.href;
+  }
+}
+syncMobilePreview();
+phoneMenu.addEventListener('change', syncMobilePreview);
 const menuViewport = matchMedia('(max-width:1024px)');
 menuViewport.addEventListener('change', closeNavigation);
 let openingScroll = null;

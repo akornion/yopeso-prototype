@@ -160,3 +160,15 @@ if(activities){
  new ResizeObserver(()=>render()).observe(viewport);
  mobile.addEventListener('change',rebuild);reduced.addEventListener('change',schedule);document.addEventListener('visibilitychange',schedule);rebuild();
 }
+
+// Internal links opt destination pages into the mobile navigation preview.
+if (new URLSearchParams(location.search).get('nav') === 'mobile' && !document.querySelector('.menu-symbol')) {
+  const previewStyle = document.createElement('link');
+  previewStyle.rel = 'stylesheet';
+  previewStyle.href = 'menu-preview.css';
+  previewStyle.media = '(max-width:599px)';
+  document.head.append(previewStyle);
+  const previewScript = document.createElement('script');
+  previewScript.src = 'menu-preview.js';
+  document.body.append(previewScript);
+}
