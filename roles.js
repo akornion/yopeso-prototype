@@ -1,6 +1,6 @@
 (()=>{
  const form=document.querySelector('.role-filters');
- if(!form){const back=document.querySelector('.roles-back');try{const saved=JSON.parse(sessionStorage.getItem('yopeso-role-search')||'null');if(back&&saved)back.href='/open-roles.html'+saved.query;}catch{}return;}
+ if(!form){const back=document.querySelector('.roles-back');try{const saved=JSON.parse(sessionStorage.getItem('yopeso-role-search')||'null');if(back&&saved)back.href='open-roles.html'+saved.query;}catch{}return;}
  const search=document.querySelector('#role-search'),rows=[...document.querySelectorAll('.role-row')],clear=document.querySelector('#clear-filters'),nav=document.querySelector('.roles-pagination'),dots=nav.querySelector('.roles-dots');
  const params=new URLSearchParams(location.search);let page=Math.max(0,(Number(params.get('page'))||1)-1);search.value=params.get('q')||'';
  const chosen=key=>[...form.querySelectorAll(`input[name="${key}"]:checked`)].map(i=>i.value).filter(Boolean);
