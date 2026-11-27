@@ -66,7 +66,6 @@ document.addEventListener('keydown',event=>{
 nav.addEventListener('focusout',event=>{
  if(!nav.contains(event.relatedTarget)&&event.relatedTarget!==toggle)closeNavigation();
 });
-matchMedia('(max-width:760px)').addEventListener('change',closeNavigation);
 
 document.querySelectorAll('[data-scroll]').forEach(button=>button.addEventListener('click',()=>document.getElementById(button.dataset.scroll)?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})));
 
@@ -163,16 +162,4 @@ if(activities){
  new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;schedule();},{threshold:.5}).observe(viewport);
  new ResizeObserver(()=>render()).observe(viewport);
  mobile.addEventListener('change',rebuild);reduced.addEventListener('change',schedule);document.addEventListener('visibilitychange',schedule);rebuild();
-}
-
-// Internal links opt destination pages into the mobile navigation preview.
-if (new URLSearchParams(location.search).get('nav') === 'mobile' && !document.querySelector('.menu-symbol')) {
-  const previewStyle = document.createElement('link');
-  previewStyle.rel = 'stylesheet';
-  previewStyle.href = 'menu-preview.css';
-  previewStyle.media = '(max-width:1024px)';
-  document.head.append(previewStyle);
-  const previewScript = document.createElement('script');
-  previewScript.src = 'menu-preview.js';
-  document.body.append(previewScript);
 }
