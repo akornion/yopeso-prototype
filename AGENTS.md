@@ -34,7 +34,7 @@ This repository, `akornion/yopeso-prototype`, is the single working source and p
 
 - Preserve the latest GitHub design, including 16px Archivo body text on desktop and mobile, 14px supporting copy, and the responsive heading roles in `typography.css`.
 - Primary and secondary buttons use 14px Archivo Medium, 48px height and 13px vertical / 24px horizontal padding. Label/icon pairs use a centered 16px gap. Desktop header Contact intentionally retains its compact 13px navigation treatment.
-- `menu-preview.css` and `menu-preview.js` are active shared navigation assets, despite their names. The compact menu applies through 1024px.
+- `menu-preview.css` and `menu-preview.js` are active shared navigation assets, despite their names. The compact menu applies through 1024px, with a 72px header and no vertical header padding. Older 94px mobile-header specimen measurements are superseded.
 - Keep the independent desktop timeline columns, mobile milestone disclosure and single-page seven-role listing with accessible filters. Do not restore older pagination or menu experiments.
 - Update the design library and relevant specimens when an approved change modifies a documented rule. Do not propagate a section-specific experiment without agreement.
 
